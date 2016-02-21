@@ -1,4 +1,12 @@
 <?php
+
+// Route::group(['middleware' => ['web']], function() {
+
+	Route::get('oauth/google', 'App\Http\Controllers\Auth\AuthController@redirectToProvider');
+	Route::get('login/google', 'App\Http\Controllers\Auth\AuthController@handleProviderCallback');
+
+// });
+
 $api = app('Dingo\Api\Routing\Router');
 
 // Version 1 of our API

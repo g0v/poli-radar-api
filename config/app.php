@@ -148,6 +148,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -200,6 +201,7 @@ return [
         'APIRoute'  => Dingo\Api\Facade\Route::class,
         'API'       => Dingo\Api\Facade\API::class,
         'JWTAuth'   => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'Socialite'   => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

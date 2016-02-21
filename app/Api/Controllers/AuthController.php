@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 use Api\Requests\UserRequest;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends BaseController
 {
+
     public function me(Request $request)
     {
         return JWTAuth::parseToken()->authenticate();
@@ -19,11 +21,12 @@ class AuthController extends BaseController
     public function authenticate(Request $request)
     {
         // grab credentials from the request
-        $credentials = $request->only('email', 'password');
+        // $credentials = $request->only('email');
+        $user = User::where('email','=', $request->email)->first();
 
         try {
             // attempt to verify the credentials and create a token for the user
-            if (! $token = JWTAuth::attempt($credentials)) {
+            if (! $token = JWTAuth::fromUser($user)) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {
@@ -41,12 +44,11 @@ class AuthController extends BaseController
         return API::response()->array(['status' => 'success'])->statusCode(200);
     }
 
-    public function register(UserRequest $request)
+    public function register(Request $request)
     {
         $newUser = [
             'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password' => bcrypt($request->get('password')),
+            'email' => $request->get('email')
         ];
         $user = User::create($newUser);
         $token = JWTAuth::fromUser($user);
