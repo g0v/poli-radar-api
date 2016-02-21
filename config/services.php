@@ -46,9 +46,9 @@ return [
      */
 
     'google' => [
-        'client_id' => env('GOOGLE_CLIENT_ID'),
-        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => env('GOOGLE_REDIRECT'),
+        'client_id' => '601517919910-ibld12am3bl3kog9i8io8n95ebjmtc3c.apps.googleusercontent.com',
+        'client_secret' => 'FxKkWfNrbPisx3BvbsEVfNM8',
+        'redirect' => 'http://localhost:8000/login/google',
 
         /**
          * Only allows google to grab email address
