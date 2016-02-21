@@ -24,6 +24,8 @@ class CreateEventsTable extends Migration
             $table->float('longitude');
             $table->integer('type_id')->unsigned();
             $table->foreign('type_id')->references('id')->on('types');
+            $table->integer('candidate_id')->unsigned();
+            $table->foreign('candidate_id')->references('id')->on('candidates');
             $table->timestamps();
         });
     }

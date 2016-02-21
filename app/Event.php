@@ -13,4 +13,9 @@ class Event extends Model
     {
         return $this->belongsTo('App\Type');
     }
+
+    public function candidate()
+    {
+        return $this->belongsTo('App\Candidate');
+    }
 }

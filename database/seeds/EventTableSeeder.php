@@ -17,11 +17,17 @@ class EventTableSeeder extends Seeder
 
     	$evntFile = base_path() . '/database/seeds/events.json';
 
-		$events = json_decode(file_get_contents($evntFile), true);;
+		$candidates = json_decode(file_get_contents($evntFile), true);
 
-    	foreach($events as $event){
-    		Event::create($event);
-		}
+        foreach ($candidates as $candidate) {
+
+            foreach($candidate['events'] as $event){
+                $event['candidate_id'] = $candidate['id'];
+                Event::create($event);
+            }
+        }
+
+    	
 
     }
 }
