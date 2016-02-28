@@ -12,4 +12,9 @@ class Candidate extends Model
     {
         return $this->hasMany('App\Event');
     }
+
+    public function eventsTransformed()
+    {
+    	return new ResourceCollection($user->posts, new PostTransformer);
+    }
 }
