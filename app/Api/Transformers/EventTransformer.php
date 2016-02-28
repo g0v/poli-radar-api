@@ -20,7 +20,9 @@ class EventTransformer extends TransformerAbstract
                   'latitude' => (float) $event->latitude,
                   'longitude' => (float) $event->longitude,
                   'type' => $event->type_id,
-                  'typeName' => $event->type->name
+                  'typeName' => $event->type->name,
+                  'candidateId' => $event->candidate->id,
+                  'candidate' => $event->candidate->name
 		];
 	}
 }
