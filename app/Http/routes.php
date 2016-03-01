@@ -15,6 +15,7 @@ $api->version('v1', function ($api) {
 		$api->post('login', 'AuthController@authenticate');
 		$api->post('register', 'AuthController@register');
 
+		$api->get('data', 'AllDataController@index');
 		$api->get('events', 'EventsController@index');
 		$api->get('candidates', 'CandidatesController@index');
 

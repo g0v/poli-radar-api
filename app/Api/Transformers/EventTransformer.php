@@ -19,9 +19,9 @@ class EventTransformer extends TransformerAbstract
                   'addr' => $event->addr,
                   'latitude' => (float) $event->latitude,
                   'longitude' => (float) $event->longitude,
-                  'type' => $event->type_id,
+                  'type' => (int) $event->type_id,
                   'typeName' => $event->type->name,
-                  'candidateId' => $event->candidate->id,
+                  'candidateId' => (int) $event->candidate->id,
                   'candidate' => $event->candidate->name
 		];
 	}
