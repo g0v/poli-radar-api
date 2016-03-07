@@ -2,15 +2,15 @@
 
 namespace Api\Controllers;
 
-use App\Candidate;
+use App\Type;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Api\Transformers\CandidateTransformer;
+use Api\Transformers\TypeTransformer;
 
 /**
- * @Resource('Candidates', uri='/candidates')
+ * @Resource('Types', uri='/candidates')
  */
-class CandidatesController extends BaseController
+class TypesController extends BaseController
 {
 
     /**
@@ -22,7 +22,7 @@ class CandidatesController extends BaseController
      */
     public function index()
     {
-        return $this->response->collection(Candidate::all(), new CandidateTransformer);
+        return $this->response->collection(Type::all(), new TypeTransformer);
     }
 
     /**
@@ -33,9 +33,8 @@ class CandidatesController extends BaseController
      */
     public function store($request)
     {
-        return Candidate::create($request->only([
-            'name',
-            'color'
+        return Type::create($request->only([
+            'name'
         ]));
     }
 
@@ -47,11 +46,11 @@ class CandidatesController extends BaseController
      */
     public function show($id)
     {
-        return $this->item(Candidate::findOrFail($id), new CandidateTransformer);
+        return $this->item(Type::findOrFail($id), new TypeTransformer);
     }
 
     /**
-     * Update the Candidate in the database.
+     * Update the Type in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -59,10 +58,9 @@ class CandidatesController extends BaseController
      */
     public function update($request, $id)
     {
-        $candidate = Candidate::findOrFail($id);
+        $candidate = Type::findOrFail($id);
         $candidate->update($request->only([
-            'name',
-            'color'
+            'name'
         ]));
         return $candidate;
     }
@@ -75,6 +73,6 @@ class CandidatesController extends BaseController
      */
     public function destroy($id)
     {
-        return Candidate::destroy($id);
+        return Type::destroy($id);
     }
 }
