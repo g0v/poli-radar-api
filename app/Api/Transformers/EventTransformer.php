@@ -14,15 +14,15 @@ class EventTransformer extends TransformerAbstract
 			'date' => $event->date,
                   'start' => $event->start,
                   'end' => $event->end,
-                  'event' => $event->name,
+                  'name' => $event->name,
                   'location' => $event->location,
                   'addr' => $event->addr,
                   'latitude' => (float) $event->latitude,
                   'longitude' => (float) $event->longitude,
                   'type' => (int) $event->type_id,
                   'typeName' => $event->type->name,
-                  'candidateId' => (int) $event->candidate->id,
-                  'candidate' => $event->candidate->name
+                  'guyId' => (int) $event->candidate->id,
+                  'guy' => $event->candidate->name
 		];
 	}
 }
