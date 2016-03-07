@@ -16,7 +16,7 @@ $api->version('v1', function ($api) {
 		$api->post('register', 'AuthController@register');
 
 		$api->get('data', 'AllDataController@index');
-		$api->get('activitties', 'EventsController@index');
+		$api->get('activities', 'EventsController@index');
 		$api->get('guys', 'CandidatesController@index');
 
 		// All routes in here are protected and thus need a valid token

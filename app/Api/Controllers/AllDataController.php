@@ -37,7 +37,7 @@ class AllDataController extends BaseController
         
         return $this->array(array(
             'activities' => $fractal->createData($activities)->toArray(),
-            'candidates' => $fractal->createData($candidates)->toArray(),
+            'guys' => $fractal->createData($candidates)->toArray(),
             'categories' => $fractal->createData($categories)->toArray()
         ));
     }
