@@ -12,12 +12,12 @@ $api->version('v1', function ($api) {
 	$api->group(['namespace' => 'Api\Controllers', 'middleware' => 'cors'], function ($api) {
 
 		// Login route
-		$api->post('login', 'AuthController@authenticate');
+		$api->post('login', 'AuthCeontroller@authenticate');
 		$api->post('register', 'AuthController@register');
 
 		$api->get('data', 'AllDataController@index');
-		$api->get('events', 'EventsController@index');
-		$api->get('candidates', 'CandidatesController@index');
+		$api->get('activitties', 'EventsController@index');
+		$api->get('guys', 'CandidatesController@index');
 
 		// All routes in here are protected and thus need a valid token
 		$api->group( [ 'middleware' => ['jwt.auth', 'jwt.refresh'] ], function ($api) {
