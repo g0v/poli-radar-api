@@ -46,9 +46,9 @@ return [
      */
 
     'google' => [
-        'client_id' => '601517919910-ibld12am3bl3kog9i8io8n95ebjmtc3c.apps.googleusercontent.com',
-        'client_secret' => 'FxKkWfNrbPisx3BvbsEVfNM8',
-        'redirect' => 'http://localhost:8000/login/google',
+        'client_id' => '220507561811-it5uukpmvkp7v9rucltcfglhm344r9b0.apps.googleusercontent.com',
+        'client_secret' => '3XxNmJ-nPwqkR6h7umQOWQop',
+        'redirect' => 'http://relab.cc/route-2016-api/public/oauth/google/callback',
 
         /**
          * Only allows google to grab email address
