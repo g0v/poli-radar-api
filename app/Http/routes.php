@@ -1,7 +1,7 @@
 <?php
 
 Route::get('oauth/google', 'App\Http\Controllers\Auth\AuthController@redirectToProvider');
-Route::get('login/google', 'App\Http\Controllers\Auth\AuthController@handleProviderCallback');
+Route::get('oauth/google/callback', 'App\Http\Controllers\Auth\AuthController@handleProviderCallback');
 
 $api = app('Dingo\Api\Routing\Router');
 
