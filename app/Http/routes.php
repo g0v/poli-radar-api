@@ -17,6 +17,7 @@ $api->version('v1', function ($api) {
 
 		$api->get('data', 'AllDataController@index');
 		$api->get('activities', 'EventsController@index');
+		$api->post('activities', 'EventsController@store');
 		$api->get('guys', 'CandidatesController@index');
 		$api->get('types', 'TypesController@index');
 
