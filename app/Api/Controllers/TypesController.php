@@ -31,7 +31,7 @@ class TypesController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($request)
+    public function store(Request $request)
     {
         return Type::create($request->only([
             'name'
@@ -56,7 +56,7 @@ class TypesController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($request, $id)
+    public function update(Request $request, $id)
     {
         $candidate = Type::findOrFail($id);
         $candidate->update($request->only([

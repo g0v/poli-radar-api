@@ -31,7 +31,7 @@ class CandidatesController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($request)
+    public function store(Request $request)
     {
         return Candidate::create($request->only([
             'name',
@@ -57,7 +57,7 @@ class CandidatesController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($request, $id)
+    public function update(Request $request, $id)
     {
         $candidate = Candidate::findOrFail($id);
         $candidate->update($request->only([

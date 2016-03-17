@@ -17,7 +17,6 @@ $api->version('v1', function ($api) {
 
 		$api->get('data', 'AllDataController@index');
 		$api->get('activities', 'EventsController@index');
-		$api->post('activities', 'EventsController@store');
 		$api->get('guys', 'CandidatesController@index');
 		$api->get('types', 'TypesController@index');
 
@@ -27,6 +26,7 @@ $api->version('v1', function ($api) {
 			$api->get('users/me', 'AuthController@me');
 			$api->get('validate_token', 'AuthController@validateToken');
 
+			$api->post('activities', 'EventsController@store');
 		});
 
 	});

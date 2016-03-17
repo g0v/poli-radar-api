@@ -32,7 +32,7 @@ class EventsController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($request)
+    public function store(Request $request)
     {
         $event = Event::create($request->only([
             'date',
@@ -67,7 +67,7 @@ class EventsController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($request, $id)
+    public function update(Request $request, $id)
     {
         $event = Event::findOrFail($id);
         $event->update($request->only([
