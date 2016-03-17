@@ -34,7 +34,7 @@ class EventsController extends BaseController
      */
     public function store($request)
     {
-        return Event::create($request->only([
+        $event = Event::create($request->only([
             'date',
             'start',
             'end',
@@ -42,9 +42,11 @@ class EventsController extends BaseController
             'location',
             'addr',
             'latitude',
-            'longitude',
-            'type_id'
+            'longitude'
         ]));
+        $event->candidate_id = $request->guy;
+        $event->save();
+        return $event;
     }
 
     /**
