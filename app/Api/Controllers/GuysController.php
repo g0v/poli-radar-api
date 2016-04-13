@@ -2,15 +2,15 @@
 
 namespace Api\Controllers;
 
-use App\Candidate;
+use App\Guy;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Api\Transformers\CandidateTransformer;
+use Api\Transformers\GuyTransformer;
 
 /**
- * @Resource('Candidates', uri='/candidates')
+ * @Resource('Guys', uri='/candidates')
  */
-class CandidatesController extends BaseController
+class GuysController extends BaseController
 {
 
     /**
@@ -22,7 +22,7 @@ class CandidatesController extends BaseController
      */
     public function index()
     {
-        return $this->response->collection(Candidate::all(), new CandidateTransformer);
+        return $this->response->collection(Guy::all(), new GuyTransformer);
     }
 
     /**
@@ -33,7 +33,7 @@ class CandidatesController extends BaseController
      */
     public function store(Request $request)
     {
-        return Candidate::create($request->only([
+        return Guy::create($request->only([
             'name',
             'color'
         ]));
@@ -47,11 +47,11 @@ class CandidatesController extends BaseController
      */
     public function show($id)
     {
-        return $this->item(Candidate::findOrFail($id), new CandidateTransformer);
+        return $this->item(Guy::findOrFail($id), new GuyTransformer);
     }
 
     /**
-     * Update the Candidate in the database.
+     * Update the Guy in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -59,7 +59,7 @@ class CandidatesController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $candidate = Candidate::findOrFail($id);
+        $candidate = Guy::findOrFail($id);
         $candidate->update($request->only([
             'name',
             'color'
@@ -75,6 +75,6 @@ class CandidatesController extends BaseController
      */
     public function destroy($id)
     {
-        return Candidate::destroy($id);
+        return Guy::destroy($id);
     }
 }

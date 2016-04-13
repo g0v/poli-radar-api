@@ -16,9 +16,8 @@ $api->version('v1', function ($api) {
 		$api->post('register', 'AuthController@register');
 
 		$api->get('data', 'AllDataController@index');
-		$api->get('activities', 'EventsController@index');
-		$api->get('guys', 'CandidatesController@index');
-		$api->get('types', 'TypesController@index');
+		$api->get('activities', 'ActivitiesController@index');
+		$api->get('guys', 'GuysController@index');
 
 		// All routes in here are protected and thus need a valid token
 		$api->group( [ 'middleware' => ['jwt.auth', 'jwt.refresh'] ], function ($api) {
@@ -26,7 +25,7 @@ $api->version('v1', function ($api) {
 			$api->get('users/me', 'AuthController@me');
 			$api->get('validate_token', 'AuthController@validateToken');
 
-			$api->post('activities', 'EventsController@store');
+			$api->post('activities', 'ActivitiesController@store');
 		});
 
 	});

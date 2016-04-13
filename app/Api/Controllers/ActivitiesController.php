@@ -2,16 +2,16 @@
 
 namespace Api\Controllers;
 
-use App\Event;
+use App\Activity;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-// use Api\Requests\EventRequest;
-use Api\Transformers\EventTransformer;
+// use Api\Requests\ActivityRequest;
+use Api\Transformers\ActivityTransformer;
 
 /**
- * @Resource('Events', uri='/events')
+ * @Resource('Activities', uri='/events')
  */
-class EventsController extends BaseController
+class ActivitiesController extends BaseController
 {
 
     /**
@@ -23,7 +23,7 @@ class EventsController extends BaseController
      */
     public function index()
     {
-        return $this->collection(Event::all(), new EventTransformer);
+        return $this->collection(Activity::all(), new ActivityTransformer);
     }
 
     /**
@@ -34,7 +34,7 @@ class EventsController extends BaseController
      */
     public function store(Request $request)
     {
-        $event = Event::create($request->only([
+        $activity = Activity::create($request->only([
             'date',
             'start',
             'end',
@@ -42,11 +42,10 @@ class EventsController extends BaseController
             'location',
             'addr',
             'latitude',
-            'longitude'
+            'longitude',
+            'guy_id'
         ]));
-        $event->candidate_id = $request->guy;
-        $event->save();
-        return $event;
+        return $activity;
     }
 
     /**
@@ -57,11 +56,11 @@ class EventsController extends BaseController
      */
     public function show($id)
     {
-        return $this->item(Event::findOrFail($id));
+        return $this->item(Activity::findOrFail($id));
     }
 
     /**
-     * Update the Event in the database.
+     * Update the Activity in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -69,8 +68,8 @@ class EventsController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $event = Event::findOrFail($id);
-        $event->update($request->only([
+        $activity = Activity::findOrFail($id);
+        $activity->update($request->only([
             'date',
             'start',
             'end',
@@ -81,7 +80,7 @@ class EventsController extends BaseController
             'longitude',
             'type_id'
         ]));
-        return $event;
+        return $activity;
     }
 
     /**
@@ -92,6 +91,6 @@ class EventsController extends BaseController
      */
     public function destroy($id)
     {
-        return Event::destroy($id);
+        return Activity::destroy($id);
     }
 }
