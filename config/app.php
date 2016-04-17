@@ -149,7 +149,11 @@ return [
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        \Conner\Tagging\Providers\TaggingServiceProvider::class,
+        willvincent\Rateable\RateableServiceProvider::class,
+        Lanz\Commentable\CommentableServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        Baum\Providers\BaumServiceProvider::class,
+        Stolz\SchemaSpy\ServiceProvider::class,
 
     ],
 
@@ -202,7 +206,9 @@ return [
         'APIRoute'  => Dingo\Api\Facade\Route::class,
         'API'       => Dingo\Api\Facade\API::class,
         'JWTAuth'   => Tymon\JWTAuth\Facades\JWTAuth::class,
-        'Socialite'   => Laravel\Socialite\Facades\Socialite::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Uuid'      => Webpatser\Uuid\Uuid::class,
     ],
 
 ];

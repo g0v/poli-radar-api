@@ -8,12 +8,13 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     JWTSubject
 {
-    use Authenticatable, Authorizable;
+    use Authenticatable, Authorizable, EntrustUserTrait;
 
     /**
      * The database table used by the model.
@@ -52,5 +53,10 @@ class User extends Model implements AuthenticatableContract,
      */
     public function getJWTCustomClaims() {
         return [];
+    }
+
+    public function events()
+    {
+        return $this->hasMany('App\Event');
     }
 }
