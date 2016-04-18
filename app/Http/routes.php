@@ -20,7 +20,7 @@ $api->version('v1', function ($api) {
 		$api->get('politicians', 'PoliticiansController@index');
 
 		// All routes in here are protected and thus need a valid token
-		$api->group( [ 'middleware' => ['jwt.auth', 'jwt.refresh'] ], function ($api) {
+		$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
 
 			$api->get('users/me', 'AuthController@me');
 			$api->get('validate_token', 'AuthController@validateToken');
