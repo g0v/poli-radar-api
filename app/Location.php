@@ -19,6 +19,11 @@ class Location extends Model
         return $this->belongsTo('App\Region');
     }
 
+    public function events()
+    {
+        return $this->hasMany('App\Event');
+    }
+
     public function categories()
     {
         return $this->belongsToMany('App\LocationCategory');

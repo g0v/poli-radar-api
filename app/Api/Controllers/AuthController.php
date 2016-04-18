@@ -21,12 +21,11 @@ class AuthController extends BaseController
     public function authenticate(Request $request)
     {
         // grab credentials from the request
-        // $credentials = $request->only('email');
-        $user = User::where('email','=', $request->email)->first();
+        $credentials = $request->only('email', 'password');
 
         try {
             // attempt to verify the credentials and create a token for the user
-            if (! $token = JWTAuth::fromUser($user)) {
+            if (! $token = JWTAuth::attempt($credentials)) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {
@@ -48,7 +47,8 @@ class AuthController extends BaseController
     {
         $newUser = [
             'name' => $request->get('name'),
-            'email' => $request->get('email')
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password')),
         ];
         $user = User::create($newUser);
         $token = JWTAuth::fromUser($user);

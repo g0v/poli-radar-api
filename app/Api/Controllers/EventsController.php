@@ -2,27 +2,28 @@
 
 namespace Api\Controllers;
 
-use App\Guy;
+use App\Event;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Api\Transformers\GuyTransformer;
+// use Api\Requests\EventRequest;
+use Api\Transformers\EventTransformer;
 
 /**
- * @Resource('Guys', uri='/candidates')
+ * @Resource('Events', uri='/events')
  */
-class GuysController extends BaseController
+class EventsController extends BaseController
 {
 
     /**
-     * Show all candidates
+     * Show all events
      *
-     * Get a JSON representation of all the candidates
+     * Get a JSON representation of all the events
      * 
      * @Get('/')
      */
     public function index()
     {
-        return $this->response->collection(Guy::all(), new GuyTransformer);
+        return $this->collection(Event::all(), new EventTransformer);
     }
 
     /**
@@ -33,10 +34,18 @@ class GuysController extends BaseController
      */
     public function store(Request $request)
     {
-        return Guy::create($request->only([
+        $event = Event::create($request->only([
+            'date',
+            'start',
+            'end',
             'name',
-            'color'
+            'location',
+            'addr',
+            'latitude',
+            'longitude',
+            'guy_id'
         ]));
+        return $event;
     }
 
     /**
@@ -47,11 +56,11 @@ class GuysController extends BaseController
      */
     public function show($id)
     {
-        return $this->item(Guy::findOrFail($id), new GuyTransformer);
+        return $this->item(Event::findOrFail($id));
     }
 
     /**
-     * Update the Guy in the database.
+     * Update the Event in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -59,12 +68,19 @@ class GuysController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $candidate = Guy::findOrFail($id);
-        $candidate->update($request->only([
+        $event = Event::findOrFail($id);
+        $event->update($request->only([
+            'date',
+            'start',
+            'end',
             'name',
-            'color'
+            'location',
+            'addr',
+            'latitude',
+            'longitude',
+            'type_id'
         ]));
-        return $candidate;
+        return $event;
     }
 
     /**
@@ -75,6 +91,6 @@ class GuysController extends BaseController
      */
     public function destroy($id)
     {
-        return Guy::destroy($id);
+        return Event::destroy($id);
     }
 }

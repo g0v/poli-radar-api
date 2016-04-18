@@ -2,16 +2,16 @@
 
 namespace Api\Controllers;
 
-use App\Activity;
-use App\Guy;
+use App\Event;
+use App\Politician;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
 use League\Fractal\Resource\Collection as FractalCollection;
 use League\Fractal\Manager;
 
-use Api\Transformers\ActivityTransformer;
-use Api\Transformers\GuyTransformer;
+use Api\Transformers\EventTransformer;
+use Api\Transformers\PoliticianTransformer;
 
 /**
  * @Resource('AllData', uri='/data')
@@ -29,12 +29,12 @@ class AllDataController extends BaseController
     public function index()
     {
         $fractal = new Manager();
-        $activities = new FractalCollection(Activity::all(), new ActivityTransformer);
-        $candidates = new FractalCollection(Guy::all(), new GuyTransformer);
+        $events = new FractalCollection(Event::all(), new EventTransformer);
+        $politicians = new FractalCollection(Politician::all(), new PoliticianTransformer);
         
         return $this->array(array(
-            'activities' => $fractal->createData($activities)->toArray(),
-            'guys' => $fractal->createData($candidates)->toArray()
+            'events' => $fractal->createData($events)->toArray(),
+            'politicians' => $fractal->createData($politicians)->toArray()
         ));
     }
 

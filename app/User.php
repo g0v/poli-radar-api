@@ -14,7 +14,7 @@ class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     JWTSubject
 {
-    use Authenticatable, Authorizable, EntrustUserTrait;
+    use Authenticatable, EntrustUserTrait;
 
     /**
      * The database table used by the model.

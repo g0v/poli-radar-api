@@ -22,4 +22,9 @@ class Event extends Model
     {
         return $this->belongsToMany('App\EventCategory');
     }
+
+    public function location()
+    {
+        return $this->belongsTo('App\Location');
+    }
 }

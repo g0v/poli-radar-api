@@ -2,28 +2,27 @@
 
 namespace Api\Controllers;
 
-use App\Activity;
+use App\Politician;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-// use Api\Requests\ActivityRequest;
-use Api\Transformers\ActivityTransformer;
+use Api\Transformers\PoliticianTransformer;
 
 /**
- * @Resource('Activities', uri='/events')
+ * @Resource('Politicians', uri='/politicians')
  */
-class ActivitiesController extends BaseController
+class PoliticiansController extends BaseController
 {
 
     /**
-     * Show all events
+     * Show all politicians
      *
-     * Get a JSON representation of all the events
+     * Get a JSON representation of all the politicians
      * 
      * @Get('/')
      */
     public function index()
     {
-        return $this->collection(Activity::all(), new ActivityTransformer);
+        return $this->response->collection(Politician::all(), new PoliticianTransformer);
     }
 
     /**
@@ -34,18 +33,10 @@ class ActivitiesController extends BaseController
      */
     public function store(Request $request)
     {
-        $activity = Activity::create($request->only([
-            'date',
-            'start',
-            'end',
+        return Politician::create($request->only([
             'name',
-            'location',
-            'addr',
-            'latitude',
-            'longitude',
-            'guy_id'
+            'party_id'
         ]));
-        return $activity;
     }
 
     /**
@@ -56,11 +47,11 @@ class ActivitiesController extends BaseController
      */
     public function show($id)
     {
-        return $this->item(Activity::findOrFail($id));
+        return $this->item(Politician::findOrFail($id), new PoliticianTransformer);
     }
 
     /**
-     * Update the Activity in the database.
+     * Update the Politician in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -68,19 +59,12 @@ class ActivitiesController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $activity = Activity::findOrFail($id);
-        $activity->update($request->only([
-            'date',
-            'start',
-            'end',
+        $candidate = Politician::findOrFail($id);
+        $candidate->update($request->only([
             'name',
-            'location',
-            'addr',
-            'latitude',
-            'longitude',
-            'type_id'
+            'color'
         ]));
-        return $activity;
+        return $candidate;
     }
 
     /**
@@ -91,6 +75,6 @@ class ActivitiesController extends BaseController
      */
     public function destroy($id)
     {
-        return Activity::destroy($id);
+        return Politician::destroy($id);
     }
 }
