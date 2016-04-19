@@ -10,6 +10,10 @@ class EventTransformer extends TransformerAbstract
 	public function transform(Event $event)
 	{
             $location = $event->location;
+            $politicians = [];
+            foreach ($event->politicians as $p) {
+                  $politicians[] = $p->id;
+            }
 		return [
 			'id' => (int) $event->id,
 			'date' => $event->date,
@@ -19,7 +23,8 @@ class EventTransformer extends TransformerAbstract
                   'location' => $location->name,
                   'addr' => $location->address,
                   'latitude' => (float) $location->lat,
-                  'longitude' => (float) $location->lng
+                  'longitude' => (float) $location->lng,
+                  'politician' => $politicians
 		];
 	}
 }
