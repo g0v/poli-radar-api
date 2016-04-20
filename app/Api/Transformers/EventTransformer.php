@@ -12,7 +12,7 @@ class EventTransformer extends TransformerAbstract
             $location = $event->location;
             $politicians = [];
             foreach ($event->politicians as $p) {
-                  $politicians[] = $p->id;
+                  $politicians[] = (int) $p->id;
             }
 		return [
 			'id' => (int) $event->id,
