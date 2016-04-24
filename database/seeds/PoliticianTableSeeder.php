@@ -14,6 +14,8 @@ class PoliticianTableSeeder extends Seeder
     public function run()
     {
         Politician::truncate();
+        PoliticianCategory::truncate();
+        DB::table('politician_politician_category')->truncate();
 
 		$politicians = [
 			[ 'name' => '朱立倫', 'party_id' => 1, 'sex' => '男' ],
