@@ -18,7 +18,9 @@ class EventTableSeeder extends Seeder
 
         Event::truncate();
         EventCategory::truncate();
+        Location::truncate();
         DB::table('event_event_category')->truncate();
+        DB::table('event_politician')->truncate();
 
         $evntFile = base_path() . '/database/seeds/events.json';
 
@@ -28,7 +30,7 @@ class EventTableSeeder extends Seeder
 
         foreach ($politicians as $politician)
         {
-            $p = Politician::first(['id' => $politician['id']]);
+            $p = Politician::find($politician['id']);
 
             foreach ($politician['events'] as $event)
             {
