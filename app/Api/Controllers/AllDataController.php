@@ -3,6 +3,7 @@
 namespace Api\Controllers;
 
 use App\Event;
+use App\Party;
 use App\Politician;
 use App\EventCategory;
 use App\PoliticianCategory;
@@ -13,6 +14,7 @@ use League\Fractal\Resource\Collection as FractalCollection;
 use League\Fractal\Manager;
 
 use Api\Transformers\EventTransformer;
+use Api\Transformers\PartyTransformer;
 use Api\Transformers\PoliticianTransformer;
 use Api\Transformers\EventCategoryTransformer;
 use Api\Transformers\PoliticianCategoryTransformer;
@@ -34,6 +36,7 @@ class AllDataController extends BaseController
     {
         $fractal = new Manager();
         $events = new FractalCollection(Event::all(), new EventTransformer);
+        $parties = new FractalCollection(Party::all(), new PartyTransformer);
         $politicians = new FractalCollection(Politician::all(), new PoliticianTransformer);
         $eventCategories = array();
         $politicianCategories = array();
@@ -58,6 +61,7 @@ class AllDataController extends BaseController
         
         return $this->array(array(
             'events' => $fractal->createData($events)->toArray(),
+            'parties' => $fractal->createData($parties)->toArray(),
             'politicians' => $fractal->createData($politicians)->toArray(),
             'eventCategories' => $eventCategories,
             'politicianCategories' => $politicianCategories
