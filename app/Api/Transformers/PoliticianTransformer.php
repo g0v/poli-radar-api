@@ -9,11 +9,18 @@ class PoliticianTransformer extends TransformerAbstract
 {
 	public function transform(Politician $politician)
 	{
-		
+		$politicianCategories = [];
+
+        foreach ($politician->categories as $c)
+        {
+            $politicianCategories[] = (int) $c->id;
+        }
+
 		return [
 			'id' => (int) $politician->id,
             'name' => $politician->name,
-            'party' => $politician->party->name
+            'party' => $politician->party->id,
+            'categories' => $politicianCategories
 		];
 	}
 }

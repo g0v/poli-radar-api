@@ -15,15 +15,18 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         //disable foreign key check for this connection before running seeders
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        if(config('database.default') == 'mysql') {
+            DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        }
 
         $this->call(UserTableSeeder::class);
         $this->call(PartyTableSeeder::class);
         $this->call(PoliticianTableSeeder::class);
         $this->call(EventTableSeeder::class);
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
+        if(config('database.default') == 'mysql') {
+            DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        }
 
         Model::reguard();
     }
