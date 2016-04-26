@@ -18,24 +18,28 @@ class PoliticianTableSeeder extends Seeder
         DB::table('politician_politician_category')->truncate();
 
 		$politicians = [
-			[ 'name' => '朱立倫', 'party_id' => 1, 'sex' => '男' ],
-			[ 'name' => '蔡英文', 'party_id' => 2, 'sex' => '女' ],
-			[ 'name' => '宋楚瑜', 'party_id' => 3, 'sex' => '男' ]
+			[ 'name' => '朱立倫', 'party' => '國民黨', 'sex' => '男' ],
+			[ 'name' => '蔡英文', 'party' => '民進黨', 'sex' => '女' ],
+			[ 'name' => '宋楚瑜', 'party' => '親民黨', 'sex' => '男' ]
     	];
 
         $sexRoot = PoliticianCategory::create(['name' => '性別']);
+        $partyRoot = PoliticianCategory::create(['name' => '政黨']);
 
     	foreach($politicians as $politician){
     		$p = Politician::create([
-                'name' => $politician['name'],
-                'party_id' => $politician['party_id']
+                'name' => $politician['name']
             ]);
             $sex = PoliticianCategory::firstOrCreate([
                 'parent_id' => $sexRoot->id,
                 'name' => $politician['sex']
             ]);
+            $party = PoliticianCategory::firstOrCreate([
+                'parent_id' => $partyRoot->id,
+                'name' => $politician['party']
+            ]);
 
-            $p->categories()->attach($sex->id);
+            $p->categories()->attach([$sex->id, $party->id]);
 		}
     }
 }

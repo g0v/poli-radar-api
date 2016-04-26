@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
         }
 
         $this->call(UserTableSeeder::class);
-        $this->call(PartyTableSeeder::class);
         $this->call(PoliticianTableSeeder::class);
         $this->call(EventTableSeeder::class);
 

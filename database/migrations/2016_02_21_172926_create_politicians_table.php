@@ -15,8 +15,6 @@ class CreatePoliticiansTable extends Migration
         Schema::create('politicians', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('party_id')->unsigned();
-            $table->foreign('party_id')->references('id')->on('parties');
             $table->timestamps();
         });
         

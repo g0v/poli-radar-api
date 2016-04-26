@@ -19,7 +19,6 @@ class PoliticianTransformer extends TransformerAbstract
 		return [
 			'id' => (int) $politician->id,
             'name' => $politician->name,
-            'party' => (int) $politician->party->id,
             'categories' => $politicianCategories
 		];
 	}
