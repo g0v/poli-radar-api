@@ -16,6 +16,7 @@ use Api\Transformers\EventTransformer;
 use Api\Transformers\PoliticianTransformer;
 use Api\Transformers\EventCategoryTransformer;
 use Api\Transformers\PoliticianCategoryTransformer;
+use DB;
 
 /**
  * @Resource('AllData', uri='/data')
@@ -55,8 +56,15 @@ class AllDataController extends BaseController
                 'children' => $fractal->createData(new FractalCollection($root->children, new PoliticianCategoryTransformer))->toArray(),
             );
         }
+        $date = DB::table('events')
+                     ->select(DB::raw('MIN(date) as min, MAX(date) as max'))
+                     ->get();
         
         return $this->array(array(
+            'date' => [
+                'min' => explode(" ", $date[0]->min)[0],
+                'max' => explode(" ", $date[0]->max)[0]
+            ],
             'events' => $fractal->createData($events)->toArray(),
             'politicians' => $fractal->createData($politicians)->toArray(),
             'eventCategories' => $eventCategories,

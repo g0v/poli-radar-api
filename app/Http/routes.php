@@ -16,6 +16,7 @@ $api->version('v1', function ($api) {
 		$api->post('register', 'AuthController@register');
 
 		$api->get('data', 'AllDataController@index');
+		$api->get('date', 'DateController@index');
 		$api->get('events/{start?}/{end?}', 'EventsController@index');
 		$api->get('politicians', 'PoliticiansController@index');
 
