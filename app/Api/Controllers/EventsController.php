@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 // use Api\Requests\EventRequest;
 use Api\Transformers\EventTransformer;
+use Carbon\Carbon;
 
 /**
  * @Resource('Events', uri='/events')
@@ -21,9 +22,23 @@ class EventsController extends BaseController
      * 
      * @Get('/')
      */
-    public function index()
+    public function index($start = null, $end = null)
     {
-        return $this->collection(Event::all(), new EventTransformer);
+
+        if(is_null($end)) {
+            $end = Carbon::now();
+        } else {
+            $end = Carbon::parse($end);
+        }
+
+        if(is_null($start)) {
+            $start = Carbon::now()->subDays(7);
+        } else {
+            $start = Carbon::parse($start);
+        }
+
+        $found = Event::whereBetween('date', [$start, $end])->get();
+        return $this->collection($found, new EventTransformer);
     }
 
     /**

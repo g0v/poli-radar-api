@@ -5,6 +5,7 @@ use App\Politician;
 use App\Event;
 use App\EventCategory;
 use App\Location;
+use Carbon\Carbon;
 
 class EventTableSeeder extends Seeder
 {
@@ -42,9 +43,10 @@ class EventTableSeeder extends Seeder
 
                 $location->name = $event['location'];
                 $location->save();
+                $date = explode("/", $event['date']);
 
                 $new_event = Event::create([
-                    'date'          => $event['date'],
+                    'date'          => Carbon::create($date[0], $date[1], $date[2], 12),
                     'start'         => $event['start'],
                     'end'           => isset($event['end']) ? $event['end'] : null,
                     'name'          => $event['name'],
