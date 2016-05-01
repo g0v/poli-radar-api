@@ -2,18 +2,17 @@
 
 namespace Api\Transformers;
 
-use App\Viwer;
+use App\Viewer;
 use League\Fractal\TransformerAbstract;
 
-class ViwerTransformer extends TransformerAbstract
+class ViewerTransformer extends TransformerAbstract
 {
-	public function transform(Viwer $viwer)
+	public function transform(Viewer $viewer)
 	{
-
 		return [
-			'id' => (int) $viwer->id,
-            'hash' => $viwer->uuid,
-            'data' => $viwer->data,
+			'id' => (int) $viewer->id,
+            'hash' => $viewer->uuid,
+            'data' => $viewer->data,
 		];
 	}
 }

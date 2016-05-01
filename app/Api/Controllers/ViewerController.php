@@ -2,15 +2,16 @@
 
 namespace Api\Controllers;
 
-use App\Politician;
+use App\Viewer;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Api\Transformers\PoliticianTransformer;
+use Api\Transformers\ViewerTransformer;
+use Uuid;
 
 /**
- * @Resource('Politicians', uri='/politicians')
+ * @Resource('Viewers', uri='/politicians')
  */
-class PoliticiansController extends BaseController
+class ViewerController extends BaseController
 {
 
     /**
@@ -22,7 +23,7 @@ class PoliticiansController extends BaseController
      */
     public function index()
     {
-        return $this->response->collection(Politician::all(), new PoliticianTransformer);
+        return $this->response->collection(Viewer::all(), new ViewerTransformer);
     }
 
     /**
@@ -33,10 +34,12 @@ class PoliticiansController extends BaseController
      */
     public function store(Request $request)
     {
-        return Politician::create($request->only([
-            'name',
-            'party_id'
-        ]));
+        $viewer = Viewer::create([
+            'uuid' => Uuid::generate()->string,
+            'data' => $request->data,
+            'user_id' => 1,
+        ]);
+        return $this->response->array(['hash' => $viewer->uuid]);
     }
 
     /**
@@ -45,13 +48,13 @@ class PoliticiansController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($uuid)
     {
-        return $this->item(Politician::findOrFail($id), new PoliticianTransformer);
+        return $this->item(Viewer::where('uuid', '=', $uuid)->firstOrFail(), new ViewerTransformer);
     }
 
     /**
-     * Update the Politician in the database.
+     * Update the Viewer in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -59,7 +62,7 @@ class PoliticiansController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $candidate = Politician::findOrFail($id);
+        $candidate = Viewer::findOrFail($id);
         $candidate->update($request->only([
             'name',
             'color'
@@ -75,6 +78,6 @@ class PoliticiansController extends BaseController
      */
     public function destroy($id)
     {
-        return Politician::destroy($id);
+        return Viewer::destroy($id);
     }
 }

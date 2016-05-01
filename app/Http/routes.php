@@ -19,6 +19,8 @@ $api->version('v1', function ($api) {
 		$api->get('date', 'DateController@index');
 		$api->get('events/{start?}/{end?}', 'EventsController@index');
 		$api->get('politicians', 'PoliticiansController@index');
+		$api->get('viewer/{uuid}', 'ViewerController@show');
+		$api->post('viewer', 'ViewerController@store');
 
 		// All routes in here are protected and thus need a valid token
 		$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
