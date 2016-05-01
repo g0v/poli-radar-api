@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 use Api\Transformers\EventTransformer;
 use Carbon\Carbon;
 
+use League\Fractal\Resource\Collection as FractalCollection;
+use League\Fractal\Manager;
+
 /**
  * @Resource('Events', uri='/events')
  */
@@ -24,6 +27,7 @@ class EventsController extends BaseController
      */
     public function index($start = null, $end = null)
     {
+        $fractal = new Manager();
 
         if(is_null($end)) {
             $end = Carbon::now();
@@ -37,8 +41,15 @@ class EventsController extends BaseController
             $start = Carbon::parse($start);
         }
 
-        $found = Event::whereBetween('date', [$start, $end])->get();
-        return $this->collection($found, new EventTransformer);
+        $events = new FractalCollection(Event::whereBetween('date', [$start, $end])->get(), new EventTransformer);
+
+        return $this->array([
+            'events' => $fractal->createData($events)->toArray(),
+            'date' => [
+                'start' => $start->format('Y-m-d'),
+                'end' => $end->format('Y-m-d'),
+            ]
+        ]);
     }
 
     /**

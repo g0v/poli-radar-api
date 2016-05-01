@@ -15,6 +15,7 @@ class CreateViewersTable extends Migration
         Schema::create('viewers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('uuid', 36);
+            $table->text('data');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
