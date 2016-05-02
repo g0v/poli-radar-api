@@ -19,6 +19,7 @@ $api->version('v1', function ($api) {
 		$api->get('date', 'DateController@index');
 		$api->get('events/{start?}/{end?}', 'EventsController@index');
 		$api->get('politicians', 'PoliticiansController@index');
+		$api->get('viewer', 'ViewerController@index');
 		$api->get('viewer/{uuid}', 'ViewerController@show');
 		$api->post('viewer', 'ViewerController@store');
 

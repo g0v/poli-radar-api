@@ -26,7 +26,6 @@ class DateController extends BaseController
                      ->select(DB::raw('MIN(date) as min, MAX(date) as max'))
                      ->get();
 
-
         return $this->array([
             'min' => explode(" ", $date[0]->min)[0],
             'max' => explode(" ", $date[0]->max)[0]
