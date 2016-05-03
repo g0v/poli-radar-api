@@ -12,4 +12,9 @@ class Region extends Model
     {
         return $this->hasMany('App\Location');
     }
+
+    public function city()
+    {
+        return $this->belongsTo('App\City');
+    }
 }

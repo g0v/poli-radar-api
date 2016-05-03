@@ -35,6 +35,8 @@ class EventTransformer extends TransformerAbstract
                   'longitude' => (float) $location->lng,
                   'politician' => $politicians,
                   'eventCategories' => $eventCategories,
+                  'region' => (int) $event->location->region->id,
+                  'city' => (int) $event->location->region->city->id,
 		];
 	}
 }
