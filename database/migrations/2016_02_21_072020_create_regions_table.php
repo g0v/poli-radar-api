@@ -20,7 +20,7 @@ class CreateRegionsTable extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('postcode', 3);
+            $table->string('postal_code', 3);
             $table->integer('city_id')->unsigned()->nullable();
             $table->foreign('city_id')->references('id')->on('cities');
             $table->timestamps();

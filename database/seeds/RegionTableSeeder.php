@@ -25,9 +25,9 @@ class RegionTableSeeder extends Seeder
             $city = City::create(['name' => $name]);
             foreach ($regions as $key => $post) {
                 Region::create([
-                    'name' => $key,
-                    'postcode' => $post,
-                    'city_id' => $city['id']
+                    'name'        => $key,
+                    'postal_code' => $post,
+                    'city_id'     => $city['id']
                 ]);
             }
         }
