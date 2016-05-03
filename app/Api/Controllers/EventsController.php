@@ -18,14 +18,12 @@ use League\Fractal\Manager;
 class EventsController extends BaseController
 {
 
-    /**
-     * Show all events
-     *
-     * Get a JSON representation of all the events
-     * 
-     * @Get('/')
-     */
-    public function index($start = null, $end = null)
+    public function index()
+    {
+        return $this->response->collection(Event::all(), new EventTransformer);
+    }
+
+    public function date($start = null, $end = null)
     {
         $fractal = new Manager();
 
@@ -82,7 +80,7 @@ class EventsController extends BaseController
      */
     public function show($id)
     {
-        return $this->item(Event::findOrFail($id));
+        return $this->item(Event::findOrFail($id), new EventTransformer);
     }
 
     /**

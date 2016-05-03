@@ -18,6 +18,7 @@ $api->version('v1', function ($api) {
 		$api->get('data', 'AllDataController@index');
 		$api->get('date', 'DateController@index');
 		$api->get('events/{start?}/{end?}', 'EventsController@index');
+		$api->get('events/{id}', 'EventsController@show');
 		$api->get('politicians', 'PoliticiansController@index');
 		$api->get('politicianCategories', 'PoliticianCategoryController@index');
 		$api->get('politicianCategories/{id}', 'PoliticianCategoryController@show');
