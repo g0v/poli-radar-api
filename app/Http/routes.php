@@ -24,6 +24,7 @@ $api->version('v1', function ($api) {
 		$api->get('politicians/{id}', 'PoliticiansController@show');
 		$api->get('politicianCategories', 'PoliticianCategoryController@index');
 		$api->get('politicianCategories/{id}', 'PoliticianCategoryController@show');
+		$api->get('cities', 'CityController@index');
 		$api->get('locations', 'LocationController@index');
 		$api->get('regions', 'RegionController@index');
 		$api->get('viewer', 'ViewerController@index');

@@ -6,6 +6,8 @@ use App\Event;
 use App\Politician;
 use App\EventCategory;
 use App\PoliticianCategory;
+use App\City;
+use App\Region;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -13,6 +15,8 @@ use League\Fractal\Resource\Collection as FractalCollection;
 use League\Fractal\Manager;
 
 use Api\Transformers\EventTransformer;
+use Api\Transformers\CityTransformer;
+use Api\Transformers\RegionTransformer;
 use Api\Transformers\PoliticianTransformer;
 use Api\Transformers\EventCategoryTransformer;
 use Api\Transformers\PoliticianCategoryTransformer;
@@ -35,6 +39,8 @@ class AllDataController extends BaseController
     {
         $fractal = new Manager();
         $events = new FractalCollection(Event::all(), new EventTransformer);
+        $cities = new FractalCollection(City::all(), new CityTransformer);
+        $regions = new FractalCollection(Region::all(), new RegionTransformer);
         $politicians = new FractalCollection(Politician::all(), new PoliticianTransformer);
         $eventCategories = array();
         $politicianCategories = array();
@@ -68,7 +74,9 @@ class AllDataController extends BaseController
             'events' => $fractal->createData($events)->toArray(),
             'politicians' => $fractal->createData($politicians)->toArray(),
             'eventCategories' => $eventCategories,
-            'politicianCategories' => $politicianCategories
+            'politicianCategories' => $politicianCategories,
+            'cities' => $fractal->createData($cities)->toArray(),
+            'regions' => $fractal->createData($regions)->toArray(),
         ));
     }
 
