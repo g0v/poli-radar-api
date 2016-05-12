@@ -2,15 +2,15 @@
 
 namespace Api\Controllers;
 
-use App\Politician;
+use App\Role;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Api\Transformers\PoliticianTransformer;
+use Api\Transformers\RoleTransformer;
 
 /**
- * @Resource('Politicians', uri='/politicians')
+ * @Resource('Roles', uri='/politicians')
  */
-class PoliticiansController extends BaseController
+class RoleController extends BaseController
 {
 
     /**
@@ -22,7 +22,7 @@ class PoliticiansController extends BaseController
      */
     public function index()
     {
-        return $this->response->collection(Politician::all(), new PoliticianTransformer);
+        return $this->response->collection(Role::all(), new RoleTransformer);
     }
 
     /**
@@ -33,17 +33,12 @@ class PoliticiansController extends BaseController
      */
     public function store(Request $request)
     {
-        $politician = Politician::create($request->only([
-            'name'
-        ]));
-
-        if (isset($request->categories)) {
-            foreach ($request->categories as $category) {
-                $politician->categories->attach($category);
-            }
-        }
-
-        return $this->item($politician, new PoliticianTransformer);
+        $viewer = Role::create([
+            'hash' => str_replace('-', '', Uuid::generate()->string),
+            'data' => $request->data,
+            'user_id' => 1,
+        ]);
+        return $this->response->array(['hash' => $viewer->hash]);
     }
 
     /**
@@ -52,13 +47,13 @@ class PoliticiansController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($hash)
     {
-        return $this->item(Politician::findOrFail($id), new PoliticianTransformer);
+        return $this->item(Role::where('hash', '=', $hash)->firstOrFail(), new RoleTransformer);
     }
 
     /**
-     * Update the Politician in the database.
+     * Update the Role in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -66,9 +61,9 @@ class PoliticiansController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $candidate = Politician::findOrFail($id);
+        $candidate = Role::findOrFail($id);
         $candidate->update($request->only([
-            'name'
+            'data'
         ]));
         return $candidate;
     }
@@ -81,6 +76,6 @@ class PoliticiansController extends BaseController
      */
     public function destroy($id)
     {
-        return Politician::destroy($id);
+        return Role::destroy($id);
     }
 }

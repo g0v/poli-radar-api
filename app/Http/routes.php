@@ -44,6 +44,8 @@ $api->version('v1', function ($api) {
 			});
 
 			$api->group(['middleware' => ['role:admin']], function($api) {
+				$api->get('roles', 'RoleController@index');
+				$api->get('permissions', 'PermissionController@index');
 				$api->post('politicians', 'PoliticiansController@store');
 				$api->post('politicianCategories', 'PoliticianCategoryController@store');
 			});

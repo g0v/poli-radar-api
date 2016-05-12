@@ -33,10 +33,14 @@ class PoliticianCategoryController extends BaseController
      */
     public function store(Request $request)
     {
-        return PoliticianCategory::create($request->only([
-            'name',
-            'parent_id'
+        $parent = PoliticianCategory::find($request->parent_id);
+        $parent->children()->create(['name' => $request->name]);
+
+        $node = PoliticianCategory::create($request->only([
+            'name'
         ]));
+
+        return $this->item($node, new PoliticianCategoryTransformer);
     }
 
     /**
