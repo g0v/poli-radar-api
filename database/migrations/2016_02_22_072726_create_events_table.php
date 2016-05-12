@@ -18,10 +18,12 @@ class CreateEventsTable extends Migration
             $table->time('start')->nullable();
             $table->time('end')->nullable();
             $table->string('name');
-            $table->integer('location_id')->unsigned();
+            $table->string('url')->nullable();
+            $table->integer('location_id')->unsigned()->nullable();
             $table->foreign('location_id')->references('id')->on('locations');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->softDeletes();
             $table->timestamps();
         });
         Schema::create('event_politician', function(Blueprint $table) {

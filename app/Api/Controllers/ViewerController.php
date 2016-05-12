@@ -35,11 +35,11 @@ class ViewerController extends BaseController
     public function store(Request $request)
     {
         $viewer = Viewer::create([
-            'uuid' => Uuid::generate()->string,
+            'hash' => str_replace('-', '', Uuid::generate()->string),
             'data' => $request->data,
             'user_id' => 1,
         ]);
-        return $this->response->array(['hash' => $viewer->uuid]);
+        return $this->response->array(['hash' => $viewer->hash]);
     }
 
     /**
@@ -48,9 +48,9 @@ class ViewerController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($uuid)
+    public function show($hash)
     {
-        return $this->item(Viewer::where('uuid', '=', $uuid)->firstOrFail(), new ViewerTransformer);
+        return $this->item(Viewer::where('hash', '=', $hash)->firstOrFail(), new ViewerTransformer);
     }
 
     /**
@@ -64,8 +64,7 @@ class ViewerController extends BaseController
     {
         $candidate = Viewer::findOrFail($id);
         $candidate->update($request->only([
-            'name',
-            'color'
+            'data'
         ]));
         return $candidate;
     }

@@ -28,16 +28,26 @@ $api->version('v1', function ($api) {
 		$api->get('locations', 'LocationController@index');
 		$api->get('regions', 'RegionController@index');
 		$api->get('viewer', 'ViewerController@index');
-		$api->get('viewer/{uuid}', 'ViewerController@show');
+		$api->get('viewer/{hash}', 'ViewerController@show');
 		$api->post('viewer', 'ViewerController@store');
+		$api->put('viewer', 'ViewerController@update');
 
 		// All routes in here are protected and thus need a valid token
 		$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
 
 			$api->get('users/me', 'AuthController@me');
+			$api->get('users/permissions', 'AuthController@permissions');
 			$api->get('validate_token', 'AuthController@validateToken');
 
-			$api->post('events', 'ActivitiesController@store');
+			$api->group( [ 'middleware' => ['permission:manage-events']], function ($api) {
+				$api->post('events', 'ActivitiesController@store');
+			});
+
+			$api->group(['middleware' => ['role:admin']], function($api) {
+				$api->post('politicians', 'PoliticiansController@store');
+				$api->post('politicianCategories', 'PoliticianCategoryController@store');
+			});
+			
 		});
 
 	});

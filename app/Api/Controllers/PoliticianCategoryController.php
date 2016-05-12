@@ -34,7 +34,8 @@ class PoliticianCategoryController extends BaseController
     public function store(Request $request)
     {
         return PoliticianCategory::create($request->only([
-            'name'
+            'name',
+            'parent_id'
         ]));
     }
 
@@ -58,11 +59,12 @@ class PoliticianCategoryController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $candidate = PoliticianCategory::findOrFail($id);
-        $candidate->update($request->only([
-            'name'
+        $politicianCategory = PoliticianCategory::findOrFail($id);
+        $politicianCategory->update($request->only([
+            'name',
+            'parent_id'
         ]));
-        return $candidate;
+        return $politicianCategory;
     }
 
     /**

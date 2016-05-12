@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Viewer extends Model
 {
-    protected $fillable = ['uuid', 'data', 'user_id'];
+    protected $fillable = ['hash', 'data', 'user_id'];
 }
