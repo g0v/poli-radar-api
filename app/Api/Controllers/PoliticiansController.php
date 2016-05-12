@@ -39,7 +39,7 @@ class PoliticiansController extends BaseController
 
         if (isset($request->categories)) {
             foreach ($request->categories as $category) {
-                $politician->categories->attach($category);
+                $politician->categories()->attach($category);
             }
         }
 
