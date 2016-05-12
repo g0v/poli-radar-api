@@ -29,6 +29,7 @@ class EventTransformer extends TransformerAbstract
                   'start' => $event->start,
                   'end' => $event->end,
                   'name' => $event->name,
+                  'url' => $event->url,
                   'location' => $location->name,
                   'addr' => $location->address,
                   'latitude' => (float) $location->lat,
