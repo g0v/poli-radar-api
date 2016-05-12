@@ -36,10 +36,6 @@ class PoliticianCategoryController extends BaseController
         $parent = PoliticianCategory::find($request->parent_id);
         $parent->children()->create(['name' => $request->name]);
 
-        $node = PoliticianCategory::create($request->only([
-            'name'
-        ]));
-
         return $this->item($node, new PoliticianCategoryTransformer);
     }
 

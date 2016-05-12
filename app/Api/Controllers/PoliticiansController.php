@@ -66,11 +66,27 @@ class PoliticiansController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $candidate = Politician::findOrFail($id);
-        $candidate->update($request->only([
+        $politician = Politician::findOrFail($id);
+        $politician->update($request->only([
             'name'
         ]));
-        return $candidate;
+        $newCategories = $request->categories;
+
+        foreach ($politician->categories as $category) {
+            if ($index = array_search($category->id, $newCategories)) {
+                unset($newCategories[$index]);
+            } else {
+                $politician->categories()->detach($category->id);
+            }
+        }
+
+        if (sizeof($newCategories)) {
+            foreach ($newCategories as $category) {
+                $politician->categories()->attach($category);
+            }
+        }
+
+        return $this->item($politician, new PoliticianTransformer);
     }
 
     /**

@@ -30,7 +30,7 @@ $api->version('v1', function ($api) {
 		$api->get('viewer', 'ViewerController@index');
 		$api->get('viewer/{hash}', 'ViewerController@show');
 		$api->post('viewer', 'ViewerController@store');
-		$api->put('viewer', 'ViewerController@update');
+		$api->put('viewer/{id}', 'ViewerController@update');
 
 		// All routes in here are protected and thus need a valid token
 		$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
@@ -47,6 +47,7 @@ $api->version('v1', function ($api) {
 				$api->get('roles', 'RoleController@index');
 				$api->get('permissions', 'PermissionController@index');
 				$api->post('politicians', 'PoliticiansController@store');
+				$api->put('politicians/{id}', 'PoliticiansController@update');
 				$api->post('politicianCategories', 'PoliticianCategoryController@store');
 			});
 			
