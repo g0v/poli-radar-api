@@ -70,14 +70,14 @@ class EventsController extends BaseController
             $location->name = $request->location;
             $location->save();
         }
-        $event = Event::create($request->only([
+        $event = Event::create([
             'date'    => $request->date,
             'start'   => $request->start,
             'end'     => $request->end,
             'name'    => $request->name,
             'url'     => $request->url,
             'user_id' => Auth::user()->id
-        ]));
+        ]);
         $event->politicians->attach($request->politician);
         return item($event, new EventTransformer);
     }
