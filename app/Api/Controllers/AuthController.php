@@ -10,12 +10,41 @@ use Api\Requests\UserRequest;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Laravel\Socialite\Facades\Socialite;
+use Api\Transformers\UserTransformer;
 
 class AuthController extends BaseController
 {
-    private function getRoleName($role)
+    /**
+     * Show all politicians
+     *
+     * Get a JSON representation of all the politicians
+     * 
+     * @Get('/')
+     */
+    public function index()
     {
-        return $role->name;
+        return $this->response->collection(User::all(), new UserTransformer);
+    }
+
+    /**
+     * Store a new dog in the database.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $user = User::create([
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+
+        if ($request->roles) {
+            $user->roles()->attach($request->roles);
+        }
+
+        return $this->item($user, new UserTransformer);
     }
 
     public function me(Request $request)
