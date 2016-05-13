@@ -40,16 +40,13 @@ $api->version('v1', function ($api) {
 			$api->get('users/permissions', 'AuthController@permissions');
 			$api->get('validate_token', 'AuthController@validateToken');
 
-			$api->group( [ 'middleware' => ['permission:manage-events']], function ($api) {
-				$api->post('events', 'EventsController@store');
-			});
-
 			$api->group(['middleware' => ['role:admin']], function($api) {
 				$api->get('roles', 'RoleController@index');
 				$api->get('permissions', 'PermissionController@index');
 				$api->post('politicians', 'PoliticiansController@store');
 				$api->put('politicians/{id}', 'PoliticiansController@update');
 				$api->post('politicianCategories', 'PoliticianCategoryController@store');
+				$api->post('events', 'EventsController@store');
 			});
 			
 		});
