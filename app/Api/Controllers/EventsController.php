@@ -3,6 +3,7 @@
 namespace Api\Controllers;
 
 use App\Event;
+use App\Location;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 // use Api\Requests\EventRequest;
@@ -58,18 +59,25 @@ class EventsController extends BaseController
      */
     public function store(Request $request)
     {
+        $location = Location::findOrCreate([
+            'address' => $request->address,
+            'lat' => $request->latitude,
+            'lng' => $request->longitude,
+            'region_id' => $request->region,
+        ]);
+        if ($request->location) {
+            $location->name = $request->location;
+            $location->save();
+        }
         $event = Event::create($request->only([
             'date',
             'start',
             'end',
             'name',
-            'location',
-            'addr',
-            'latitude',
-            'longitude',
-            'guy_id'
+            'url',
         ]));
-        return $event;
+        $event->politicians->attach($request->politician);
+        return item($event, new EventTransformer);
     }
 
     /**
