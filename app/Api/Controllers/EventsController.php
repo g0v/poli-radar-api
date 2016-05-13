@@ -2,6 +2,7 @@
 
 namespace Api\Controllers;
 
+use Auth;
 use App\Event;
 use App\Location;
 use App\Http\Requests;
@@ -60,9 +61,9 @@ class EventsController extends BaseController
     public function store(Request $request)
     {
         $location = Location::firstOrCreate([
-            'address' => $request->address,
-            'lat' => $request->latitude,
-            'lng' => $request->longitude,
+            'address'   => $request->address,
+            'lat'       => $request->latitude,
+            'lng'       => $request->longitude,
             'region_id' => $request->region,
         ]);
         if ($request->location) {
@@ -70,11 +71,12 @@ class EventsController extends BaseController
             $location->save();
         }
         $event = Event::create($request->only([
-            'date',
-            'start',
-            'end',
-            'name',
-            'url',
+            'date'    => $request->date,
+            'start'   => $request->start,
+            'end'     => $request->end,
+            'name'    => $request->name,
+            'url'     => $request->url,
+            'user_id' => Auth::user()->id
         ]));
         $event->politicians->attach($request->politician);
         return item($event, new EventTransformer);
