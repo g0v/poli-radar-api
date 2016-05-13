@@ -50,7 +50,11 @@ class ViewerController extends BaseController
      */
     public function show($hash)
     {
-        return $this->item(Viewer::where('hash', '=', $hash)->firstOrFail(), new ViewerTransformer);
+        $data = Viewer::where('hash', $hash)->first();
+        if (is_null($data)) {
+            $data = Viewer::find($hash);
+        }
+        return $this->item($data, new ViewerTransformer);
     }
 
     /**
