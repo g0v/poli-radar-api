@@ -41,7 +41,7 @@ $api->version('v1', function ($api) {
 			$api->get('validate_token', 'AuthController@validateToken');
 
 			$api->group( [ 'middleware' => ['permission:manage-events']], function ($api) {
-				$api->post('events', 'ActivitiesController@store');
+				$api->post('events', 'EventsController@store');
 			});
 
 			$api->group(['middleware' => ['role:admin']], function($api) {
