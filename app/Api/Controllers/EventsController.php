@@ -59,7 +59,7 @@ class EventsController extends BaseController
      */
     public function store(Request $request)
     {
-        $location = Location::findOrCreate([
+        $location = Location::firstOrCreate([
             'address' => $request->address,
             'lat' => $request->latitude,
             'lng' => $request->longitude,
