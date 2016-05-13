@@ -78,7 +78,7 @@ class EventsController extends BaseController
             'url'     => $request->url,
             'user_id' => Auth::user()->id
         ]);
-        $event->politicians->attach($request->politician);
+        $event->politicians()->attach($request->politician);
         return item($event, new EventTransformer);
     }
 
