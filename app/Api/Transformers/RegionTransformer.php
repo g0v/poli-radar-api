@@ -19,8 +19,9 @@ class RegionTransformer extends TransformerAbstract
         }
 		
 		return [
-			'id' => (int) $region->id,
-            'name' => $region->name,
+			'id'     => (int) $region->id,
+            'city'   => (int) $region->city->id,
+            'name'   => $region->name,
             'events' => $events,
 		];
 	}
