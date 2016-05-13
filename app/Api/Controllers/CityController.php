@@ -6,6 +6,7 @@ use App\City;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Api\Transformers\CityTransformer;
+use Api\Transformers\CityWithRegionTransformer;
 
 /**
  * @Resource('Citys', uri='/politicians')
@@ -46,7 +47,7 @@ class CityController extends BaseController
      */
     public function show($id)
     {
-        return $this->item(City::findOrFail($id), new CityTransformer);
+        return $this->item(City::findOrFail($id), new CityWithRegionTransformer);
     }
 
     /**
