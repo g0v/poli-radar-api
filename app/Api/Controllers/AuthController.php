@@ -75,8 +75,9 @@ class AuthController extends BaseController
 
         // all good so return the token
         return response()->json([
-            'token' => $token,
-            'roles' => $roles
+            'token'    => $token,
+            'username' => $user->name,
+            'roles'    => $roles
         ]);
     }
 
