@@ -49,7 +49,8 @@ class AuthController extends BaseController
 
     public function me(Request $request)
     {
-        return JWTAuth::parseToken()->authenticate();
+        $user = JWTAuth::parseToken()->authenticate();
+        return $this->item($user, new UserTransformer);
     }
 
     public function authenticate(Request $request)
@@ -111,8 +112,9 @@ class AuthController extends BaseController
 
         // all good so return the token
         return response()->json([
-            'token' => $token,
-            'roles' => $roles
+            'token'    => $token,
+            'username' => $user->name,
+            'roles'    => $roles
         ]);
     }
 }
