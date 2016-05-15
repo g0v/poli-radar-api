@@ -4,6 +4,7 @@ namespace Api\Controllers;
 
 use Auth;
 use App\Event;
+use App\Region;
 use App\Location;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -65,6 +66,50 @@ class EventsController extends BaseController
             'lat'       => $request->latitude,
             'lng'       => $request->longitude,
             'region_id' => $request->region,
+        ]);
+        if ($request->location) {
+            $location->name = $request->location;
+            $location->save();
+        }
+        $event = Event::create([
+            'date'    => $request->date,
+            'start'   => $request->start,
+            'end'     => $request->end,
+            'name'    => $request->name,
+            'url'     => $request->url,
+            'location_id' => $location->id,
+            'user_id' => Auth::user()->id
+        ]);
+        $event->politicians()->attach($request->politician);
+        return item($event, new EventTransformer);
+    }
+
+    public function batchStore(Request $request)
+    {
+        $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
+        $geocoder = new \Geocoder\Provider\GoogleMaps(
+            $curl,
+            'zh-tw',
+            'tw',
+            true,
+            'AIzaSyBGogPR8JvLm5xC8xGwSTCpKkXm5eZFVH4'
+        );
+
+        $geoResults = $geocoder->geocode($request->address);
+
+        $region = Region::where('name', $request->region)->first();
+        if (!$region) {
+            $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
+            if (!$region) {
+                return response()->json(['error' => 'no_region_data_provided'], 409); 
+            }
+        }
+
+        $location = Location::firstOrCreate([
+            'address'   => $request->address,
+            'lat'       => $geoResults->getLatitude(),
+            'lng'       => $geoResults->getLongitude(),
+            'region_id' => $region->id,
         ]);
         if ($request->location) {
             $location->name = $request->location;

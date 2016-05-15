@@ -44,6 +44,7 @@ $api->version('v1', function ($api) {
 
 			$api->group(['middleware' => ['permission:manage-event']], function($api) {			
 				$api->post('events', 'EventsController@store');
+				$api->post('events/batch', 'EventsController@batchStore');
 			});
 			$api->group(['middleware' => ['role:admin']], function($api) {
 				$api->get('users', 'AuthController@index');
