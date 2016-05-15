@@ -117,13 +117,16 @@ class EventsController extends BaseController
         }
         $event = Event::firstOrCreate([
             'date'    => $request->date,
-            'start'   => $request->start,
-            'end'     => $request->end,
             'name'    => $request->name,
-            'url'     => $request->url,
             'location_id' => $location->id,
             'user_id' => Auth::user()->id
         ]);
+        $event->url = $request->url;
+        $event->start = $request->start;
+        $event->end = $request->end;
+        $event->save();
+        // must detach ?
+        $event->politicians()->detach();
         $event->politicians()->attach($request->politician);
         return $this->item($event, new EventTransformer);
     }
