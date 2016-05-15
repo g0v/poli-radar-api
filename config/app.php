@@ -153,7 +153,6 @@ return [
         Lanz\Commentable\CommentableServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Baum\Providers\BaumServiceProvider::class,
-        Stolz\SchemaSpy\ServiceProvider::class,
 
     ],
 
