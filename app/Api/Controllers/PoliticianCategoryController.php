@@ -2,10 +2,15 @@
 
 namespace Api\Controllers;
 
+use App\Politician;
 use App\PoliticianCategory;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Api\Transformers\PoliticianCategoryTransformer;
+use Api\Transformers\PoliticianCategoryWithNameTransformer;
+
+use League\Fractal\Resource\Collection as FractalCollection;
+use League\Fractal\Manager;
 
 /**
  * @Resource('PoliticianCategorys', uri='/politicians')
@@ -23,6 +28,11 @@ class PoliticianCategoryController extends BaseController
     public function index()
     {
         return $this->response->collection(PoliticianCategory::all(), new PoliticianCategoryTransformer);
+    }
+
+    public function type()
+    {
+        return $this->response->collection(PoliticianCategory::where('name', '政黨')->first()->getLeaves(), new PoliticianCategoryWithNameTransformer);
     }
 
     /**

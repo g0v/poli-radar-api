@@ -16,7 +16,7 @@ class PoliticianCategory extends Node {
 
   public function politicians()
   {
-    return $this->belongsToMany('App\Plolitician');
+    return $this->belongsToMany('App\Politician');
   }
 
   //////////////////////////////////////////////////////////////////////////////

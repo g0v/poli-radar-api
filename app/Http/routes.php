@@ -23,6 +23,7 @@ $api->version('v1', function ($api) {
 		$api->get('politicians', 'PoliticiansController@index');
 		$api->get('politicians/{id}', 'PoliticiansController@show');
 		$api->get('politicianCategories', 'PoliticianCategoryController@index');
+		$api->get('politicianCategories/type', 'PoliticianCategoryController@type');
 		$api->get('politicianCategories/{id}', 'PoliticianCategoryController@show');
 		$api->get('cities', 'CityController@index');
 		$api->get('cities/{id}', 'CityController@show');
