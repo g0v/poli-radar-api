@@ -95,7 +95,7 @@ class EventsController extends BaseController
             'AIzaSyBGogPR8JvLm5xC8xGwSTCpKkXm5eZFVH4'
         );
 
-        $geoResults = $geocoder->geocode($request->address);
+        $geoResults = $geocoder->geocode($request->city.$request->region.$request->address);
 
         $region = Region::where('name', $request->region)->first();
         if (!$region) {
