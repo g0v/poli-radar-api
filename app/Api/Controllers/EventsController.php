@@ -95,7 +95,7 @@ class EventsController extends BaseController
             'AIzaSyBGogPR8JvLm5xC8xGwSTCpKkXm5eZFVH4'
         );
 
-        $geoResults = $geocoder->geocode($request->city.$request->region.$request->address);
+        $geoResults = $geocoder->geocode($request->city.$request->region.$request->address)->first();
 
         $region = Region::where('name', $request->region)->first();
         if (!$region) {
@@ -115,7 +115,7 @@ class EventsController extends BaseController
             $location->name = $request->location;
             $location->save();
         }
-        $event = Event::create([
+        $event = Event::firstOrCreate([
             'date'    => $request->date,
             'start'   => $request->start,
             'end'     => $request->end,
@@ -125,7 +125,7 @@ class EventsController extends BaseController
             'user_id' => Auth::user()->id
         ]);
         $event->politicians()->attach($request->politician);
-        return item($event, new EventTransformer);
+        return $this->item($event, new EventTransformer);
     }
 
     /**
