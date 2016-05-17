@@ -66,11 +66,9 @@ class EventsController extends BaseController
             'lat'       => $request->latitude,
             'lng'       => $request->longitude,
             'region_id' => $request->region,
+            'name'      => $request->location,
         ]);
-        if ($request->location) {
-            $location->name = $request->location;
-            $location->save();
-        }
+
         $event = Event::create([
             'date'    => $request->date,
             'start'   => $request->start,
@@ -97,12 +95,10 @@ class EventsController extends BaseController
 
         $geoResults = $geocoder->geocode($request->city.$request->region.$request->address)->first();
 
-        $region = Region::where('name', $request->region)->first();
+        
+        $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
         if (!$region) {
-            $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
-            if (!$region) {
-                return response()->json(['error' => 'no_region_data_provided'], 409); 
-            }
+            return response()->json(['error' => 'no_region_data_provided'], 409); 
         }
 
         $location = Location::firstOrCreate([
@@ -110,11 +106,9 @@ class EventsController extends BaseController
             'lat'       => $geoResults->getLatitude(),
             'lng'       => $geoResults->getLongitude(),
             'region_id' => $region->id,
+            'name'      => $request->location,
         ]);
-        if ($request->location) {
-            $location->name = $request->location;
-            $location->save();
-        }
+
         $event = Event::firstOrCreate([
             'date'    => $request->date,
             'name'    => $request->name,
