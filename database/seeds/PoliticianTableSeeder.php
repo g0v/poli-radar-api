@@ -23,8 +23,15 @@ class PoliticianTableSeeder extends Seeder
 			[ 'name' => '宋楚瑜', 'party' => '親民黨', 'sex' => '男' ]
     	];
 
+        $typeRoot = PoliticianCategory::create(['name' => '類型']);
         $sexRoot = PoliticianCategory::create(['name' => '性別']);
         $partyRoot = PoliticianCategory::create(['name' => '政黨']);
+
+        $candidate = PoliticianCategory::create([
+            'name' => '總統候選人',
+            'parent_id' => $typeRoot->id,
+        ]);
+        
 
     	foreach($politicians as $politician){
     		$p = Politician::create([
@@ -39,7 +46,7 @@ class PoliticianTableSeeder extends Seeder
                 'name' => $politician['party']
             ]);
 
-            $p->categories()->attach([$sex->id, $party->id]);
+            $p->categories()->attach([$candidate->id, $sex->id, $party->id]);
 		}
     }
 }
