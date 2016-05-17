@@ -14,8 +14,10 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('permission_role')->truncate();
         DB::table('role_user')->truncate();
         DB::table('users')->truncate();
+        DB::table('permissions')->truncate();
         DB::table('roles')->truncate();
 
         $admin = Role::create([
