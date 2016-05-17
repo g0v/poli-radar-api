@@ -44,5 +44,13 @@ class UserTableSeeder extends Seeder
 
         $user->attachRole($admin);
 
+        $demo = User::create([
+            'name' => 'Demo',
+            'email' => 'demo@relab.cc',
+            'password' => bcrypt('demo')
+        ]);
+
+        $demo->attachRole($manager);
+
     }
 }
