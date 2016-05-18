@@ -17,9 +17,13 @@ class PoliticianTableSeeder extends Seeder
         PoliticianCategory::truncate();
         DB::table('politician_politician_category')->truncate();
 
+        $json = base_path() . '/database/seeds/legi-party.json';
+
+        $legis = json_decode(file_get_contents($json), true);
+
 		$politicians = [
-			[ 'name' => '朱立倫', 'party' => '國民黨', 'sex' => '男' ],
-			[ 'name' => '蔡英文', 'party' => '民進黨', 'sex' => '女' ],
+			[ 'name' => '朱立倫', 'party' => '中國國民黨', 'sex' => '男' ],
+			[ 'name' => '蔡英文', 'party' => '民主進步黨', 'sex' => '女' ],
 			[ 'name' => '宋楚瑜', 'party' => '親民黨', 'sex' => '男' ]
     	];
 
@@ -31,8 +35,12 @@ class PoliticianTableSeeder extends Seeder
             'name' => '總統候選人',
             'parent_id' => $typeRoot->id,
         ]);
-        
 
+        $legiss = PoliticianCategory::create([
+            'name' => '第九屆立法委員',
+            'parent_id' => $typeRoot->id,
+        ]);
+        
     	foreach($politicians as $politician){
     		$p = Politician::create([
                 'name' => $politician['name']
@@ -48,5 +56,18 @@ class PoliticianTableSeeder extends Seeder
 
             $p->categories()->attach([$candidate->id, $sex->id, $party->id]);
 		}
+
+        foreach ($legis as $politician) {
+            $p = Politician::create([
+                'name' => $politician['name']
+            ]);
+
+            $party = PoliticianCategory::firstOrCreate([
+                'parent_id' => $partyRoot->id,
+                'name' => $politician['party']
+            ]);
+
+            $p->categories()->attach([$legiss->id, $party->id]);
+        }
     }
 }
