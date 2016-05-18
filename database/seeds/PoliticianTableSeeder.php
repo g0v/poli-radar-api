@@ -40,6 +40,11 @@ class PoliticianTableSeeder extends Seeder
             'name' => '第九屆立法委員',
             'parent_id' => $typeRoot->id,
         ]);
+
+        $mayor = PoliticianCategory::create([
+            'name' => '縣市首長',
+            'parent_id' => $typeRoot->id,
+        ]);
         
     	foreach($politicians as $politician){
     		$p = Politician::create([
@@ -69,5 +74,13 @@ class PoliticianTableSeeder extends Seeder
 
             $p->categories()->attach([$legiss->id, $party->id]);
         }
+
+        $k = Politician::create([
+            'name' => '柯文哲'
+        ]);
+
+        $noParty = PoliticianCategory::where('name', '無黨籍')->first();
+
+        $k->categories()->attach([$mayor->id, $noParty->id]);
     }
 }
