@@ -94,27 +94,31 @@ class EventsController extends BaseController
         );
 
         $geoResults = $geocoder->geocode($request->city.$request->region.$request->address)->first();
-
         
         $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
-        if (!$region) {
-            return response()->json(['error' => 'no_region_data_provided'], 409); 
+
+        if ($region) {
+            $location = Location::firstOrCreate([
+                'address'   => $request->address,
+                'lat'       => $geoResults->getLatitude(),
+                'lng'       => $geoResults->getLongitude(),
+                'region_id' => $region->id,
+                'name'      => $request->location,
+            ]);
+            $event = Event::firstOrCreate([
+                'date'    => $request->date,
+                'name'    => $request->name,
+                'location_id' => $location->id,
+                'user_id' => Auth::user()->id
+            ]);
+        } else {
+           $event = Event::firstOrCreate([
+                'date'    => $request->date,
+                'name'    => $request->name,
+                'user_id' => Auth::user()->id
+            ]); 
         }
-
-        $location = Location::firstOrCreate([
-            'address'   => $request->address,
-            'lat'       => $geoResults->getLatitude(),
-            'lng'       => $geoResults->getLongitude(),
-            'region_id' => $region->id,
-            'name'      => $request->location,
-        ]);
-
-        $event = Event::firstOrCreate([
-            'date'    => $request->date,
-            'name'    => $request->name,
-            'location_id' => $location->id,
-            'user_id' => Auth::user()->id
-        ]);
+       
         $event->url = $request->url;
         $event->start = $request->start;
         $event->end = $request->end;
