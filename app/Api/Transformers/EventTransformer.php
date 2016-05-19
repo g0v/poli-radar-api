@@ -29,7 +29,6 @@ class EventTransformer extends TransformerAbstract
                         'addr' => $location->address,
                         'latitude' => (float) $location->lat,
                         'longitude' => (float) $location->lng,
-                        'politician' => $politicians,
                         'region' => (int) $location->region->id,
                         'city' => (int) $location->region->city->id,
                   ];
@@ -42,6 +41,7 @@ class EventTransformer extends TransformerAbstract
                   'end' => $event->end,
                   'name' => $event->name,
                   'url' => $event->url,
+                  'politician' => $politicians,
                   'eventCategories' => $eventCategories,
 		], $locationData);
 	}
