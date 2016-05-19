@@ -9,8 +9,6 @@ class EventTransformer extends TransformerAbstract
 {
 	public function transform(Event $event)
 	{
-            $location = $event->location;
-
             $politicians = [];
             foreach ($event->politicians as $p)
             {
@@ -23,21 +21,28 @@ class EventTransformer extends TransformerAbstract
                   $eventCategories[] = (int) $c->id;
             }
 
-		return [
+            $location = $event->location;
+            $locationData = [];
+            if ($location) {
+                  $locationData = [
+                        'location' => $location->name,
+                        'addr' => $location->address,
+                        'latitude' => (float) $location->lat,
+                        'longitude' => (float) $location->lng,
+                        'politician' => $politicians,
+                        'region' => (int) $location->region->id,
+                        'city' => (int) $location->region->city->id,
+                  ];
+            }
+
+		return array_merge([
 			'id' => (int) $event->id,
 			'date' => $event->date,
                   'start' => $event->start,
                   'end' => $event->end,
                   'name' => $event->name,
                   'url' => $event->url,
-                  'location' => $location->name,
-                  'addr' => $location->address,
-                  'latitude' => (float) $location->lat,
-                  'longitude' => (float) $location->lng,
-                  'politician' => $politicians,
                   'eventCategories' => $eventCategories,
-                  'region' => (int) $location->region->id,
-                  'city' => (int) $location->region->city->id,
-		];
+		], $locationData);
 	}
 }
