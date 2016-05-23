@@ -6,6 +6,7 @@ use App\Event;
 use App\Politician;
 use App\EventCategory;
 use App\PoliticianCategory;
+use App\PoliticianTrait;
 use App\City;
 use App\Region;
 use App\Http\Requests;
@@ -20,6 +21,7 @@ use Api\Transformers\RegionTransformer;
 use Api\Transformers\PoliticianTransformer;
 use Api\Transformers\EventCategoryTransformer;
 use Api\Transformers\PoliticianCategoryTransformer;
+use Api\Transformers\PoliticianTraitTransformer;
 use DB;
 
 /**
@@ -42,8 +44,9 @@ class AllDataController extends BaseController
         $cities = new FractalCollection(City::all(), new CityTransformer);
         $regions = new FractalCollection(Region::all(), new RegionTransformer);
         $politicians = new FractalCollection(Politician::all(), new PoliticianTransformer);
+        $politicianCategories = new FractalCollection(PoliticianCategory::all(), new PoliticianCategoryTransformer);
         $eventCategories = array();
-        $politicianCategories = array();
+        $politicianTraits = array();
 
         foreach (EventCategory::all()->toHierarchy() as $root)
         {
@@ -54,18 +57,18 @@ class AllDataController extends BaseController
             );
         }
 
-        foreach (PoliticianCategory::all()->toHierarchy() as $root)
+        foreach (PoliticianTrait::all()->toHierarchy() as $root)
         {
-            $politicianCategories[] = array(
+            $politicianTraits[] = array(
                 'id' => (int) $root->id,
                 'name' => $root->name,
-                'children' => $fractal->createData(new FractalCollection($root->children, new PoliticianCategoryTransformer))->toArray(),
+                'children' => $fractal->createData(new FractalCollection($root->children, new PoliticianTraitTransformer))->toArray(),
             );
         }
         $date = DB::table('events')
-                     ->select(DB::raw('MIN(date) as min, MAX(date) as max'))
-                     ->get();
-        
+                ->select(DB::raw('MIN(date) as min, MAX(date) as max'))
+                ->get();
+
         return $this->array(array(
             'date' => [
                 'min' => explode(" ", $date[0]->min)[0],
@@ -73,8 +76,9 @@ class AllDataController extends BaseController
             ],
             'events' => $fractal->createData($events)->toArray(),
             'politicians' => $fractal->createData($politicians)->toArray(),
+            'politicianCategories' => $fractal->createData($politicianCategories)->toArray(),
             'eventCategories' => $eventCategories,
-            'politicianCategories' => $politicianCategories,
+            'politicianTraits' => $politicianTraits,
             'cities' => $fractal->createData($cities)->toArray(),
             'regions' => $fractal->createData($regions)->toArray(),
         ));

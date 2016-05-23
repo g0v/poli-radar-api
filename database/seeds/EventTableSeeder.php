@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Politician;
+use App\PoliticianCategory;
 use App\Event;
 use App\EventCategory;
 use App\Location;
@@ -28,7 +29,11 @@ class EventTableSeeder extends Seeder
 
         $politicians = json_decode(file_get_contents($evntFile), true);
 
-        $eventType = EventCategory::create(['name' => '行程分類']);
+        $eventType = EventCategory::create(['name' => '總統候選人']);
+
+        $candidates = PoliticianCategory::where('name', '總統候選人')->first();
+        $candidates->event_category_id = $eventType->id;
+        $candidates->save();
 
         foreach ($politicians as $politician)
         {
@@ -47,7 +52,7 @@ class EventTableSeeder extends Seeder
 
                     $location->name = $event['location'];
                     $location->save();
-                    $date = explode("/", $event['date']);
+                    $date = explode('/', $event['date']);
 
                     $new_event = Event::create([
                         'date'          => Carbon::create($date[0], $date[1], $date[2], 12),

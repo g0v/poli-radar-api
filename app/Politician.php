@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Politician extends Model
 {
-    protected $fillable = ['name', 'party_id'];
+    protected $fillable = ['name'];
 
     public function events()
     {
@@ -16,6 +16,11 @@ class Politician extends Model
     public function categories()
     {
         return $this->belongsToMany('App\PoliticianCategory');
+    }
+
+    public function traits()
+    {
+        return $this->belongsToMany('App\PoliticianTrait');
     }
 
 }

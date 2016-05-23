@@ -1,28 +1,22 @@
 <?php
-
 namespace App;
 use Baum\Node;
 
 /**
-* EventCategory
+* PoliticianTrait
 */
-class EventCategory extends Node {
+class PoliticianTrait extends Node {
 
   /**
    * Table name.
    *
    * @var string
    */
-  protected $table = 'event_categories';
+  protected $table = 'politician_traits';
 
-  public function events()
+  public function politicians()
   {
-    return $this->belongsToMany('App\Event');
-  }
-
-  public function politicianCategories()
-  {
-    return $this->hasMany('App\PoliticianCategory');
+    return $this->belongsToMany('App\Politician');
   }
 
   //////////////////////////////////////////////////////////////////////////////

@@ -12,7 +12,7 @@ class PoliticianCategoryTransformer extends TransformerAbstract
 		return [
 			'id' => (int) $pCat->id,
             'name' => $pCat->name,
-            'parent_id' => (int) $pCat->parent_id
+            'event_category_root' => $pCat->event_category_id,
 		];
 	}
 }
