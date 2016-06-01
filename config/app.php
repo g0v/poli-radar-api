@@ -150,7 +150,7 @@ return [
         Barryvdh\Cors\ServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         willvincent\Rateable\RateableServiceProvider::class,
-        Lanz\Commentable\CommentableServiceProvider::class,
+        // Lanz\Commentable\CommentableServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Baum\Providers\BaumServiceProvider::class,
 
