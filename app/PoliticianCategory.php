@@ -11,7 +11,7 @@ class PoliticianCategory extends Model
     return $this->belongsToMany('App\Politician');
   }
 
-  public function eventCategories()
+  public function eventCategory()
   {
     return $this->belongsTo('App\EventCategory');
   }

@@ -15,6 +15,7 @@ class CreatePoliticianCategoriesTable extends Migration {
       $table->increments('id');
       $table->string('name');
       $table->integer('event_category_id')->unsigned()->nullable();
+      $table->foreign('event_category_id')->references('id')->on('event_categories')->onDelete('cascade');
       $table->timestamps();
     });
     Schema::create('politician_politician_category', function(Blueprint $table) {
