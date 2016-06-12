@@ -17,13 +17,13 @@ class PoliticianCategoryTransformer extends TransformerAbstract
 		$eventCategories = [];
 
 		if ($pCat->eventCategory) {
-			$eventCategories = $fractal->createData(new FractalCollection($pCat->eventCategory->leaves(), new EventCategoryTransformer))->toArray();
+			$eventCategories = $fractal->createData(new FractalCollection($pCat->eventCategory->leaves()->get(), new EventCategoryTransformer))->toArray();
 		}
 
 		return [
 			'id' => (int) $pCat->id,
             'name' => $pCat->name,
-            'event_categories' => $eventCategories,
+            'eventCategories' => $eventCategories,
 		];
 	}
 }

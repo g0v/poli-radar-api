@@ -4,7 +4,6 @@ namespace Api\Controllers;
 
 use App\Event;
 use App\Politician;
-use App\EventCategory;
 use App\PoliticianCategory;
 use App\PoliticianTrait;
 use App\City;
@@ -19,7 +18,6 @@ use Api\Transformers\EventTransformer;
 use Api\Transformers\CityTransformer;
 use Api\Transformers\RegionTransformer;
 use Api\Transformers\PoliticianTransformer;
-use Api\Transformers\EventCategoryTransformer;
 use Api\Transformers\PoliticianCategoryTransformer;
 use Api\Transformers\PoliticianTraitTransformer;
 use DB;
@@ -45,17 +43,7 @@ class AllDataController extends BaseController
         $regions = new FractalCollection(Region::all(), new RegionTransformer);
         $politicians = new FractalCollection(Politician::all(), new PoliticianTransformer);
         $politicianCategories = new FractalCollection(PoliticianCategory::all(), new PoliticianCategoryTransformer);
-        $eventCategories = array();
         $politicianTraits = array();
-
-        foreach (EventCategory::all()->toHierarchy() as $root)
-        {
-            $eventCategories[] = array(
-                'id' => (int) $root->id,
-                'name' => $root->name,
-                'children' => $fractal->createData(new FractalCollection($root->children, new EventCategoryTransformer))->toArray(),
-            );
-        }
 
         foreach (PoliticianTrait::all()->toHierarchy() as $root)
         {
@@ -77,7 +65,6 @@ class AllDataController extends BaseController
             'events' => $fractal->createData($events)->toArray(),
             'politicians' => $fractal->createData($politicians)->toArray(),
             'politicianCategories' => $fractal->createData($politicianCategories)->toArray(),
-            'eventCategories' => $eventCategories,
             'politicianTraits' => $politicianTraits,
             'cities' => $fractal->createData($cities)->toArray(),
             'regions' => $fractal->createData($regions)->toArray(),

@@ -9,7 +9,6 @@ class EventCategoryTransformer extends TransformerAbstract
 {
 	public function transform(EventCategory $eCat)
 	{
-		
 		return [
 			'id' => (int) $eCat->id,
             'name' => $eCat->name,
