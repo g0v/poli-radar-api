@@ -6,6 +6,7 @@ use Auth;
 use App\Event;
 use App\Region;
 use App\Location;
+use App\EventCategory;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 // use Api\Requests\EventRequest;
@@ -93,7 +94,7 @@ class EventsController extends BaseController
             'AIzaSyBGogPR8JvLm5xC8xGwSTCpKkXm5eZFVH4'
         );
 
-        $geoResults = $geocoder->geocode($request->city.$request->region.$request->address)->first();
+        $geoResults = $geocoder->geocode($request->address)->first();
         
         $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
 
@@ -112,7 +113,7 @@ class EventsController extends BaseController
                 'user_id' => Auth::user()->id
             ]);
         } else {
-           $event = Event::firstOrCreate([
+            $event = Event::firstOrCreate([
                 'date'    => $request->date,
                 'name'    => $request->name,
                 'user_id' => Auth::user()->id
@@ -123,6 +124,17 @@ class EventsController extends BaseController
         $event->start = $request->start;
         $event->end = $request->end;
         $event->save();
+
+        $eventTypeRoot = EventCategory::where(['name' => $request->politicianCategory])->first();
+        $eventType = EventCategory::firstOrCreate([
+            'parent_id' => $eventTypeRoot->id,
+            'name' => $request->category,
+        ]);
+        $eventType->makeChildOf($eventTypeRoot);
+
+        $event->categories()->detach();
+        $event->categories()->attach($eventType->id);
+
         // must detach ?
         $event->politicians()->detach();
         $event->politicians()->attach($request->politician);

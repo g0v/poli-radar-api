@@ -30,16 +30,6 @@ class PoliticianCategoryController extends BaseController
         return $this->response->collection(PoliticianCategory::all(), new PoliticianCategoryTransformer);
     }
 
-    public function party()
-    {
-        return $this->response->collection(PoliticianCategory::where('name', '政黨')->first()->getLeaves(), new PoliticianCategoryWithNameTransformer);
-    }
-
-    public function type()
-    {
-        return $this->response->collection(PoliticianCategory::where('name', '類型')->first()->getLeaves(), new PoliticianCategoryWithNameTransformer);
-    }
-
     /**
      * Store a new dog in the database.
      *

@@ -29,11 +29,22 @@ class EventTableSeeder extends Seeder
 
         $politicians = json_decode(file_get_contents($evntFile), true);
 
-        $eventType = EventCategory::create(['name' => '總統候選人']);
+        $politicianCategories = [
+            '總統候選人',
+            '現任總統',
+            '第九屆立法委員',
+            '縣市首長'
+        ];
 
-        $candidates = PoliticianCategory::where('name', '總統候選人')->first();
-        $candidates->event_category_id = $eventType->id;
-        $candidates->save();
+        foreach ($politicianCategories as $name) {
+            $politicianCategory = EventCategory::create(['name' => $name]);
+            $candidates = PoliticianCategory::where('name', $name)->first();
+            $candidates->event_category_id = $politicianCategory->id;
+            $candidates->save();
+        }
+
+        $eventType = EventCategory::where(['name' => '總統候選人'])->first();
+
 
         foreach ($politicians as $politician)
         {
