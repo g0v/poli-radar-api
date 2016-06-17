@@ -19,7 +19,6 @@ $api->version('v1', function ($api) {
 		$api->get('date', 'DateController@index');
 		$api->get('events', 'EventsController@index');
 		$api->get('events/{id}', 'EventsController@show');
-		$api->get('events/{start?}/{end?}', 'EventsController@date');
 		$api->get('politicians', 'PoliticiansController@index');
 		$api->get('politicians/{id}', 'PoliticiansController@show');
 		$api->get('politicianCategories', 'PoliticianCategoryController@index');
@@ -53,7 +52,7 @@ $api->version('v1', function ($api) {
 				$api->put('politicians/{id}', 'PoliticiansController@update');
 				$api->post('politicianCategories', 'PoliticianCategoryController@store');
 			});
-			
+
 		});
 
 	});

@@ -13,8 +13,8 @@ use Illuminate\Http\Request;
 use Api\Transformers\EventTransformer;
 use Carbon\Carbon;
 
-use League\Fractal\Resource\Collection as FractalCollection;
 use League\Fractal\Manager;
+use League\Fractal\Resource\Collection as FractalCollection;
 
 /**
  * @Resource('Events', uri='/events')
@@ -22,36 +22,24 @@ use League\Fractal\Manager;
 class EventsController extends BaseController
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        return $this->response->collection(Event::all(), new EventTransformer);
-    }
-
-    public function date($start = null, $end = null)
-    {
-        $fractal = new Manager();
-
-        if(is_null($end)) {
-            $end = Carbon::now();
+        if (!$request->has('start') && !$request->has('end')) {
+          return $this->response->collection(Event::all(), new EventTransformer);
         } else {
-            $end = Carbon::parse($end);
+          $fractal = new Manager();
+          $start = $request->input('start', Carbon::now());
+          $end = $request->input('end', Carbon::now()->subDays(30));
+          $events = new FractalCollection(Event::whereBetween('date', [$end, $start])->get(), new EventTransformer);
+
+          return $this->array([
+              'events' => $fractal->createData($events)->toArray(),
+              'date' => [
+                  'start' => $start->format('Y-m-d'),
+                  'end' => $end->format('Y-m-d'),
+              ]
+          ]);
         }
-
-        if(is_null($start)) {
-            $start = Carbon::now()->subDays(7);
-        } else {
-            $start = Carbon::parse($start);
-        }
-
-        $events = new FractalCollection(Event::whereBetween('date', [$start, $end])->get(), new EventTransformer);
-
-        return $this->array([
-            'events' => $fractal->createData($events)->toArray(),
-            'date' => [
-                'start' => $start->format('Y-m-d'),
-                'end' => $end->format('Y-m-d'),
-            ]
-        ]);
     }
 
     /**
@@ -95,7 +83,7 @@ class EventsController extends BaseController
         );
 
         $geoResults = $geocoder->geocode($request->address)->first();
-        
+
         $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
 
         if ($region) {
@@ -117,9 +105,9 @@ class EventsController extends BaseController
                 'date'    => $request->date,
                 'name'    => $request->name,
                 'user_id' => Auth::user()->id
-            ]); 
+            ]);
         }
-       
+
         $event->url = $request->url;
         $event->start = $request->start;
         $event->end = $request->end;
