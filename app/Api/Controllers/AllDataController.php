@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 
 use League\Fractal\Resource\Collection as FractalCollection;
 use League\Fractal\Manager;
+use Carbon\Carbon;
 
 use Api\Transformers\EventTransformer;
 use Api\Transformers\CityTransformer;
@@ -38,7 +39,6 @@ class AllDataController extends BaseController
     public function index()
     {
         $fractal = new Manager();
-        $events = new FractalCollection(Event::all(), new EventTransformer);
         $cities = new FractalCollection(City::all(), new CityTransformer);
         $regions = new FractalCollection(Region::all(), new RegionTransformer);
         $politicians = new FractalCollection(Politician::all(), new PoliticianTransformer);
@@ -53,14 +53,19 @@ class AllDataController extends BaseController
                 'children' => $fractal->createData(new FractalCollection($root->children, new PoliticianTraitTransformer))->toArray(),
             );
         }
-        $date = DB::table('events')
-                ->select(DB::raw('MIN(date) as min, MAX(date) as max'))
-                ->get();
+        $latestDate = new Carbon(DB::table('events')
+                ->select(DB::raw('MAX(date) as max'))
+                ->first()->max);
+        $now = Carbon::now();
+        $end = $now->min($latestDate);
+        $endClone = clone $end;
+        $start = $endClone->subDays(30);
+        $events = new FractalCollection(Event::whereBetween('date', [$start, $end])->get(), new EventTransformer);
 
         return $this->array(array(
             'date' => [
-                'min' => explode(" ", $date[0]->min)[0],
-                'max' => explode(" ", $date[0]->max)[0]
+                'start' => $start->format('Y-m-d'),
+                'end' => $end->format('Y-m-d'),
             ],
             'events' => $fractal->createData($events)->toArray(),
             'politicians' => $fractal->createData($politicians)->toArray(),

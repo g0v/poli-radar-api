@@ -2,6 +2,7 @@
 
 namespace Api\Controllers;
 
+use DB;
 use Auth;
 use App\Event;
 use App\Region;
@@ -24,19 +25,29 @@ class EventsController extends BaseController
 
     public function index(Request $request)
     {
-        if (!$request->has('start') && !$request->has('end')) {
+        if ($request->has('all')) {
           return $this->response->collection(Event::all(), new EventTransformer);
         } else {
           $fractal = new Manager();
-          $start = $request->input('start', Carbon::now());
-          $end = $request->input('end', Carbon::now()->subDays(30));
-          $events = new FractalCollection(Event::whereBetween('date', [$end, $start])->get(), new EventTransformer);
+          $latestDate = new Carbon(DB::table('events')
+                ->select(DB::raw('MAX(date) as max'))
+                ->first()->max);
+
+          $now = Carbon::now();
+
+          $end = $request->input('end', $now->min($latestDate));
+
+          $endClone = clone $end;
+
+          $start = $request->input('start', $endClone->subDays(30));
+
+          $events = new FractalCollection(Event::whereBetween('date', [$start, $end])->get(), new EventTransformer);
 
           return $this->array([
               'events' => $fractal->createData($events)->toArray(),
               'date' => [
-                  'start' => $start->format('Y-m-d'),
-                  'end' => $end->format('Y-m-d'),
+                'start' => $start->format('Y-m-d'),
+                'end' => $end->format('Y-m-d'),
               ]
           ]);
         }
