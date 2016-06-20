@@ -25,13 +25,16 @@ class EventsController extends BaseController
 
     public function index(Request $request)
     {
-        if ($request->has('all')) {
-          return $this->response->collection(Event::all(), new EventTransformer);
+      if ($request->has('all')){
+        return $this->response->collection(Event::all(), new EventTransformer);
+      } else {
+        if ($request->has('start') && $request->has('end')) {
+          return $this->response->collection(Event::whereBetween('date', [$request->start, $request->end])->get(), new EventTransformer);
         } else {
           $fractal = new Manager();
           $latestDate = new Carbon(DB::table('events')
-                ->select(DB::raw('MAX(date) as max'))
-                ->first()->max);
+            ->select(DB::raw('MAX(date) as max'))
+            ->first()->max);
 
           $now = Carbon::now();
 
@@ -41,16 +44,17 @@ class EventsController extends BaseController
 
           $start = $request->input('start', $endClone->subDays(30));
 
-          $events = new FractalCollection(Event::whereBetween('date', [$start, $end])->get(), new EventTransformer);
+          $events = new FractalCollection(Event::whereBetween('date', [$start, $end])->get());
 
           return $this->array([
-              'events' => $fractal->createData($events)->toArray(),
-              'date' => [
-                'start' => $start->format('Y-m-d'),
-                'end' => $end->format('Y-m-d'),
-              ]
+            'events' => $fractal->createData($events)->toArray(),
+            'date' => [
+              'start' => $start->format('Y-m-d'),
+              'end' => $end->format('Y-m-d'),
+            ]
           ]);
         }
+      }
     }
 
     /**
