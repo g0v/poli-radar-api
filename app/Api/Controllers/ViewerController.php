@@ -23,7 +23,7 @@ class ViewerController extends BaseController
      */
     public function index()
     {
-        return $this->response->collection(Viewer::all(), new ViewerTransformer);
+        return $this->response->paginator(Viewer::orderBy('id', 'desc')->paginate(10), new ViewerTransformer);
     }
 
     /**
