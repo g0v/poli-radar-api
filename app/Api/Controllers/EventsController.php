@@ -17,44 +17,67 @@ use Carbon\Carbon;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection as FractalCollection;
 
+function checkDateCount($event, $ids, $eventCategories)
+{
+    $pIds = [];
+    $eCats = [];
+    foreach ($event->politicians as $p) {
+        $pIds[] = $p->id;
+    }
+    foreach ($event->categories as $cat) {
+        $eCats[] = $cat->id;
+    }
+    if (array_intersect($pIds, $ids) && array_intersect($eCats, $eventCategories)) {
+        return true;
+    }
+    return false;
+}
+
 /**
  * @Resource('Events', uri='/events')
  */
 class EventsController extends BaseController
 {
-
     public function index(Request $request)
     {
-      if ($request->has('all')){
-        return $this->response->collection(Event::all(), new EventTransformer);
-      } else {
-        if ($request->has('start') && $request->has('end')) {
-          return $this->response->collection(Event::whereBetween('date', [$request->start, $request->end])->get(), new EventTransformer);
+        if ($request->has('all')) {
+            return $this->response->collection(Event::all(), new EventTransformer);
         } else {
-          $fractal = new Manager();
-          $latestDate = new Carbon(DB::table('events')
-            ->select(DB::raw('MAX(date) as max'))
-            ->first()->max);
+            if ($request->has('start') && $request->has('end')) {
+              return $this->response->collection(Event::whereBetween('date', [$request->start, $request->end])->get(), new EventTransformer);
+            } else {
+                if ($request->has('politicians') && $request->has('eventCategories')) {
+                    foreach (Event::orderBy('date', 'desc')->get() as $event) {
+                        if (checkDateCount($event, $request->politicians, $request->eventCategories)) {
+                            $end = new Carbon($event->date);
+                            break;
+                        }
+                    }
+                } else {
+                    $latestDate = new Carbon(DB::table('events')
+                        ->select(DB::raw('MAX(date) as max'))
+                        ->first()->max);
 
-          $now = Carbon::now();
+                    $now = Carbon::now();
 
-          $end = $request->input('end', $now->min($latestDate));
+                    $end = $now->min($latestDate);
+                }
+                $fractal = new Manager();
 
-          $endClone = clone $end;
+                $endClone = clone $end;
+                $start = $endClone->subDays(30);
 
-          $start = $request->input('start', $endClone->subDays(30));
+                $events = new FractalCollection(Event::whereBetween('date', [$start, $end])->get(), new EventTransformer);
 
-          $events = new FractalCollection(Event::whereBetween('date', [$start, $end])->get());
-
-          return $this->array([
-            'events' => $fractal->createData($events)->toArray(),
-            'date' => [
-              'start' => $start->format('Y-m-d'),
-              'end' => $end->format('Y-m-d'),
-            ]
-          ]);
+                return $this->array([
+                    'events' => $fractal->createData($events)->toArray(),
+                    'date' => [
+                        'start' => $start->format('Y-m-d'),
+                        'end' => $end->format('Y-m-d'),
+                    ]
+                ]);
+            }
         }
-      }
     }
 
     /**
@@ -100,6 +123,7 @@ class EventsController extends BaseController
         $geoResults = $geocoder->geocode($request->address)->first();
 
         $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
+        $date = new Carbon($request->date);
 
         if ($region) {
             $location = Location::firstOrCreate([
@@ -110,14 +134,14 @@ class EventsController extends BaseController
                 'name'      => $request->location,
             ]);
             $event = Event::firstOrCreate([
-                'date'    => $request->date,
+                'date'    => $date->format('Y-m-d'),
                 'name'    => $request->name,
                 'location_id' => $location->id,
                 'user_id' => Auth::user()->id
             ]);
         } else {
             $event = Event::firstOrCreate([
-                'date'    => $request->date,
+                'date'    => $date->format('Y-m-d'),
                 'name'    => $request->name,
                 'user_id' => Auth::user()->id
             ]);

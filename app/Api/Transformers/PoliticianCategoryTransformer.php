@@ -22,8 +22,8 @@ class PoliticianCategoryTransformer extends TransformerAbstract
 			$eventCategories = $fractal->createData(new FractalCollection($pCat->eventCategory->leaves()->get(), new EventCategoryTransformer))->toArray();
 		}
 
-		if ($pCat->politicians) {
-			$politicians = $fractal->createData(new FractalCollection($pCat->politicians, new PoliticianTransformer))->toArray();
+		foreach ($pCat->politicians as $p) {
+			$politicians[] = (int) $p->id;
 		}
 
 		return [

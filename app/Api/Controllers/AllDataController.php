@@ -58,26 +58,15 @@ class AllDataController extends BaseController
                 ->first();
         $minDate = new Carbon($dateRange->min);
         $maxDate = new Carbon($dateRange->max);
-        $now = Carbon::now();
-        $end = $now->min($maxDate);
-        $endClone = clone $end;
-        $start = $endClone->subDays(30);
-        $events = new FractalCollection(Event::whereBetween('date', [$start, $end])->get(), new EventTransformer);
         
-
         return $this->array(array(
             'date' => [
                 'start' => $minDate->format('Y-m-d'),
                 'end' => $maxDate->format('Y-m-d'),
             ],
-            'curRange' => [
-                'start' => $start->format('Y-m-d'),
-                'end' => $end->format('Y-m-d'),
-            ],
-            'events' => $fractal->createData($events)->toArray(),
             'politicians' => $fractal->createData($politicians)->toArray(),
             'politicianCategories' => $fractal->createData($politicianCategories)->toArray(),
-            'politicianTraits' => $politicianTraits,
+            'politicianTraits' => ['data' => $politicianTraits],
             'cities' => $fractal->createData($cities)->toArray(),
             'regions' => $fractal->createData($regions)->toArray(),
         ));
