@@ -96,8 +96,10 @@ class EventsController extends BaseController
             'name'      => $request->location,
         ]);
 
+        $date = new Carbon($request->date);
+
         $event = Event::create([
-            'date'    => $request->date,
+            'date'    => $date->format('Y-m-d'),
             'start'   => $request->start,
             'end'     => $request->end,
             'name'    => $request->name,
