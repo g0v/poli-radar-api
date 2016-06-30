@@ -58,3 +58,13 @@ $api->version('v1', function ($api) {
 	});
 
 });
+
+// Version 2 of our API
+$api->version('v2', function ($api) {
+
+	// Set our namespace for the underlying routes
+	$api->group(['namespace' => 'Api\V2\Controllers', 'middleware' => 'cors'], function ($api) {
+		$api->get('politician_categories', 'PoliticianCategoryController@index');
+		$api->get('politician_categories/{id}', 'PoliticianCategoryController@show');
+	});
+});
