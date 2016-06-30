@@ -1,16 +1,43 @@
 <?php
 namespace Api\V2\Transformers;
 
+use App\Politician;
 use App\PoliticianCategory;
-use League\Fractal\TransformerAbstract;
+use League\Fractal;
 
-class PoliticianCategoryTransformer extends TransformerAbstract
+use Api\V2\Transformers\PoliticianTransformer;
+
+class PoliticianCategoryTransformer extends Fractal\TransformerAbstract
 {
+	/**
+     * List of resources possible to include
+     *
+     * @var array
+     */
+    protected $availableIncludes = [
+        'politicians',
+    ];
+
 	public function transform(PoliticianCategory $category)
 	{
+		$fractal = new Fractal\Manager();
+		if (isset($_GET['include'])) {
+			$fractal->parseIncludes($_GET['include']);
+		};
+
 	    return [
 	        'id' => (int) $category->id,
 			'name' => $category->name,
 	    ];
+	}
+
+	public function includePoliticians(PoliticianCategory $category)
+	{
+		$politicians = $category
+			->politicians()
+			->where('politician_category_id', '=', $category->id)
+			->get();
+
+		return $this->collection($politicians, new PoliticianTransformer);
 	}
 }
