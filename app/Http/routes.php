@@ -67,7 +67,9 @@ $api->version('v2', function ($api) {
 		$api->get('politician_categories', 'PoliticianCategoryController@index');
 		$api->get('politician_categories/{id}', 'PoliticianCategoryController@show');
 
-		$api->get('events', 'EventsController@index');
 		$api->get('locations', 'LocationController@index');
+		$api->get('locations/{id}', 'LocationController@show');
+
+		$api->get('events', 'EventsController@index');
 	});
 });

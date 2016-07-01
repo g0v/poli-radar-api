@@ -39,9 +39,10 @@ class LocationController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-    // {
-    // }
+    public function show($id)
+    {
+        return $this->response->item(Location::findOrFail($id), new LocationTransformer);
+    }
 
     /**
      * Update the Location in the database.
