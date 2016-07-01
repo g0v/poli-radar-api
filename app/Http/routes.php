@@ -66,5 +66,7 @@ $api->version('v2', function ($api) {
 	$api->group(['namespace' => 'Api\V2\Controllers', 'middleware' => 'cors'], function ($api) {
 		$api->get('politician_categories', 'PoliticianCategoryController@index');
 		$api->get('politician_categories/{id}', 'PoliticianCategoryController@show');
+
+		$api->get('events', 'EventsController@index');
 	});
 });
