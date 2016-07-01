@@ -69,6 +69,7 @@ $api->version('v2', function ($api) {
 
 		$api->get('locations', 'LocationController@index');
 		$api->get('locations/{id}', 'LocationController@show');
+		$api->post('locations', 'LocationController@store');
 
 		$api->get('events', 'EventsController@index');
 	});

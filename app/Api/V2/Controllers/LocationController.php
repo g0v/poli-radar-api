@@ -2,6 +2,8 @@
 
 namespace Api\V2\Controllers;
 
+use \Illuminate\Http\Request;
+
 use App\Location;
 use Api\V2\Transformers\LocationTransformer;
 
@@ -29,9 +31,18 @@ class LocationController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    // {
-    // }
+    public function store(Request $request)
+    {
+        $location = Location::firstOrCreate([
+            'name' => $request->name,
+            'address' => $request->address,
+            'lat' => $request->coordinates['lat'],
+            'lng' => $request->coordinates['lng'],
+            'region_id' => $request->region_id,
+        ]);
+
+        return $this->response->created($location);
+    }
 
     /**
      * Display the specified resource.
