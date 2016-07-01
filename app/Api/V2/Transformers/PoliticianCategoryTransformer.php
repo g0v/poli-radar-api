@@ -3,9 +3,12 @@ namespace Api\V2\Transformers;
 
 use App\Politician;
 use App\PoliticianCategory;
+use App\EventCategory;
+
 use League\Fractal;
 
 use Api\V2\Transformers\PoliticianTransformer;
+use Api\V2\Transformers\EventCategoryTransformer;
 
 class PoliticianCategoryTransformer extends Fractal\TransformerAbstract
 {
@@ -16,6 +19,7 @@ class PoliticianCategoryTransformer extends Fractal\TransformerAbstract
      */
     protected $availableIncludes = [
         'politicians',
+		'eventCategory',
     ];
 
 	public function transform(PoliticianCategory $category)
@@ -39,5 +43,15 @@ class PoliticianCategoryTransformer extends Fractal\TransformerAbstract
 			->get();
 
 		return $this->collection($politicians, new PoliticianTransformer);
+	}
+
+	public function includeEventCategory(PoliticianCategory $category)
+	{
+		$eventCategories = $category
+			->eventCategory
+			->leaves()
+			->get();
+
+		return $this->collection($eventCategories, new EventCategoryTransformer);
 	}
 }
