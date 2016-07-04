@@ -64,6 +64,10 @@ $api->version('v2', function ($api) {
 
 	// Set our namespace for the underlying routes
 	$api->group(['namespace' => 'Api\V2\Controllers', 'middleware' => 'cors'], function ($api) {
+
+		$api->post('auth/login', 'AuthController@login');
+		$api->post('auth/signup', 'AuthController@signup');
+
 		$api->get('politician_categories', 'PoliticianCategoryController@index');
 		$api->get('politician_categories/{id}', 'PoliticianCategoryController@show');
 
