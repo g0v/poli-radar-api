@@ -13,7 +13,7 @@ class LocationTransformer extends TransformerAbstract
             'id' => $location->id,
 			'name' => $location->name,
 			'address' => $location->address,
-			'location' => [
+			'coordinates' => [
 				'lat' => $location->lat,
 				'lng' => $location->lng,
 			],

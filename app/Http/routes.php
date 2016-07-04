@@ -80,6 +80,8 @@ $api->version('v2', function ($api) {
 		// All routes in here are protected and thus need a valid token
 		$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
 			$api->get('validate_token', 'AuthController@validateToken');
+
+			$api->post('politicians/{id}/events', 'PoliticianEventController@store');
 		});
 	});
 });
