@@ -122,4 +122,10 @@ class AuthController extends BaseController
                 return $this->response->error('could_not_reset_password', 500);
         }
     }
+
+    public function validateToken()
+    {
+        // Our routes file should have already authenticated this token, so we just return success here
+        return $this->response()->array(['status' => 'success'])->statusCode(200);
+    }
 }

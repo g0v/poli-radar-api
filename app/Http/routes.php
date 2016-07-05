@@ -76,5 +76,10 @@ $api->version('v2', function ($api) {
 		$api->post('locations', 'LocationController@store');
 
 		$api->get('events', 'EventsController@index');
+
+		// All routes in here are protected and thus need a valid token
+		$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
+			$api->get('validate_token', 'AuthController@validateToken');
+		});
 	});
 });
