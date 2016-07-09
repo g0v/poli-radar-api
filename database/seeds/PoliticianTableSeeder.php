@@ -35,11 +35,11 @@ class PoliticianTableSeeder extends Seeder
         ]);
 
         $president = PoliticianCategory::create([
-            'name' => '現任總統',
+            'name' => '總統',
         ]);
 
         $legiss = PoliticianCategory::create([
-            'name' => '第九屆立法委員',
+            'name' => '立法委員',
         ]);
 
         $mayor = PoliticianCategory::create([

@@ -11,7 +11,7 @@ class ViewerTransformer extends TransformerAbstract
 	{
 		return [
 			'id' => (int) $viewer->id,
-            'hash' => $viewer->uuid,
+            'hash' => $viewer->hash,
             'data' => $viewer->data,
 		];
 	}
