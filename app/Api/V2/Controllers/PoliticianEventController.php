@@ -20,21 +20,34 @@ class PoliticianEventController extends BaseController
     {
         $json = $request->data;
 
+        $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
+        $geocoder = new \Geocoder\Provider\GoogleMaps(
+            $curl,
+            'zh-tw',
+            'tw',
+            true,
+            'AIzaSyBGogPR8JvLm5xC8xGwSTCpKkXm5eZFVH4'
+        );
+
         foreach ($json as $item) {
-            $locationData = @$item['location']['data'];
+            $locationData = $item['location']['data'];
+
+            $geoResults = $geocoder->geocode($locationData['address'])->first();
+
+            $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
 
             $location = Location::firstOrCreate([
-                'name'      => @$locationData['name'],
-                'address'   => @$locationData['address'],
-                'lat'       => @$locationData['coordinates']['lat'],
-                'lng'       => @$locationData['coordinates']['lng'],
-                'region_id' => @$locationData['region_id'],
+                'name'      => $locationData['name'],
+                'address'   => $locationData['address'],
+                'lat'       => $geoResults->getLatitude(),
+                'lng'       => $geoResults->getLongitude(),
+                'region_id' => $region->id,
             ]);
 
-            $date = new Carbon(@$item['date']);
+            $date = new Carbon($item['date']);
 
             $event = Event::create([
-                'name'    => @$item['name'],
+                'name'    => $item['name'],
                 'date'    => $date->format('Y-m-d'),
                 'start'   => @$item['start'],
                 'end'     => @$item['end'],

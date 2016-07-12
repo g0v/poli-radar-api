@@ -73,7 +73,6 @@ $api->version('v2', function ($api) {
 
 		$api->get('locations', 'LocationController@index');
 		$api->get('locations/{id}', 'LocationController@show');
-		$api->post('locations', 'LocationController@store');
 
 		$api->get('events', 'EventsController@index');
 
@@ -81,6 +80,7 @@ $api->version('v2', function ($api) {
 		$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
 			$api->get('validate_token', 'AuthController@validateToken');
 
+			$api->post('locations', 'LocationController@store');
 			$api->post('politicians/{id}/events', 'PoliticianEventController@store');
 		});
 	});
