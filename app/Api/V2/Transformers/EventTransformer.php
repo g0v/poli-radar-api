@@ -5,6 +5,8 @@ namespace Api\V2\Transformers;
 use App\Event;
 use League\Fractal;
 
+use Api\V2\Transformers\PoliticianTransformer;
+use Api\V2\Transformers\EventCategoryTransformer;
 use Api\V2\Transformers\LocationTransformer;
 
 class EventTransformer extends Fractal\TransformerAbstract
@@ -15,6 +17,8 @@ class EventTransformer extends Fractal\TransformerAbstract
      * @var array
      */
     protected $availableIncludes = [
+		'politicians',
+		'categories',
         'location',
     ];
 
@@ -32,6 +36,24 @@ class EventTransformer extends Fractal\TransformerAbstract
             'start' => $event->start,
             'end' => $event->end,
         ];
+	}
+
+	public function includeCategories(Event $event)
+	{
+		$categories = $event
+			->categories()
+			->get();
+
+		return $this->collection($categories, new EventCategoryTransformer);
+	}
+
+	public function includePoliticians(Event $event)
+	{
+		$politicians = $event
+			->politicians()
+			->get();
+
+		return $this->collection($politicians, new PoliticianTransformer);
 	}
 
 	public function includeLocation(Event $event)
