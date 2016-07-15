@@ -30,6 +30,11 @@ class PoliticianCategoryController extends BaseController
         return $this->response->collection(PoliticianCategory::all(), new PoliticianCategoryTransformer);
     }
 
+    public function withNames()
+    {
+        return $this->response->collection(PoliticianCategory::all(), new PoliticianCategoryWithNameTransformer);
+    }
+
     /**
      * Store a new dog in the database.
      *

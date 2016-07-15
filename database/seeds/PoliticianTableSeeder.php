@@ -35,11 +35,11 @@ class PoliticianTableSeeder extends Seeder
         ]);
 
         $president = PoliticianCategory::create([
-            'name' => '現任總統',
+            'name' => '總統',
         ]);
 
         $legiss = PoliticianCategory::create([
-            'name' => '第九屆立法委員',
+            'name' => '立法委員',
         ]);
 
         $mayor = PoliticianCategory::create([
@@ -72,12 +72,16 @@ class PoliticianTableSeeder extends Seeder
 
         foreach ($legis as $politician) {
             $p = Politician::create([
-                'name' => $politician['name']
+                'name' => $politician['姓名']
+            ]);
+            $sex = PoliticianTrait::firstOrCreate([
+                'parent_id' => $sexRoot->id,
+                'name' => $politician['性別']
             ]);
 
             $party = PoliticianTrait::firstOrCreate([
                 'parent_id' => $partyRoot->id,
-                'name' => $politician['party']
+                'name' => $politician['黨籍']
             ]);
 
             $p->traits()->attach($party->id);

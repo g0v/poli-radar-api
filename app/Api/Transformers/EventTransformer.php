@@ -4,6 +4,7 @@ namespace Api\Transformers;
 
 use App\Event;
 use League\Fractal\TransformerAbstract;
+use Carbon\Carbon;
 
 class EventTransformer extends TransformerAbstract
 {
@@ -33,15 +34,16 @@ class EventTransformer extends TransformerAbstract
                         'city' => (int) $location->region->city->id,
                   ];
             }
+            $date = new Carbon($event->date);
 
 		return array_merge([
 			'id' => (int) $event->id,
-			'date' => $event->date,
+			'date' => $date->format('Y-m-d'),
                   'start' => $event->start,
                   'end' => $event->end,
                   'name' => $event->name,
                   'url' => $event->url,
-                  'politician' => $politicians,
+                  'politicians' => $politicians,
                   'eventCategories' => $eventCategories,
 		], $locationData);
 	}

@@ -9,15 +9,15 @@ use Api\Transformers\ViewerTransformer;
 use Uuid;
 
 /**
- * @Resource('Viewers', uri='/politicians')
+ * @Resource('Viewers', uri='/viewer')
  */
 class ViewerController extends BaseController
 {
 
     /**
-     * Show all politicians
+     * Show all viewers
      *
-     * Get a JSON representation of all the politicians
+     * Get a JSON representation of all the viewers
      * 
      * @Get('/')
      */
@@ -27,19 +27,20 @@ class ViewerController extends BaseController
     }
 
     /**
-     * Store a new dog in the database.
+     * Store a new viewer in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $hash = str_replace('-', '', Uuid::generate()->string);
         $viewer = Viewer::create([
-            'hash' => str_replace('-', '', Uuid::generate()->string),
+            'hash' => $hash,
             'data' => $request->data,
             'user_id' => 1,
         ]);
-        return $this->response->array(['hash' => $viewer->hash]);
+        return $this->response->array(['hash' => $hash]);
     }
 
     /**

@@ -8,7 +8,6 @@ use League\Fractal\Resource\Collection as FractalCollection;
 use League\Fractal\Manager;
 
 use Api\Transformers\EventCategoryTransformer;
-use Api\Transformers\PoliticianTransformer;
 
 class PoliticianCategoryTransformer extends TransformerAbstract
 {
