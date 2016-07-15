@@ -65,10 +65,18 @@ class EventsController extends BaseController
             }
 
             if ($request->has('start')) {
-                $start = new Carbon($request->start);                
+                $start = new Carbon($request->start);
             } else {
                 $endClone = clone $end;
                 $start = $endClone->subDays(30);
+            }
+
+            if ($request->has('start') && $request->has('end') && $request->has('politician')) {
+              $politician = Politician::with(['events' => function ($query) use ($request) {
+                  $query->whereBetween('date', [$request->start, $request->end]);
+              }])->find($request->politician);
+
+              return $this->response->item($politician, new PoliticianTransformer);
             }
 
             $fractal = new Manager();
