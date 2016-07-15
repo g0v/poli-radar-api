@@ -7,11 +7,14 @@ use Auth;
 use App\Event;
 use App\Region;
 use App\Location;
+use App\Politician;
 use App\EventCategory;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 // use Api\Requests\EventRequest;
 use Api\Transformers\EventTransformer;
+use Api\Transformers\PoliticianTransformer;
+
 use Carbon\Carbon;
 
 use League\Fractal\Manager;
