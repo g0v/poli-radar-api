@@ -199,6 +199,7 @@ class EventsController extends BaseController
         $event->url = $request->url;
         $event->start = $request->start;
         $event->end = $request->end;
+        $event->description = $request->description;
         $event->save();
 
         $eventTypeRoot = EventCategory::where(['name' => $request->politicianCategory])->first();
