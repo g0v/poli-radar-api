@@ -11,6 +11,7 @@ use App\Politician;
 use App\EventCategory;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 // use Api\Requests\EventRequest;
 use Api\Transformers\EventTransformer;
 use Api\Transformers\PoliticianTransformer;
@@ -19,6 +20,9 @@ use Carbon\Carbon;
 
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection as FractalCollection;
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 function checkDateCount($event, $ids, $eventCategories)
 {
@@ -34,6 +38,22 @@ function checkDateCount($event, $ids, $eventCategories)
         return true;
     }
     return false;
+}
+
+function parseAddress($address)
+{
+    $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
+    $geocoder = new \Geocoder\Provider\GoogleMaps(
+        $curl,
+        'zh-tw',
+        'tw',
+        true,
+        'AIzaSyBGogPR8JvLm5xC8xGwSTCpKkXm5eZFVH4'
+    );
+
+    $geoResults = $geocoder->geocode($address)->first();
+
+    return $geoResults;
 }
 
 /**
@@ -150,17 +170,7 @@ class EventsController extends BaseController
 
     public function batchStore(Request $request)
     {
-        $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
-        $geocoder = new \Geocoder\Provider\GoogleMaps(
-            $curl,
-            'zh-tw',
-            'tw',
-            true,
-            'AIzaSyBGogPR8JvLm5xC8xGwSTCpKkXm5eZFVH4'
-        );
-
-        $geoResults = $geocoder->geocode($request->address)->first();
-
+        $geoResults = parseAddress($request->address);
         $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
         $date = new Carbon($request->date);
 
@@ -228,18 +238,43 @@ class EventsController extends BaseController
     public function update(Request $request, $id)
     {
         $event = Event::findOrFail($id);
-        $event->update($request->only([
-            'date',
-            'start',
-            'end',
-            'name',
-            'location',
-            'addr',
-            'latitude',
-            'longitude',
-            'type_id'
-        ]));
-        return $event;
+        $event->name = $request->name;
+        $event->description = $request->description;
+        $event->date = $request->date;
+        $event->start = $request->start;
+        $event->end = $request->end;
+        $event->url = $request->url;
+
+        $geoResults = parseAddress($request->address);
+
+        $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
+        $location = Location::firstOrCreate([
+            'address'   => $request->address,
+            'lat'       => $geoResults->getLatitude(),
+            'lng'       => $geoResults->getLongitude(),
+            'region_id' => $region->id,
+            'name'      => $request->location,
+        ]);
+        $event->location_id = $location->id;
+        $event->save();
+
+        $eventTypeRoot = EventCategory::where(['name' => $request->politicianCategory])->first();
+        $eventType = EventCategory::firstOrCreate([
+            'parent_id' => $eventTypeRoot->id,
+            'name' => $request->category == '' ? '無分類' : $request->category,
+        ]);
+        $eventType->makeChildOf($eventTypeRoot);
+
+        $event->categories()->detach();
+        $event->categories()->attach($eventType->id);
+
+        // must detach ?
+        $event->politicians()->detach();
+        $event->politicians()->attach($request->politician);
+
+        return response()->json([
+            'status' => '201'
+        ]);
     }
 
     /**

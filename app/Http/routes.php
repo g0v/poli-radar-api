@@ -40,9 +40,9 @@ $api->version('v1', function ($api) {
 			$api->get('users/permissions', 'AuthController@permissions');
 			$api->get('validate_token', 'AuthController@validateToken');
 
-
 			$api->post('events', 'EventsController@store');
 			$api->post('events/batch', 'EventsController@batchStore');
+			$api->put('events/{id}', 'EventsController@update');
 
 			$api->group(['middleware' => ['role:admin']], function($api) {
 				$api->get('users', 'AuthController@index');

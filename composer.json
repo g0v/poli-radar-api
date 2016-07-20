@@ -16,7 +16,8 @@
         "willvincent/laravel-rateable": "~1.0",
         "zizaco/entrust": "5.2.x-dev",
         "webpatser/laravel-uuid": "2.*",
-        "willdurand/geocoder": "^3.3"
+        "willdurand/geocoder": "^3.3",
+        "monolog/monolog": "^1.20"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.1",
