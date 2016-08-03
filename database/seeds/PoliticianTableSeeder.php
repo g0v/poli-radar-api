@@ -25,17 +25,15 @@ class PoliticianTableSeeder extends Seeder
         $legis = json_decode(file_get_contents($json), true);
 
 		$politicians = [
-			[ 'name' => '朱立倫', 'party' => '中國國民黨', 'sex' => '男' ],
 			[ 'name' => '蔡英文', 'party' => '民主進步黨', 'sex' => '女' ],
-			[ 'name' => '宋楚瑜', 'party' => '親民黨', 'sex' => '男' ]
     	];
-
-        $candidate = PoliticianCategory::create([
-            'name' => '總統候選人',
-        ]);
 
         $president = PoliticianCategory::create([
             'name' => '總統',
+        ]);
+
+        $exec = PoliticianCategory::create([
+            'name' => '行政首長',
         ]);
 
         $legiss = PoliticianCategory::create([
@@ -63,7 +61,6 @@ class PoliticianTableSeeder extends Seeder
             ]);
 
             $p->traits()->attach([$sex->id, $party->id]);         
-            $p->categories()->attach($candidate->id);  
 
             if ($p->name == '蔡英文') {
                 $p->categories()->attach($president->id);
@@ -96,5 +93,17 @@ class PoliticianTableSeeder extends Seeder
 
         $k->traits()->attach($noParty->id);
         $k->categories()->attach($mayor->id);
+
+        $lin = Politician::create([
+            'name' => '林全'
+        ]);
+
+        $dpp = PoliticianTrait::firstOrCreate([
+            'parent_id' => $partyRoot->id,
+            'name' => '民主進步黨'
+        ]);
+
+        $lin->traits()->attach($dpp->id);
+        $lin->categories()->attach($exec->id);
     }
 }
