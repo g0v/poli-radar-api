@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PoliticianCategory extends Model
 {
+    protected $fillable = ['name', 'event_category_id'];
 
   public function politicians()
   {

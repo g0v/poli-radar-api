@@ -3,6 +3,7 @@
 Route::get('oauth/google', 'App\Http\Controllers\Auth\AuthController@redirectToProvider');
 Route::get('oauth/google/callback', 'App\Http\Controllers\Auth\AuthController@handleProviderCallback');
 */
+
 $api = app('Dingo\Api\Routing\Router');
 
 // Version 1 of our API
@@ -10,6 +11,9 @@ $api->version('v1', function ($api) {
 
 	// Set our namespace for the underlying routes
 	$api->group(['namespace' => 'Api\Controllers', 'middleware' => 'cors'], function ($api) {
+		$api->get('images/{filename}', function ($filename) {
+			return \Image::make(public_path() . '/' . $filename)->response();
+		})->where('filename', '(.*)');
 
 		// Login route
 		$api->post('login', 'AuthController@authenticate');
@@ -50,8 +54,10 @@ $api->version('v1', function ($api) {
 				$api->get('roles', 'RoleController@index');
 				$api->get('permissions', 'PermissionController@index');
 				$api->post('politicians', 'PoliticiansController@store');
+				$api->post('politicians/{id}/image', 'PoliticiansController@uploadImg');
 				$api->put('politicians/{id}', 'PoliticiansController@update');
 				$api->post('politicianCategories', 'PoliticianCategoryController@store');
+				$api->post('eventCategories', 'EventCategoryController@store');
 			});
 
 		});

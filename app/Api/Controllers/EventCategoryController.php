@@ -34,6 +34,7 @@ class EventCategoryController extends BaseController
     public function store(Request $request)
     {
         return EventCategory::create($request->only([
+            'parent_id',
             'name'
         ]));
     }

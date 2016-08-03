@@ -2,6 +2,7 @@
 
 namespace Api\Controllers;
 
+use Image;
 use App\Politician;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -36,6 +37,13 @@ class PoliticiansController extends BaseController
         $politician = Politician::create($request->only([
             'name'
         ]));
+
+        if (isset($request->image)) {
+            $imgName = 'image/' . $politician->id . '.' . $ext;
+            $img = Image::make($request->image)->resize(150, 150)->save($imgName);
+            $politician->image = $imgName;
+            $politician->save();
+        }
 
         if (isset($request->categories)) {
             foreach ($request->categories as $category) {
@@ -87,6 +95,27 @@ class PoliticiansController extends BaseController
         }
 
         return $this->item($politician, new PoliticianTransformer);
+    }
+
+    /**
+     * Update the Politician in the database.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function uploadImg(Request $request, $id)
+    {
+        if (isset($request->image)) {
+            $politician = Politician::findOrFail($id);
+            $img = Image::make($request->image)->resize(150, 150);
+            $ext = explode('/', $img->mime())[1];
+            $imgName = 'image/' . $politician->id . '.' . $ext;
+            $img->save($imgName);
+            $politician->image = $imgName;
+            $politician->save();
+            return $this->item($politician, new PoliticianTransformer);
+        }
     }
 
     /**

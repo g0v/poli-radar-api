@@ -153,6 +153,7 @@ return [
         // Lanz\Commentable\CommentableServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Baum\Providers\BaumServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -208,6 +209,8 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Uuid'      => Webpatser\Uuid\Uuid::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
+
     ],
 
 ];

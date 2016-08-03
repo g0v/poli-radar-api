@@ -4,6 +4,7 @@ namespace Api\Controllers;
 
 use App\Politician;
 use App\PoliticianCategory;
+use App\EventCategory;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Api\Transformers\PoliticianCategoryTransformer;
@@ -43,10 +44,12 @@ class PoliticianCategoryController extends BaseController
      */
     public function store(Request $request)
     {
-        $parent = PoliticianCategory::find($request->parent_id);
-        $parent->children()->create(['name' => $request->name]);
+        $eventCategory = EventCategory::create(['name' => $request->name]);
 
-        return $this->item($node, new PoliticianCategoryTransformer);
+        return $this->item(PoliticianCategory::create([
+            'name' => $request->name,
+            'event_category_id' => $eventCategory->id
+        ]), new PoliticianCategoryTransformer);
     }
 
     /**
