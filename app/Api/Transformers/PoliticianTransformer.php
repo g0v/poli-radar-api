@@ -28,7 +28,8 @@ class PoliticianTransformer extends TransformerAbstract
             'categories' => $politicianCategories,
             'traits' => $politicianTraits,
             'hasData' => (bool) $politician->events->count(),
-            'image' => $politician->image
+            'image' => $politician->image,
+			'events' => $politician->events,
 		];
 	}
 }

@@ -44,9 +44,9 @@ $api->version('v1', function ($api) {
 			$api->get('users/permissions', 'AuthController@permissions');
 			$api->get('validate_token', 'AuthController@validateToken');
 
-
 			$api->post('events', 'EventsController@store');
 			$api->post('events/batch', 'EventsController@batchStore');
+			$api->put('events/{id}', 'EventsController@update');
 
 			$api->group(['middleware' => ['role:admin']], function($api) {
 				$api->get('users', 'AuthController@index');
@@ -64,4 +64,31 @@ $api->version('v1', function ($api) {
 
 	});
 
+});
+
+// Version 2 of our API
+$api->version('v2', function ($api) {
+
+	// Set our namespace for the underlying routes
+	$api->group(['namespace' => 'Api\V2\Controllers', 'middleware' => 'cors'], function ($api) {
+
+		$api->post('auth/login', 'AuthController@login');
+		$api->post('auth/signup', 'AuthController@signup');
+
+		$api->get('politician_categories', 'PoliticianCategoryController@index');
+		$api->get('politician_categories/{id}', 'PoliticianCategoryController@show');
+
+		$api->get('locations', 'LocationController@index');
+		$api->get('locations/{id}', 'LocationController@show');
+
+		$api->get('events', 'EventsController@index');
+
+		// All routes in here are protected and thus need a valid token
+		$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
+			$api->get('validate_token', 'AuthController@validateToken');
+
+			$api->post('locations', 'LocationController@store');
+			$api->post('politicians/{id}/events', 'PoliticianEventController@store');
+		});
+	});
 });
