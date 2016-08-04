@@ -19,7 +19,7 @@ class EventTransformer extends TransformerAbstract
         $eventCategories = [];
         foreach ($event->categories as $c)
         {
-			$parent = $c->parent->first();
+			$parent = $c->parent()->first();
 			$eventCategories[] = [
 				'id' => (int) $c->id,
 				'name' => $c->name,
