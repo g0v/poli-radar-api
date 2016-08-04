@@ -11,13 +11,19 @@ class EventCategoryTransformer extends TransformerAbstract
 	{
 		$parent = $eCat->parent()->first();
 
+		if (is_null($parent)) {
+			$parentArray = false;
+		} {
+			$parentArray = [
+				'id' => (int) $parent->id,
+				'name' => $parent->name,
+			];
+		}
+
 		return [
 			'id' => (int) $eCat->id,
             'name' => $eCat->name,
-			'parent' => [
-				'id' => (int) $parent->id,
-				'name' => $parent->name,
-			]
+			'parent' => $parentArray
 		];
 	}
 }
