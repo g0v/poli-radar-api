@@ -22,7 +22,7 @@ class EventCategory extends Node {
 
   public function politicianCategories()
   {
-    return $this->hasMany('App\PoliticianCategory');
+    return $this->hasOne('App\PoliticianCategory');
   }
 
   //////////////////////////////////////////////////////////////////////////////

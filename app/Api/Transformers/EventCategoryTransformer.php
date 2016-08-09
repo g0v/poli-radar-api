@@ -13,7 +13,7 @@ class EventCategoryTransformer extends TransformerAbstract
 
 		if (is_null($parent)) {
 			$parentArray = false;
-		} {
+		} else {
 			$parentArray = [
 				'id' => (int) $parent->id,
 				'name' => $parent->name,

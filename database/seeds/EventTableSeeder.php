@@ -34,6 +34,10 @@ class EventTableSeeder extends Seeder
 
         foreach ($politicianCategories as $name) {
             $politicianCategory = EventCategory::create(['name' => $name]);
+            $attachment = PoliticianCategory::where('name', $name)->first();
+            if ($attachment) {
+                $politicianCategory->politicianCategories()->save($attachment);
+            }
         }
     }
 }
