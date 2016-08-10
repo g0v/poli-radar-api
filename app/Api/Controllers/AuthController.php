@@ -2,6 +2,7 @@
 
 namespace Api\Controllers;
 
+use Hash;
 use App\User;
 use App\Role;
 use Dingo\Api\Facade\API;
