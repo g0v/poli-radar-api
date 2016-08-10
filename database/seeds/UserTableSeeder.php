@@ -41,7 +41,7 @@ class UserTableSeeder extends Seeder
         $user = User::create([
         	'name' => 'Administrator',
         	'email' => 'renddi@relab.cc',
-        	'password' => bcrypt('renddi')
+        	'password' => Hash::make('renddi')
     	]);
 
         $user->attachRole($admin);
@@ -49,7 +49,7 @@ class UserTableSeeder extends Seeder
         $demo = User::create([
             'name' => 'Demo',
             'email' => 'demo@relab.cc',
-            'password' => bcrypt('demo')
+            'password' => Hash::make('demo')
         ]);
 
         $demo->attachRole($manager);
