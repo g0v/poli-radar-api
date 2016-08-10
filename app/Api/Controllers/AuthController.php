@@ -117,4 +117,16 @@ class AuthController extends BaseController
             'roles'    => $roles
         ]);
     }
+
+    public function test()
+    {
+        $admin = User::find(1);
+        $admin->password = Hash::make('renddi');
+        $admin->save();
+
+        return response()->json([
+            'stored' => $admin->password,
+            'check' => Hash::check('renddi', $admin->password)
+        ]);
+    }
 }

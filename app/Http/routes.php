@@ -18,6 +18,7 @@ $api->version('v1', function ($api) {
 		// Login route
 		$api->post('login', 'AuthController@authenticate');
 		$api->post('register', 'AuthController@register');
+		$api->get('test', 'AuthController@test');
 
 		$api->get('data', 'AllDataController@index');
 		$api->get('date', 'DateController@index');
@@ -48,7 +49,7 @@ $api->version('v1', function ($api) {
 			$api->post('events/batch', 'EventsController@batchStore');
 			$api->put('events/{id}', 'EventsController@update');
 
-			$api->group(['middleware' => ['role:admin']], function($api) {
+			$api->group(['middleware' => ['role:admin']], function ($api) {
 				$api->get('users', 'AuthController@index');
 				$api->post('users', 'AuthController@store');
 				$api->get('roles', 'RoleController@index');
