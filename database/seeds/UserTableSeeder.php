@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 use App\Role;
 use App\Permission;
 use App\User;
@@ -14,6 +15,8 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        Model::unguard();
+
         DB::table('permission_role')->truncate();
         DB::table('role_user')->truncate();
         DB::table('users')->truncate();
@@ -39,20 +42,21 @@ class UserTableSeeder extends Seeder
         $manager->attachPermission($manageEvent);
 
         $user = User::create([
-        	'name' => 'Administrator',
-        	'email' => 'renddi@relab.cc',
-        	'password' => Hash::make('renddi')
-    	]);
+            'name' => 'Administrator',
+            'email' => 'renddi@relab.cc',
+            'password' => 'renddi'
+        ]);
 
         $user->attachRole($admin);
 
         $demo = User::create([
             'name' => 'Demo',
             'email' => 'demo@relab.cc',
-            'password' => Hash::make('demo')
+            'password' => 'demo'
         ]);
 
         $demo->attachRole($manager);
 
+        Model::reguard();
     }
 }

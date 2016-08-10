@@ -19,9 +19,7 @@ class EventTableSeeder extends Seeder
     public function run()
     {
 
-        Event::truncate();
         EventCategory::truncate();
-        Location::truncate();
         DB::table('event_event_category')->truncate();
         DB::table('event_politician')->truncate();
 

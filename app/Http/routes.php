@@ -18,7 +18,6 @@ $api->version('v1', function ($api) {
 		// Login route
 		$api->post('login', 'AuthController@authenticate');
 		$api->post('register', 'AuthController@register');
-		$api->get('test', 'AuthController@test');
 
 		$api->get('data', 'AllDataController@index');
 		$api->get('date', 'DateController@index');
