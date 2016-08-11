@@ -35,7 +35,7 @@ class EventCategoryController extends BaseController
     {
         return EventCategory::firstOrCreate([
             'parent_id' => (int) $request->parent_id,
-            'name' => $request->category == '' ? '無分類' : $request->category,
+            'name' =>$request->name,
         ]);
     }
 
