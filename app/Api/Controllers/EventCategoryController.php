@@ -33,10 +33,14 @@ class EventCategoryController extends BaseController
      */
     public function store(Request $request)
     {
-        return EventCategory::firstOrCreate([
+        $parent = EventCategory::find($request->parent_id);
+        $newCate = EventCategory::firstOrCreate([
             'parent_id' => (int) $request->parent_id,
             'name' =>$request->name,
         ]);
+        $newCate->makeChildOf($parent);
+
+        return $this->item($newCate, new EventCategoryTransformer);
     }
 
     /**
