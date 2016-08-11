@@ -37,6 +37,8 @@ $api->version('v1', function ($api) {
 		$api->post('viewer', 'ViewerController@store');
 		$api->put('viewer/{hash}', 'ViewerController@update');
 
+		$api->get('eventCategories/find/{name}', 'EventCategoryController@find');
+
 		// All routes in here are protected and thus need a valid token
 		$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
 

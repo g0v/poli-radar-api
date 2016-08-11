@@ -47,6 +47,8 @@ class PoliticianCategoryTransformer extends Fractal\TransformerAbstract
 
 	public function includeEventCategory(PoliticianCategory $category)
 	{
+		if (is_null($category->eventCategory)) return $this->collection([], new EventCategoryTransformer);
+
 		$eventCategories = $category
 			->eventCategory
 			->leaves()

@@ -33,10 +33,10 @@ class EventCategoryController extends BaseController
      */
     public function store(Request $request)
     {
-        return EventCategory::create($request->only([
-            'parent_id',
-            'name'
-        ]));
+        return EventCategory::firstOrCreate([
+            'parent_id' => (int) $request->parent_id,
+            'name' => $request->category == '' ? '無分類' : $request->category,
+        ]);
     }
 
     /**
@@ -75,5 +75,14 @@ class EventCategoryController extends BaseController
     public function destroy($id)
     {
         return EventCategory::destroy($id);
+    }
+
+    public function find($name)
+    {
+        return $this->item(
+            EventCategory::where('parent_id', null)
+            ->where('name', $name)
+            ->first()
+        , new EventCategoryTransformer);
     }
 }

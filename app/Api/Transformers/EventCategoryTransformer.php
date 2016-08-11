@@ -12,7 +12,7 @@ class EventCategoryTransformer extends TransformerAbstract
 		$parent = $eCat->parent()->first();
 
 		if (is_null($parent)) {
-			$parentArray = false;
+			$parentArray = [];
 		} else {
 			$parentArray = [
 				'id' => (int) $parent->id,

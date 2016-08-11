@@ -66,9 +66,9 @@ class EventsController extends BaseController
         if ($request->has('all')) {
             return $this->response->collection(Event::all(), new EventTransformer);
         } else {
-            if ($request->has('politicians') && $request->has('eventCategories')) {
+            if ($request->has('politician') && $request->has('eventCategories')) {
                 foreach (Event::orderBy('date', 'desc')->get() as $event) {
-                    if (checkDateCount($event, $request->politicians, $request->eventCategories)) {
+                    if (checkDateCount($event, $request->politician, $request->eventCategories)) {
                         $end = new Carbon($event->date);
                         break;
                     }
@@ -204,7 +204,7 @@ class EventsController extends BaseController
 
         $eventTypeRoot = EventCategory::where(['name' => $request->politicianCategory])->first();
         $eventType = EventCategory::firstOrCreate([
-            'parent_id' => $eventTypeRoot->id,
+            'parent_id' => (int) $eventTypeRoot->id,
             'name' => $request->category == '' ? '無分類' : $request->category,
         ]);
         $eventType->makeChildOf($eventTypeRoot);

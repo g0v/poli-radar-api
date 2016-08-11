@@ -93,7 +93,7 @@ class AuthController extends BaseController
         $newUser = [
             'name' => $request->get('name'),
             'email' => $request->get('email'),
-            'password' => bcrypt($request->get('password')),
+            'password' => $request->get('password'),
         ];
         $user = User::create($newUser);
         $token = JWTAuth::fromUser($user);

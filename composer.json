@@ -18,7 +18,8 @@
         "webpatser/laravel-uuid": "2.*",
         "willdurand/geocoder": "^3.3",
         "intervention/image": "^2.3",
-        "monolog/monolog": "^1.20"
+        "monolog/monolog": "^1.20",
+        "league/fractal": "^0.13.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.1",
