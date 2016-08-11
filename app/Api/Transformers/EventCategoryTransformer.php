@@ -22,7 +22,7 @@ class EventCategoryTransformer extends TransformerAbstract
 
 		return [
 			'id' => (int) $eCat->id,
-            'name' => $eCat->name,
+			'name' => $eCat->name,
 			'parent' => $parentArray
 		];
 	}

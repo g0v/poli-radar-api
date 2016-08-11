@@ -204,7 +204,7 @@ class EventsController extends BaseController
 
         $eventTypeRoot = EventCategory::where(['name' => $request->politicianCategory])->first();
         $eventType = EventCategory::firstOrCreate([
-            'parent_id' => (int) $eventTypeRoot->id,
+            'parent_id' => $request->parentId,
             'name' => $request->category == '' ? '無分類' : $request->category,
         ]);
         $eventType->makeChildOf($eventTypeRoot);
@@ -259,9 +259,8 @@ class EventsController extends BaseController
         $event->location_id = $location->id;
         $event->save();
 
-        $eventTypeRoot = EventCategory::where(['name' => $request->politicianCategory])->first();
         $eventType = EventCategory::firstOrCreate([
-            'parent_id' => $eventTypeRoot->id,
+            'parent_id' => $request->parentId,
             'name' => $request->category == '' ? '無分類' : $request->category,
         ]);
         $eventType->makeChildOf($eventTypeRoot);
