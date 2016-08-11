@@ -202,16 +202,16 @@ class EventsController extends BaseController
         $event->description = $request->description;
         $event->save();
 
-        $eventTypeRoot = EventCategory::where(['name' => $request->politicianCategory])->first();
-        $eventType = EventCategory::firstOrCreate([
+        $eventType = EventCategory::where([
             'parent_id' => $request->parentId,
             'name' => $request->category == '' ? '無分類' : $request->category,
-        ]);
-        $eventType->makeChildOf($eventTypeRoot);
+        ])->first();
 
-        $event->categories()->detach();
-        $event->categories()->attach($eventType->id);
-
+        if ($eventType) {
+            $event->categories()->detach();
+            $event->categories()->attach($eventType->id);
+        }
+        
         // must detach ?
         $event->politicians()->detach();
         $event->politicians()->attach($request->politician);
@@ -260,7 +260,7 @@ class EventsController extends BaseController
         $event->save();
 
         $eventType = EventCategory::firstOrCreate([
-            'parent_id' => $request->parentId,
+            'parent_id' => (int) $request->parentId,
             'name' => $request->category == '' ? '無分類' : $request->category,
         ]);
         $eventType->makeChildOf($eventTypeRoot);
