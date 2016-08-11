@@ -17,11 +17,6 @@ class UserTableSeeder extends Seeder
     {
         Model::unguard();
 
-        //disable foreign key check for this connection before running seeders
-        if(config('database.default') == 'mysql') {
-            DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        }
-
         DB::table('permission_role')->truncate();
         DB::table('role_user')->truncate();
         DB::table('users')->truncate();
@@ -61,10 +56,6 @@ class UserTableSeeder extends Seeder
         ]);
 
         $demo->attachRole($manager);
-
-        if(config('database.default') == 'mysql') {
-            DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        }
 
         Model::reguard();
     }
