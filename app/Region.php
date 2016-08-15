@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Region extends Model
 {
-    protected $fillable = ['name', 'postcode', 'city_id'];
+    protected $fillable = ['name', 'postal_code', 'city_id'];
 
     public function locations()
     {
