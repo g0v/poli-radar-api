@@ -185,9 +185,9 @@ class EventsController extends BaseController
             $event = Event::firstOrCreate([
                 'date'    => $date->format('Y-m-d'),
                 'name'    => $request->name,
-                'location_id' => $location->id,
                 'user_id' => Auth::user()->id
             ]);
+            $event->location_id = $location->id;
         } else {
             $event = Event::firstOrCreate([
                 'date'    => $date->format('Y-m-d'),
