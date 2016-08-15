@@ -24,9 +24,6 @@ use League\Fractal\Resource\Collection as FractalCollection;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-use GuzzleHttp\Client as GuzzleClient;
-use Http\Adapter\Guzzle6\Client as GuzzleAdapter;
-
 function checkDateCount($event, $ids, $eventCategories)
 {
     $pIds = [];
@@ -45,10 +42,9 @@ function checkDateCount($event, $ids, $eventCategories)
 
 function parseAddress($address)
 {
-    $guzzle = new GuzzleClient();
-    $adapter = new GuzzleAdapter($guzzle);
+    $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
     $geocoder = new \Geocoder\Provider\GoogleMaps(
-        $adapter,
+        $curl,
         'zh-tw',
         'tw',
         true,
