@@ -20,6 +20,10 @@ class EventTableSeeder extends Seeder
     {
 
         EventCategory::truncate();
+        Event::truncate();
+        Location::truncate();
+        Region::truncate();
+        DB::table('event_event_category')->truncate();
         DB::table('event_event_category')->truncate();
         DB::table('event_politician')->truncate();
 
