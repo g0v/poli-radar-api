@@ -99,24 +99,24 @@ class EventsController extends BaseController
                     $politician = Politician::with(['events' => function ($query) use ($request) {
                         $query->whereBetween('date', [$request->start, $request->end])
                           ->with('categories')
-                          ->with('location');
+                          ->with('location.region.city');
                     }])->find($request->politician);
                 } else if ($request->has('start')) {
                     $politician = Politician::with(['events' => function ($query) use ($request) {
                         $query->where('date', '>', $request->start)
                           ->with('categories')
-                          ->with('location');
+                          ->with('location.region.city');
                     }])->find($request->politician);
                 } else if ($request->has('end')) {
                     $politician = Politician::with(['events' => function ($query) use ($request) {
                         $query->whereBetween('date', '<',$request->end)
                           ->with('categories')
-                          ->with('location');
+                          ->with('location.region.city');
                     }])->find($request->politician);
                 } else {
                   $politician = Politician::with(['events' => function ($query) use ($request) {
                       $query->with('categories')
-                        ->with('location');
+                        ->with('location.region.city');
                     }])->find($request->politician);
                 }
 
