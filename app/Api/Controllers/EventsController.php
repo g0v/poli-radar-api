@@ -246,17 +246,20 @@ class EventsController extends BaseController
         $event->end = $request->end;
         $event->url = $request->url;
 
-        $geoResults = parseAddress($request->address);
+        if ($request->address) {
+            $geoResults = parseAddress($request->address);
 
-        $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
-        $location = Location::firstOrCreate([
-            'address'   => $request->address,
-            'lat'       => $geoResults->getLatitude(),
-            'lng'       => $geoResults->getLongitude(),
-            'region_id' => $region->id,
-            'name'      => $request->location,
-        ]);
-        $event->location_id = $location->id;
+            $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
+            $location = Location::firstOrCreate([
+                'address'   => $request->address,
+                'lat'       => $geoResults->getLatitude(),
+                'lng'       => $geoResults->getLongitude(),
+                'region_id' => $region->id,
+                'name'      => $request->location,
+            ]);
+            $event->location_id = $location->id;
+        }
+        
         $event->save();
 
         $eventType = EventCategory::firstOrCreate([
