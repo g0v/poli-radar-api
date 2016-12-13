@@ -37,6 +37,8 @@ $api->version('v1', function ($api) {
 		$api->post('viewer', 'ViewerController@store');
 		$api->put('viewer/{hash}', 'ViewerController@update');
 
+		$api->get('eventCategories/find/{name}', 'EventCategoryController@find');
+
 		// All routes in here are protected and thus need a valid token
 		$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
 
@@ -48,7 +50,7 @@ $api->version('v1', function ($api) {
 			$api->post('events/batch', 'EventsController@batchStore');
 			$api->put('events/{id}', 'EventsController@update');
 
-			$api->group(['middleware' => ['role:admin']], function($api) {
+			$api->group(['middleware' => ['role:admin']], function ($api) {
 				$api->get('users', 'AuthController@index');
 				$api->post('users', 'AuthController@store');
 				$api->get('roles', 'RoleController@index');

@@ -66,9 +66,9 @@ class EventsController extends BaseController
         if ($request->has('all')) {
             return $this->response->collection(Event::all(), new EventTransformer);
         } else {
-            if ($request->has('politicians') && $request->has('eventCategories')) {
+            if ($request->has('politician') && $request->has('eventCategories')) {
                 foreach (Event::orderBy('date', 'desc')->get() as $event) {
-                    if (checkDateCount($event, $request->politicians, $request->eventCategories)) {
+                    if (checkDateCount($event, $request->politician, $request->eventCategories)) {
                         $end = new Carbon($event->date);
                         break;
                     }
@@ -185,9 +185,9 @@ class EventsController extends BaseController
             $event = Event::firstOrCreate([
                 'date'    => $date->format('Y-m-d'),
                 'name'    => $request->name,
-                'location_id' => $location->id,
                 'user_id' => Auth::user()->id
             ]);
+            $event->location_id = $location->id;
         } else {
             $event = Event::firstOrCreate([
                 'date'    => $date->format('Y-m-d'),
@@ -202,16 +202,16 @@ class EventsController extends BaseController
         $event->description = $request->description;
         $event->save();
 
-        $eventTypeRoot = EventCategory::where(['name' => $request->politicianCategory])->first();
-        $eventType = EventCategory::firstOrCreate([
-            'parent_id' => $eventTypeRoot->id,
+        $eventType = EventCategory::where([
+            'parent_id' => $request->parentId,
             'name' => $request->category == '' ? '無分類' : $request->category,
-        ]);
-        $eventType->makeChildOf($eventTypeRoot);
+        ])->first();
 
-        $event->categories()->detach();
-        $event->categories()->attach($eventType->id);
-
+        if ($eventType) {
+            $event->categories()->detach();
+            $event->categories()->attach($eventType->id);
+        }
+        
         // must detach ?
         $event->politicians()->detach();
         $event->politicians()->attach($request->politician);
@@ -246,22 +246,24 @@ class EventsController extends BaseController
         $event->end = $request->end;
         $event->url = $request->url;
 
-        $geoResults = parseAddress($request->address);
+        if ($request->address) {
+            $geoResults = parseAddress($request->address);
 
-        $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
-        $location = Location::firstOrCreate([
-            'address'   => $request->address,
-            'lat'       => $geoResults->getLatitude(),
-            'lng'       => $geoResults->getLongitude(),
-            'region_id' => $region->id,
-            'name'      => $request->location,
-        ]);
-        $event->location_id = $location->id;
+            $region = Region::where('postal_code', $geoResults->getPostalCode())->first();
+            $location = Location::firstOrCreate([
+                'address'   => $request->address,
+                'lat'       => $geoResults->getLatitude(),
+                'lng'       => $geoResults->getLongitude(),
+                'region_id' => $region->id,
+                'name'      => $request->location,
+            ]);
+            $event->location_id = $location->id;
+        }
+        
         $event->save();
 
-        $eventTypeRoot = EventCategory::where(['name' => $request->politicianCategory])->first();
         $eventType = EventCategory::firstOrCreate([
-            'parent_id' => $eventTypeRoot->id,
+            'parent_id' => (int) $request->parentId,
             'name' => $request->category == '' ? '無分類' : $request->category,
         ]);
         $eventType->makeChildOf($eventTypeRoot);

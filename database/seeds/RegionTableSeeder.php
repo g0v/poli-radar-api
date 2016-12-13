@@ -27,8 +27,9 @@ class RegionTableSeeder extends Seeder
                 Region::create([
                     'name'        => $key,
                     'postal_code' => $post,
-                    'city_id'     => $city['id']
+                    'city_id'     => $city->id
                 ]);
+
             }
         }
 
