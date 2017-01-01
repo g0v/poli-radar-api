@@ -3,27 +3,27 @@
 namespace Api\Transformers;
 
 use App\EventCategory;
-use League\Fractal\TransformerAbstract;
 
-class EventCategoryTransformer extends TransformerAbstract
+class EventCategoryTransformer extends BaseTransformer
 {
+	protected $defaultIncludes = [
+		'parent',
+  ];
+
 	public function transform(EventCategory $eCat)
 	{
-		$parent = $eCat->parent()->first();
-
-		if (is_null($parent)) {
-			$parentArray = [];
-		} else {
-			$parentArray = [
-				'id' => (int) $parent->id,
-				'name' => $parent->name,
-			];
-		}
-
 		return [
 			'id' => (int) $eCat->id,
 			'name' => $eCat->name,
-			'parent' => $parentArray
 		];
+	}
+
+	public function includeParent(EventCategory $eCat)
+	{
+		$parent = $eCat->parent()->first();
+		if (is_null($parent)) {
+			return $this->null();
+		}
+		return $this->item($parent, new EventCategoryTransformer);
 	}
 }

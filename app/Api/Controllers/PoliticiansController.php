@@ -18,7 +18,7 @@ class PoliticiansController extends BaseController
      * Show all politicians
      *
      * Get a JSON representation of all the politicians
-     * 
+     *
      * @Get('/')
      */
     public function index()

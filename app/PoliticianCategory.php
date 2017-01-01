@@ -7,9 +7,9 @@ class PoliticianCategory extends Model
 {
     protected $fillable = ['name', 'event_category_id'];
 
-  public function politicians()
+  public function jobs()
   {
-    return $this->belongsToMany('App\Politician');
+    return $this->hasMany('App\Job');
   }
 
   public function eventCategory()

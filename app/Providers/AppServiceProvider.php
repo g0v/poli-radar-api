@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use League\Fractal\Manager;
+use League\Fractal\Serializer\ArraySerializer;
+use Dingo\Api\Transformer\Adapter\Fractal;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+      $this->app['Dingo\Api\Transformer\Factory']->setAdapter(function ($app) {
+        $manager = new Manager;
+        $manager->setSerializer(new ArraySerializer);
+
+        return new Fractal($manager, 'include', ',');
+      });
     }
 
     /**
@@ -23,6 +31,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
     }
 }
