@@ -3,13 +3,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PoliticianCategory extends Model
+class PostClassification extends Model
 {
-    protected $fillable = ['name', 'event_category_id'];
+  protected $fillable = ['name'];
 
-  public function jobs()
+  public function posts()
   {
-    return $this->hasMany('App\Job');
+    return $this->hasMany('App\Post');
   }
 
   public function eventCategory()

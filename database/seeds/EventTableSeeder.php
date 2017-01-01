@@ -1,12 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Job;
-use App\PoliticianCategory;
+use App\Person;
+use App\PostClassification;
 use App\Event;
 use App\EventCategory;
 use App\Location;
-use App\Region;
 use Carbon\Carbon;
 
 class EventTableSeeder extends Seeder
@@ -33,18 +32,18 @@ class EventTableSeeder extends Seeder
           ]);
           return $sub_cat;
         }, $cats_list);
-        $poli_cat = PoliticianCategory::where('name', '立法委員')->first();
-        $evt_cat->politicianCategories()->save($poli_cat);
+        $poli_cat = PostClassification::where('name', '立法委員')->first();
+        $evt_cat->postClassification()->save($poli_cat);
 
         $faker = \Faker\Factory::create('zh_TW');
 
-        foreach (Job::all() as $job) {
+        foreach (Person::all() as $person) {
           foreach ($main_cats as $sub_cat) {
             for ($i = 0; $i < 3; $i++) {
               $evt = Event::create([
                 'date' => $faker->dateTimeBetween('2016-02-01'),
                 'name' => $faker->realText($faker->numberBetween(10,20)),
-                'job_id' => $job->id,
+                'person_id' => $person->id,
                 'user_id' => 1,
               ]);
 

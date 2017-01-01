@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePoliticiansTable extends Migration
+class CreatePersonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,17 @@ class CreatePoliticiansTable extends Migration
      */
     public function up()
     {
-        Schema::create('politicians', function (Blueprint $table) {
+        Schema::create('persons', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('sex');
-            $table->integer('born')->nullable();
+            $table->string('altName')->nullable();
+            $table->string('identifier')->nullable();
+            $table->string('email')->nullable();
+            $table->string('gender')->nullable();
+            $table->date('born')->nullable();
+            $table->date('dead')->nullable();
             $table->string('image')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
 
@@ -31,6 +36,6 @@ class CreatePoliticiansTable extends Migration
     public function down()
     {
 
-        Schema::drop('politicians');
+        Schema::drop('persons');
     }
 }

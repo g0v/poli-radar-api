@@ -19,11 +19,12 @@ class CreateEventsTable extends Migration
             $table->time('end')->nullable();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('url')->nullable();
+            $table->string('link')->nullable();
+            $table->integer('parent_id')->unsigned()->nullable();
             $table->integer('location_id')->unsigned()->nullable();
             $table->foreign('location_id')->references('id')->on('locations');
-            $table->integer('job_id')->unsigned();
-            $table->foreign('job_id')->references('id')->on('jobs');
+            $table->integer('person_id')->unsigned();
+            $table->foreign('person_id')->references('id')->on('persons');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->softDeletes();

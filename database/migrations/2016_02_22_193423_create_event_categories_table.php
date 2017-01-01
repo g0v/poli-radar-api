@@ -36,7 +36,7 @@ class CreateEventCategoriesTable extends Migration {
       $table->foreign('event_category_id')->references('id')->on('event_categories')->onDelete('cascade');
     });
 
-    Schema::table('politician_categories', function($table) {
+    Schema::table('post_classifications', function($table) {
       $table->foreign('event_category_id')->references('id')->on('event_categories')->onDelete('cascade');
     });
   }
@@ -47,7 +47,7 @@ class CreateEventCategoriesTable extends Migration {
    * @return void
    */
   public function down() {
-    Schema::table('politician_categories', function($table) {
+    Schema::table('post_classifications', function($table) {
       $table->dropForeign(['event_category_id']);
     });
     Schema::drop('event_event_category');

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <database name="poliradar" type="MySQL - 5.5.5-10.1.19-MariaDB">
    <tables>
-      <table name="cities" numRows="22" remarks="" type="TABLE">
+      <table name="cities" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="city_id" foreignKey="regions_city_id_foreign" implied="false" onDeleteCascade="false" table="regions"/>
          </column>
@@ -13,10 +13,10 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="event_categories" numRows="4" remarks="" type="TABLE">
+      <table name="event_categories" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="event_category_id" foreignKey="event_event_category_event_category_id_foreign" implied="false" onDeleteCascade="true" table="event_event_category"/>
-            <child column="event_category_id" foreignKey="politician_categories_event_category_id_foreign" implied="false" onDeleteCascade="true" table="politician_categories"/>
+            <child column="event_category_id" foreignKey="post_classifications_event_category_id_foreign" implied="false" onDeleteCascade="true" table="post_classifications"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="parent_id" nullable="true" remarks="" size="10" type="INT"/>
          <column autoUpdated="false" digits="0" id="2" name="lft" nullable="true" remarks="" size="10" type="INT"/>
@@ -39,7 +39,7 @@
             <column ascending="true" name="rgt"/>
          </index>
       </table>
-      <table name="event_event_category" numRows="1053" remarks="" type="TABLE">
+      <table name="event_event_category" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="event_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <parent column="id" foreignKey="event_event_category_event_id_foreign" implied="false" onDeleteCascade="true" table="events"/>
          </column>
@@ -53,7 +53,7 @@
             <column ascending="true" name="event_id"/>
          </index>
       </table>
-      <table name="events" numRows="1053" remarks="" type="TABLE">
+      <table name="events" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="event_id" foreignKey="event_event_category_event_id_foreign" implied="false" onDeleteCascade="true" table="event_event_category"/>
          </column>
@@ -62,100 +62,32 @@
          <column autoUpdated="false" digits="0" id="3" name="end" nullable="true" remarks="" size="8" type="TIME"/>
          <column autoUpdated="false" digits="0" id="4" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="5" name="description" nullable="true" remarks="" size="65535" type="TEXT"/>
-         <column autoUpdated="false" digits="0" id="6" name="url" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="7" name="location_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+         <column autoUpdated="false" digits="0" id="6" name="link" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="7" name="parent_id" nullable="true" remarks="" size="10" type="INT UNSIGNED"/>
+         <column autoUpdated="false" digits="0" id="8" name="location_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
             <parent column="id" foreignKey="events_location_id_foreign" implied="false" onDeleteCascade="false" table="locations"/>
          </column>
-         <column autoUpdated="false" digits="0" id="8" name="job_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <parent column="id" foreignKey="events_job_id_foreign" implied="false" onDeleteCascade="false" table="jobs"/>
+         <column autoUpdated="false" digits="0" id="9" name="person_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="events_person_id_foreign" implied="false" onDeleteCascade="false" table="persons"/>
          </column>
-         <column autoUpdated="false" digits="0" id="9" name="user_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+         <column autoUpdated="false" digits="0" id="10" name="user_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <parent column="id" foreignKey="events_user_id_foreign" implied="false" onDeleteCascade="false" table="users"/>
          </column>
-         <column autoUpdated="false" digits="0" id="10" name="deleted_at" nullable="true" remarks="" size="19" type="TIMESTAMP"/>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="11" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="12" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <column autoUpdated="false" digits="0" id="11" name="deleted_at" nullable="true" remarks="" size="19" type="TIMESTAMP"/>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="12" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="13" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="PRIMARY" unique="true">
             <column ascending="true" name="id"/>
-         </index>
-         <index name="events_job_id_foreign" unique="false">
-            <column ascending="true" name="job_id"/>
          </index>
          <index name="events_location_id_foreign" unique="false">
             <column ascending="true" name="location_id"/>
          </index>
+         <index name="events_person_id_foreign" unique="false">
+            <column ascending="true" name="person_id"/>
+         </index>
          <index name="events_user_id_foreign" unique="false">
             <column ascending="true" name="user_id"/>
-         </index>
-      </table>
-      <table name="job_positions" numRows="98" remarks="" type="TABLE">
-         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <child column="job_position_id" foreignKey="job_records_job_position_id_foreign" implied="false" onDeleteCascade="true" table="job_records"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="1" name="title" nullable="false" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="2" name="description" nullable="true" remarks="" size="65535" type="TEXT"/>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="3" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="4" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
-         <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="PRIMARY" unique="true">
-            <column ascending="true" name="id"/>
-         </index>
-      </table>
-      <table name="job_records" numRows="431" remarks="" type="TABLE">
-         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED"/>
-         <column autoUpdated="false" digits="0" id="1" name="subtitle" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="2" name="start" nullable="true" remarks="" size="10" type="DATE"/>
-         <column autoUpdated="false" digits="0" id="3" name="end" nullable="true" remarks="" size="10" type="DATE"/>
-         <column autoUpdated="false" digits="0" id="4" name="job_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <parent column="id" foreignKey="job_records_job_id_foreign" implied="false" onDeleteCascade="true" table="jobs"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="5" name="job_position_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <parent column="id" foreignKey="job_records_job_position_id_foreign" implied="false" onDeleteCascade="true" table="job_positions"/>
-         </column>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="6" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="7" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
-         <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="PRIMARY" unique="true">
-            <column ascending="true" name="id"/>
-         </index>
-         <index name="job_records_job_id_index" unique="false">
-            <column ascending="true" name="job_id"/>
-         </index>
-         <index name="job_records_job_position_id_index" unique="false">
-            <column ascending="true" name="job_position_id"/>
-         </index>
-      </table>
-      <table name="jobs" numRows="117" remarks="" type="TABLE">
-         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <child column="job_id" foreignKey="events_job_id_foreign" implied="false" onDeleteCascade="false" table="events"/>
-            <child column="job_id" foreignKey="job_records_job_id_foreign" implied="false" onDeleteCascade="true" table="job_records"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="1" name="start" nullable="true" remarks="" size="10" type="DATE"/>
-         <column autoUpdated="false" digits="0" id="2" name="end" nullable="true" remarks="" size="10" type="DATE"/>
-         <column autoUpdated="false" digits="0" id="3" name="politician_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <parent column="id" foreignKey="jobs_politician_id_foreign" implied="false" onDeleteCascade="true" table="politicians"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="4" name="politician_category_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <parent column="id" foreignKey="jobs_politician_category_id_foreign" implied="false" onDeleteCascade="true" table="politician_categories"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="5" name="party_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <parent column="id" foreignKey="jobs_party_id_foreign" implied="false" onDeleteCascade="true" table="parties"/>
-         </column>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="6" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="7" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
-         <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="PRIMARY" unique="true">
-            <column ascending="true" name="id"/>
-         </index>
-         <index name="jobs_party_id_foreign" unique="false">
-            <column ascending="true" name="party_id"/>
-         </index>
-         <index name="jobs_politician_category_id_foreign" unique="false">
-            <column ascending="true" name="politician_category_id"/>
-         </index>
-         <index name="jobs_politician_id_foreign" unique="false">
-            <column ascending="true" name="politician_id"/>
          </index>
       </table>
       <table name="location_categories" numRows="0" remarks="" type="TABLE">
@@ -219,25 +151,85 @@
             <column ascending="true" name="region_id"/>
          </index>
       </table>
-      <table name="migrations" numRows="12" remarks="" type="TABLE">
+      <table name="memberships" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED"/>
+         <column autoUpdated="false" digits="0" id="1" name="label" nullable="false" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="2" name="role" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="3" name="start" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="4" name="end" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="5" name="organization_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="memberships_organization_id_foreign" implied="false" onDeleteCascade="true" table="organizations"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="6" name="post_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="memberships_post_id_foreign" implied="false" onDeleteCascade="true" table="posts"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="7" name="person_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="memberships_person_id_foreign" implied="false" onDeleteCascade="true" table="persons"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="8" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="9" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="memberships_organization_id_index" unique="false">
+            <column ascending="true" name="organization_id"/>
+         </index>
+         <index name="memberships_person_id_index" unique="false">
+            <column ascending="true" name="person_id"/>
+         </index>
+         <index name="memberships_post_id_index" unique="false">
+            <column ascending="true" name="post_id"/>
+         </index>
+      </table>
+      <table name="migrations" numRows="11" remarks="" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="migration" nullable="false" remarks="" size="255" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="1" name="batch" nullable="false" remarks="" size="10" type="INT"/>
       </table>
-      <table name="parties" numRows="6" remarks="" type="TABLE">
+      <table name="organization_classifications" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <child column="party_id" foreignKey="jobs_party_id_foreign" implied="false" onDeleteCascade="true" table="jobs"/>
+            <child column="classification_id" foreignKey="organizations_classification_id_foreign" implied="false" onDeleteCascade="true" table="organizations"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="2" name="image" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="3" name="color" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="4" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="5" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="2" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="3" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="PRIMARY" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="permission_role" numRows="2" remarks="" type="TABLE">
+      <table name="organizations" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="organization_id" foreignKey="memberships_organization_id_foreign" implied="false" onDeleteCascade="true" table="memberships"/>
+            <child column="organization_id" foreignKey="posts_organization_id_foreign" implied="false" onDeleteCascade="true" table="posts"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="parent_id" nullable="true" remarks="" size="10" type="INT UNSIGNED"/>
+         <column autoUpdated="false" digits="0" id="2" name="classification_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="organizations_classification_id_foreign" implied="false" onDeleteCascade="true" table="organization_classifications"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="4" name="altName" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="5" name="formerName" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="6" name="identifier" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="7" name="description" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="8" name="image" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="9" name="foundAt" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="10" name="dissolutedAt" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="11" name="link" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="12" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="13" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="organizations_classification_id_index" unique="false">
+            <column ascending="true" name="classification_id"/>
+         </index>
+         <index name="organizations_parent_id_index" unique="false">
+            <column ascending="true" name="parent_id"/>
+         </index>
+      </table>
+      <table name="permission_role" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="permission_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <parent column="id" foreignKey="permission_role_permission_id_foreign" implied="false" onDeleteCascade="true" table="permissions"/>
          </column>
@@ -254,7 +246,7 @@
             <column ascending="true" name="role_id"/>
          </index>
       </table>
-      <table name="permissions" numRows="1" remarks="" type="TABLE">
+      <table name="permissions" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="permission_id" foreignKey="permission_role_permission_id_foreign" implied="false" onDeleteCascade="true" table="permission_role"/>
          </column>
@@ -271,13 +263,34 @@
             <column ascending="true" name="name"/>
          </index>
       </table>
-      <table name="politician_categories" numRows="1" remarks="" type="TABLE">
+      <table name="persons" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <child column="politician_category_id" foreignKey="jobs_politician_category_id_foreign" implied="false" onDeleteCascade="true" table="jobs"/>
+            <child column="person_id" foreignKey="events_person_id_foreign" implied="false" onDeleteCascade="false" table="events"/>
+            <child column="person_id" foreignKey="memberships_person_id_foreign" implied="false" onDeleteCascade="true" table="memberships"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="2" name="altName" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="3" name="identifier" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="4" name="email" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="5" name="gender" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="6" name="born" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="7" name="dead" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="8" name="image" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="9" name="link" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="10" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="11" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="post_classifications" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="post_classification_id" foreignKey="posts_post_classification_id_foreign" implied="false" onDeleteCascade="true" table="posts"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="2" name="event_category_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
-            <parent column="id" foreignKey="politician_categories_event_category_id_foreign" implied="false" onDeleteCascade="true" table="event_categories"/>
+            <parent column="id" foreignKey="post_classifications_event_category_id_foreign" implied="false" onDeleteCascade="true" table="event_categories"/>
          </column>
          <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="3" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
          <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="4" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
@@ -285,26 +298,39 @@
          <index name="PRIMARY" unique="true">
             <column ascending="true" name="id"/>
          </index>
-         <index name="politician_categories_event_category_id_foreign" unique="false">
+         <index name="post_classifications_event_category_id_index" unique="false">
             <column ascending="true" name="event_category_id"/>
          </index>
       </table>
-      <table name="politicians" numRows="117" remarks="" type="TABLE">
+      <table name="posts" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <child column="politician_id" foreignKey="jobs_politician_id_foreign" implied="false" onDeleteCascade="true" table="jobs"/>
+            <child column="post_id" foreignKey="memberships_post_id_foreign" implied="false" onDeleteCascade="true" table="memberships"/>
          </column>
-         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="2" name="sex" nullable="false" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="3" name="born" nullable="true" remarks="" size="10" type="INT"/>
-         <column autoUpdated="false" digits="0" id="4" name="image" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="5" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
-         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="6" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <column autoUpdated="false" digits="0" id="1" name="label" nullable="false" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="2" name="altLabel" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="3" name="role" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="4" name="organization_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="posts_organization_id_foreign" implied="false" onDeleteCascade="true" table="organizations"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="start" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="6" name="end" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="7" name="post_classification_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="posts_post_classification_id_foreign" implied="false" onDeleteCascade="true" table="post_classifications"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="8" name="created_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
+         <column autoUpdated="false" defaultValue="0000-00-00 00:00:00" digits="0" id="9" name="updated_at" nullable="false" remarks="" size="19" type="TIMESTAMP"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="PRIMARY" unique="true">
             <column ascending="true" name="id"/>
          </index>
+         <index name="posts_organization_id_index" unique="false">
+            <column ascending="true" name="organization_id"/>
+         </index>
+         <index name="posts_post_classification_id_index" unique="false">
+            <column ascending="true" name="post_classification_id"/>
+         </index>
       </table>
-      <table name="regions" numRows="371" remarks="" type="TABLE">
+      <table name="regions" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="region_id" foreignKey="locations_region_id_foreign" implied="false" onDeleteCascade="false" table="locations"/>
          </column>
@@ -323,7 +349,7 @@
             <column ascending="true" name="city_id"/>
          </index>
       </table>
-      <table name="role_user" numRows="2" remarks="" type="TABLE">
+      <table name="role_user" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="user_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <parent column="id" foreignKey="role_user_user_id_foreign" implied="false" onDeleteCascade="true" table="users"/>
          </column>
@@ -340,7 +366,7 @@
             <column ascending="true" name="role_id"/>
          </index>
       </table>
-      <table name="roles" numRows="2" remarks="" type="TABLE">
+      <table name="roles" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="role_id" foreignKey="permission_role_role_id_foreign" implied="false" onDeleteCascade="true" table="permission_role"/>
             <child column="role_id" foreignKey="role_user_role_id_foreign" implied="false" onDeleteCascade="true" table="role_user"/>
@@ -358,7 +384,7 @@
             <column ascending="true" name="name"/>
          </index>
       </table>
-      <table name="users" numRows="2" remarks="" type="TABLE">
+      <table name="users" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="user_id" foreignKey="events_user_id_foreign" implied="false" onDeleteCascade="false" table="events"/>
             <child column="user_id" foreignKey="role_user_user_id_foreign" implied="false" onDeleteCascade="true" table="role_user"/>

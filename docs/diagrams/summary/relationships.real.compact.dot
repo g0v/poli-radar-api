@@ -25,7 +25,7 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">cities</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">22 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="tables/cities.html"
     tooltip="cities"
@@ -39,7 +39,7 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD PORT="lft" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">lft</TD></TR>
       <TR><TD PORT="rgt" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rgt</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="tables/event_categories.html"
     tooltip="event_categories"
@@ -50,7 +50,7 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">event_event_category</TD></TR>
       <TR><TD PORT="event_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">event_id</TD></TR>
       <TR><TD PORT="event_category_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">event_category_id</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1,053 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tables/event_event_category.html"
     tooltip="event_event_category"
@@ -61,51 +61,13 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">events</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="location_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">location_id</TD></TR>
-      <TR><TD PORT="job_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_id</TD></TR>
+      <TR><TD PORT="person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person_id</TD></TR>
       <TR><TD PORT="user_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">user_id</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1,053 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="tables/events.html"
     tooltip="events"
-  ];
-  "job_positions" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">job_positions</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">98 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
-    </TABLE>>
-    URL="tables/job_positions.html"
-    tooltip="job_positions"
-  ];
-  "job_records" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">job_records</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="job_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_id</TD></TR>
-      <TR><TD PORT="job_position_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_position_id</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">431 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
-    </TABLE>>
-    URL="tables/job_records.html"
-    tooltip="job_records"
-  ];
-  "jobs" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">jobs</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="politician_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">politician_id</TD></TR>
-      <TR><TD PORT="politician_category_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">politician_category_id</TD></TR>
-      <TR><TD PORT="party_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">party_id</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">117 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
-    </TABLE>>
-    URL="tables/jobs.html"
-    tooltip="jobs"
   ];
   "location_categories" [
     label=<
@@ -144,16 +106,43 @@ digraph "compactRelationshipsDiagram" {
     URL="tables/locations.html"
     tooltip="locations"
   ];
-  "parties" [
+  "memberships" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">parties</TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">memberships</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="organization_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">organization_id</TD></TR>
+      <TR><TD PORT="post_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">post_id</TD></TR>
+      <TR><TD PORT="person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/memberships.html"
+    tooltip="memberships"
+  ];
+  "organization_classifications" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">organization_classifications</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
-    URL="tables/parties.html"
-    tooltip="parties"
+    URL="tables/organization_classifications.html"
+    tooltip="organization_classifications"
+  ];
+  "organizations" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">organizations</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="parent_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">parent_id</TD></TR>
+      <TR><TD PORT="classification_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">classification_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/organizations.html"
+    tooltip="organizations"
   ];
   "permission_role" [
     label=<
@@ -161,7 +150,7 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">permission_role</TD></TR>
       <TR><TD PORT="permission_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">permission_id</TD></TR>
       <TR><TD PORT="role_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">role_id</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tables/permission_role.html"
     tooltip="permission_role"
@@ -173,33 +162,46 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">name</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 row</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="tables/permissions.html"
     tooltip="permissions"
   ];
-  "politician_categories" [
+  "persons" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">politician_categories</TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">persons</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/persons.html"
+    tooltip="persons"
+  ];
+  "post_classifications" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">post_classifications</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="event_category_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">event_category_id</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 row</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
-    URL="tables/politician_categories.html"
-    tooltip="politician_categories"
+    URL="tables/post_classifications.html"
+    tooltip="post_classifications"
   ];
-  "politicians" [
+  "posts" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">politicians</TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">posts</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="organization_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">organization_id</TD></TR>
+      <TR><TD PORT="post_classification_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">post_classification_id</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">117 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
-    URL="tables/politicians.html"
-    tooltip="politicians"
+    URL="tables/posts.html"
+    tooltip="posts"
   ];
   "regions" [
     label=<
@@ -208,7 +210,7 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="city_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">city_id</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">371 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="tables/regions.html"
     tooltip="regions"
@@ -219,7 +221,7 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">role_user</TD></TR>
       <TR><TD PORT="user_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">user_id</TD></TR>
       <TR><TD PORT="role_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">role_id</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tables/role_user.html"
     tooltip="role_user"
@@ -231,7 +233,7 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">name</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="tables/roles.html"
     tooltip="roles"
@@ -243,27 +245,28 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="email" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">email</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="tables/users.html"
     tooltip="users"
   ];
   "event_event_category":"event_category_id":w -> "event_categories":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "event_event_category":"event_id":w -> "events":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "events":"job_id":w -> "jobs":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "events":"location_id":w -> "locations":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "events":"person_id":w -> "persons":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "events":"user_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "job_records":"job_id":w -> "jobs":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "job_records":"job_position_id":w -> "job_positions":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "jobs":"party_id":w -> "parties":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "jobs":"politician_category_id":w -> "politician_categories":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "jobs":"politician_id":w -> "politicians":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "location_location_category":"location_category_id":w -> "location_categories":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "location_location_category":"location_id":w -> "locations":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "locations":"region_id":w -> "regions":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "memberships":"organization_id":w -> "organizations":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "memberships":"person_id":w -> "persons":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "memberships":"post_id":w -> "posts":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "organizations":"classification_id":w -> "organization_classifications":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "permission_role":"permission_id":w -> "permissions":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "permission_role":"role_id":w -> "roles":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "politician_categories":"event_category_id":w -> "event_categories":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "post_classifications":"event_category_id":w -> "event_categories":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "posts":"organization_id":w -> "organizations":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "posts":"post_classification_id":w -> "post_classifications":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "regions":"city_id":w -> "cities":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "role_user":"role_id":w -> "roles":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "role_user":"user_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];

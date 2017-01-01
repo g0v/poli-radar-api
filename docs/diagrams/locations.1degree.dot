@@ -32,14 +32,15 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="end" COLSPAN="3" ALIGN="LEFT">end</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
       <TR><TD PORT="description" COLSPAN="3" ALIGN="LEFT">description</TD></TR>
-      <TR><TD PORT="url" COLSPAN="3" ALIGN="LEFT">url</TD></TR>
+      <TR><TD PORT="link" COLSPAN="3" ALIGN="LEFT">link</TD></TR>
+      <TR><TD PORT="parent_id" COLSPAN="3" ALIGN="LEFT">parent_id</TD></TR>
       <TR><TD PORT="location_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">location_id</TD></TR>
-      <TR><TD PORT="job_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_id</TD></TR>
+      <TR><TD PORT="person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person_id</TD></TR>
       <TR><TD PORT="user_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">user_id</TD></TR>
       <TR><TD PORT="deleted_at" COLSPAN="3" ALIGN="LEFT">deleted_at</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1,053 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="events.html"
     tooltip="events"
@@ -82,7 +83,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="city_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">city_id</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">371 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="regions.html"
     tooltip="regions"

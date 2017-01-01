@@ -20,9 +20,9 @@ class EventCategory extends Node {
     return $this->belongsToMany('App\Event');
   }
 
-  public function politicianCategories()
+  public function postClassification()
   {
-    return $this->hasOne('App\PoliticianCategory');
+    return $this->hasOne('App\PostClassification');
   }
 
   //////////////////////////////////////////////////////////////////////////////
