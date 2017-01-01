@@ -25,11 +25,16 @@ class CreateJobsTable extends Migration
           $table->timestamps();
         });
 
-        Schema::create('job_job_position', function(Blueprint $table) {
+        Schema::create('job_records', function(Blueprint $table) {
+          $table->increments('id');
+          $table->string('subtitle')->nullable();
+          $table->date('start')->nullable();
+          $table->date('end')->nullable();
           $table->integer('job_id')->unsigned()->index();
           $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
           $table->integer('job_position_id')->unsigned()->index();
           $table->foreign('job_position_id')->references('id')->on('job_positions')->onDelete('cascade');
+          $table->timestamps();
         });
     }
 
@@ -40,7 +45,7 @@ class CreateJobsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('job_job_position');
+        Schema::drop('job_records');
         Schema::drop('jobs');
     }
 }

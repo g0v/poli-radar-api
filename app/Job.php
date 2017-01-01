@@ -24,13 +24,13 @@ class Job extends Model
     return $this->belongsTo('App\Politician');
   }
 
-  public function mainCategory()
+  public function category()
   {
     return $this->belongsTo('App\PoliticianCategory');
   }
 
-  public function positions()
+  public function records()
   {
-      return $this->belongsToMany('App\JobPosition');
+      return $this->hasMany('App\JobRecord');
   }
 }

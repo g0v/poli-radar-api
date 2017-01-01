@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Job;
 use App\JobPosition;
+use App\JobRecord;
 use App\Party;
 use App\Politician;
 use App\PoliticianCategory;
@@ -17,13 +18,12 @@ class PoliticianTableSeeder extends Seeder
      */
     public function run()
     {
+        JobRecord::truncate();
         Job::truncate();
         JobPosition::truncate();
         Party::truncate();
         Politician::truncate();
         PoliticianCategory::truncate();
-
-        DB::table('job_job_position')->truncate();
 
         $json = __DIR__ . '/json/legi-party.json';
 
@@ -55,18 +55,25 @@ class PoliticianTableSeeder extends Seeder
               foreach ($politician['委員會'] as $period) {
                 foreach ($period as $key => $value) {
                   $jp = JobPosition::firstOrCreate([
-                    'name' => $value,
+                    'title' => $value,
                   ]);
-                  $job->positions()->attach($jp);
+                  JobRecord::create([
+                    'subtitle' => $key,
+                    'job_id' => $job->id,
+                    'job_position_id' => $jp->id,
+                  ]);
                 }
               }
             }
 
             if (isset($politician['選區'])) {
               $region = JobPosition::firstOrCreate([
-                'name' => $politician['選區'],
+                'title' => $politician['選區'],
               ]);
-              $job->positions()->attach($region);
+              JobRecord::create([
+                'job_id' => $job->id,
+                'job_position_id' => $region->id,
+              ]);
             }
         }
     }

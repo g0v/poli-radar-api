@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class JobPosition extends Model
 {
   protected $fillable = [
-    'name',
+    'title',
     'description',
   ];
 
-  public function jobs()
+  public function records()
   {
-      return $this->belongsToMany('App\Job');
+    return $this->hasMany('App\JobRecord');
   }
 }
