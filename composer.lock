@@ -4,40 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "faa89e99121d801f7477a6bffc4936e2",
-    "content-hash": "98c1ede3224b88138cbfe1446b8adc72",
+    "hash": "223cb5d22d68d07a88f7e1243a73a8cd",
+    "content-hash": "0b8073b71321dc6b022762b737a7c5c3",
     "packages": [
-        {
-            "name": "asika/faker-zhtw",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/asika32764/php-faker-zhtw-provider.git",
-                "reference": "24102b54dae1374829ccf6e68c159021299cb462"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/asika32764/php-faker-zhtw-provider/zipball/24102b54dae1374829ccf6e68c159021299cb462",
-                "reference": "24102b54dae1374829ccf6e68c159021299cb462",
-                "shasum": ""
-            },
-            "require": {
-                "fzaninotto/faker": "*@stable"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Faker\\Provider\\zh_TW\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPLv3+"
-            ],
-            "description": "A repository to hold PHP Faker zh_TW provider until Faker release new version.",
-            "homepage": "https://github.com/asika32764/php-faker-zhtw-provider",
-            "time": "2015-02-21 17:09:53"
-        },
         {
             "name": "asm89/stack-cors",
             "version": "0.2.1",
@@ -725,54 +694,6 @@
             ],
             "abandoned": "php-http/httplug",
             "time": "2015-08-12 09:35:40"
-        },
-        {
-            "name": "fzaninotto/faker",
-            "version": "v1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/44f9a286a04b80c76a4e5fb7aad8bb539b920123",
-                "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3|^7.0"
-            },
-            "require-dev": {
-                "ext-intl": "*",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~1.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": []
-            },
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "time": "2016-04-29 12:21:54"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -4167,6 +4088,54 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/44f9a286a04b80c76a4e5fb7aad8bb539b920123",
+                "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3|^7.0"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": []
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2016-04-29 12:21:54"
         },
         {
             "name": "hamcrest/hamcrest-php",
