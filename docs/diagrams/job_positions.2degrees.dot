@@ -19,39 +19,45 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "job_job_position":"job_id":w -> "jobs":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "job_job_position":"job_position_id":w -> "job_positions":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "job_job_position" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">job_job_position</TD></TR>
-      <TR><TD PORT="job_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_id</TD></TR>
-      <TR><TD PORT="job_position_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_position_id</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
-    </TABLE>>
-    URL="job_job_position.html"
-    tooltip="job_job_position"
-  ];
+  "job_records":"job_id":w -> "jobs":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "job_records":"job_position_id":w -> "job_positions":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "job_positions" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">job_positions</TD></TR>
       <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="name" COLSPAN="2" ALIGN="LEFT">name</TD><TD PORT="name.type" ALIGN="LEFT">varchar[255]</TD></TR>
+      <TR><TD PORT="title" COLSPAN="2" ALIGN="LEFT">title</TD><TD PORT="title.type" ALIGN="LEFT">varchar[255]</TD></TR>
       <TR><TD PORT="description" COLSPAN="2" ALIGN="LEFT">description</TD><TD PORT="description.type" ALIGN="LEFT">text[65535]</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="2" ALIGN="LEFT">created_at</TD><TD PORT="created_at.type" ALIGN="LEFT">timestamp[19]</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="2" ALIGN="LEFT">updated_at</TD><TD PORT="updated_at.type" ALIGN="LEFT">timestamp[19]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">98 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="job_positions.html"
     tooltip="job_positions"
+  ];
+  "job_records" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">job_records</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="subtitle" COLSPAN="3" ALIGN="LEFT">subtitle</TD></TR>
+      <TR><TD PORT="start" COLSPAN="3" ALIGN="LEFT">start</TD></TR>
+      <TR><TD PORT="end" COLSPAN="3" ALIGN="LEFT">end</TD></TR>
+      <TR><TD PORT="job_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_id</TD></TR>
+      <TR><TD PORT="job_position_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_position_id</TD></TR>
+      <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
+      <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">431 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="job_records.html"
+    tooltip="job_records"
   ];
   "jobs" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">jobs</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">117 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="jobs.html"
     tooltip="jobs"

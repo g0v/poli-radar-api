@@ -111,9 +111,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="job_job_position.job_position_id refs job_positions.id via job_job_position_job_position_id_foreign"><a href='job_job_position.html'>job_job_position</a><span class='relatedKey'>.job_position_id</span>
+    <td class='relatedTable detail' title="job_records.job_position_id refs job_positions.id via job_records_job_position_id_foreign"><a href='job_records.html'>job_records</a><span class='relatedKey'>.job_position_id</span>
     </td>
-    <td class='constraint detail'>job_job_position_job_position_id_foreign<span title='Cascade on delete:
+    <td class='constraint detail'>job_records_job_position_id_foreign<span title='Cascade on delete:
  Deletion of parent deletes child'>&nbsp;C</span></td>
    </tr>
   </table>
@@ -122,7 +122,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>name</td>
+ <td class='detail'>title</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>255</td>
  <td class='detail' align='center'></td>
@@ -166,7 +166,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='5 columns'>Table contained 0 rows at ??? ?? 01 13:29 TST 2017<p/>
+<p title='5 columns'>Table contained 98 rows at ??? ?? 01 18:18 TST 2017<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -192,14 +192,14 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from job_positions'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="job_job_position.html" title="job_job_position" alt="" coords="285,5,438,107">
-<area shape="rect" id="node3" href="job_positions.html" title="job_positions" alt="" coords="6,27,239,203">
+<area shape="rect" id="node1" href="job_records.html" title="job_records" alt="" coords="293,5,457,243">
+<area shape="rect" id="node3" href="job_positions.html" title="job_positions" alt="" coords="6,117,247,293">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/job_positions.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="job_job_position.html" title="job_job_position" alt="" coords="285,43,438,146">
-<area shape="rect" id="node3" href="jobs.html" title="jobs" alt="" coords="55,5,190,85">
-<area shape="rect" id="node5" href="job_positions.html" title="job_positions" alt="" coords="6,103,239,279">
+<area shape="rect" id="node1" href="job_records.html" title="job_records" alt="" coords="293,5,457,243">
+<area shape="rect" id="node3" href="jobs.html" title="jobs" alt="" coords="51,57,202,137">
+<area shape="rect" id="node5" href="job_positions.html" title="job_positions" alt="" coords="6,155,247,331">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/job_positions.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

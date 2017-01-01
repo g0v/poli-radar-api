@@ -2,7 +2,7 @@ migrations
 role_user
 permission_role
 location_location_category
-job_job_position
+job_records
 event_event_category
 events
 jobs

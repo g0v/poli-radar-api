@@ -13,7 +13,7 @@ locations
 jobs
 events
 event_event_category
-job_job_position
+job_records
 location_location_category
 permission_role
 role_user

@@ -20,7 +20,7 @@ digraph "oneDegreeRelationshipsDiagram" {
     arrowsize="0.8"
   ];
   "events":"job_id":w -> "jobs":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "job_job_position":"job_id":w -> "jobs":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "job_records":"job_id":w -> "jobs":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "jobs":"party_id":w -> "parties":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "jobs":"politician_category_id":w -> "politician_categories":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "jobs":"politician_id":w -> "politicians":"id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -41,21 +41,27 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="deleted_at" COLSPAN="3" ALIGN="LEFT">deleted_at</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1,053 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="events.html"
     tooltip="events"
   ];
-  "job_job_position" [
+  "job_records" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">job_job_position</TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">job_records</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="subtitle" COLSPAN="3" ALIGN="LEFT">subtitle</TD></TR>
+      <TR><TD PORT="start" COLSPAN="3" ALIGN="LEFT">start</TD></TR>
+      <TR><TD PORT="end" COLSPAN="3" ALIGN="LEFT">end</TD></TR>
       <TR><TD PORT="job_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_id</TD></TR>
       <TR><TD PORT="job_position_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_position_id</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
+      <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">431 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
-    URL="job_job_position.html"
-    tooltip="job_job_position"
+    URL="job_records.html"
+    tooltip="job_records"
   ];
   "jobs" [
     label=<
@@ -69,7 +75,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="party_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">party_id</TD><TD PORT="party_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="2" ALIGN="LEFT">created_at</TD><TD PORT="created_at.type" ALIGN="LEFT">timestamp[19]</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="2" ALIGN="LEFT">updated_at</TD><TD PORT="updated_at.type" ALIGN="LEFT">timestamp[19]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">117 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="jobs.html"
     tooltip="jobs"
@@ -84,7 +90,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="color" COLSPAN="3" ALIGN="LEFT">color</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="parties.html"
     tooltip="parties"
@@ -98,7 +104,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="event_category_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">event_category_id</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 row</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="politician_categories.html"
     tooltip="politician_categories"
@@ -114,7 +120,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="image" COLSPAN="3" ALIGN="LEFT">image</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">117 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="politicians.html"
     tooltip="politicians"
