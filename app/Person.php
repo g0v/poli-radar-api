@@ -19,7 +19,7 @@ class Person extends Model
         return $this->hasMany('App\Event');
     }
 
-    public function member()
+    public function memberships()
     {
         return $this->hasMany('App\Membership');
     }

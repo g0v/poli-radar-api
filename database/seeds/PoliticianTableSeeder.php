@@ -63,6 +63,7 @@ class PoliticianTableSeeder extends Seeder
 
             Membership::create([
               'label' => '黨員',
+              'person_id' => $person->id,
               'organization_id' => $party->id,
             ]);
 

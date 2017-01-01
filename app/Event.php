@@ -13,9 +13,9 @@ class Event extends Model
 
     protected $guarded = ['id'];
 
-    public function politicians()
+    public function person()
     {
-        return $this->belongsToMany('App\Politician');
+        return $this->belongsTo('App\Person');
     }
 
     public function added_by()

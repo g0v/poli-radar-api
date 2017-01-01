@@ -23,8 +23,8 @@ $api->version('v1', function ($api) {
 		$api->get('date', 'DateController@index');
 		$api->get('events', 'EventsController@index');
 		$api->get('events/{id}', 'EventsController@show');
-		$api->get('politicians', 'PoliticiansController@index');
-		$api->get('politicians/{id}', 'PoliticiansController@show');
+		$api->get('persons', 'PersonsController@index');
+		$api->get('persons/{id}', 'PersonsController@show');
 		$api->get('politicianCategories', 'PoliticianCategoryController@index');
 		$api->get('politicianCategories/names', 'PoliticianCategoryController@withNames');
 		$api->get('politicianCategories/{id}', 'PoliticianCategoryController@show');
@@ -51,9 +51,9 @@ $api->version('v1', function ($api) {
 				$api->post('users', 'AuthController@store');
 				$api->get('roles', 'RoleController@index');
 				$api->get('permissions', 'PermissionController@index');
-				$api->post('politicians', 'PoliticiansController@store');
-				$api->post('politicians/{id}/image', 'PoliticiansController@uploadImg');
-				$api->put('politicians/{id}', 'PoliticiansController@update');
+				$api->post('persons', 'PersonsController@store');
+				$api->post('persons/{id}/image', 'PersonsController@uploadImg');
+				$api->put('persons/{id}', 'PersonsController@update');
 				$api->post('politicianCategories', 'PoliticianCategoryController@store');
 				$api->post('eventCategories', 'EventCategoryController@store');
 			});
@@ -86,7 +86,7 @@ $api->version('v2', function ($api) {
 			$api->get('validate_token', 'AuthController@validateToken');
 
 			$api->post('locations', 'LocationController@store');
-			$api->post('politicians/{id}/events', 'PoliticianEventController@store');
+			$api->post('persons/{id}/events', 'PoliticianEventController@store');
 		});
 	});
 });

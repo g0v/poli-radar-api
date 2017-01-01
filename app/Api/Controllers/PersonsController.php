@@ -3,15 +3,15 @@
 namespace Api\Controllers;
 
 use Image;
-use App\Politician;
+use App\Person;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Api\Transformers\PoliticianTransformer;
+use Api\Transformers\PersonTransformer;
 
 /**
- * @Resource('Politicians', uri='/politicians')
+ * @Resource('Persons', uri='/politicians')
  */
-class PoliticiansController extends BaseController
+class PersonsController extends BaseController
 {
 
     /**
@@ -23,7 +23,7 @@ class PoliticiansController extends BaseController
      */
     public function index()
     {
-        return $this->response->collection(Politician::all(), new PoliticianTransformer);
+        return $this->response->collection(Person::all(), new PersonTransformer);
     }
 
     /**
@@ -34,7 +34,7 @@ class PoliticiansController extends BaseController
      */
     public function store(Request $request)
     {
-        $politician = Politician::create($request->only([
+        $politician = Person::create($request->only([
             'name'
         ]));
 
@@ -51,7 +51,7 @@ class PoliticiansController extends BaseController
             }
         }
 
-        return $this->item($politician, new PoliticianTransformer);
+        return $this->item($politician, new PersonTransformer);
     }
 
     /**
@@ -62,11 +62,11 @@ class PoliticiansController extends BaseController
      */
     public function show($id)
     {
-        return $this->item(Politician::findOrFail($id), new PoliticianTransformer);
+        return $this->item(Person::findOrFail($id), new PersonTransformer);
     }
 
     /**
-     * Update the Politician in the database.
+     * Update the Person in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -74,7 +74,7 @@ class PoliticiansController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $politician = Politician::findOrFail($id);
+        $politician = Person::findOrFail($id);
         $politician->update($request->only([
             'name'
         ]));
@@ -94,11 +94,11 @@ class PoliticiansController extends BaseController
             }
         }
 
-        return $this->item($politician, new PoliticianTransformer);
+        return $this->item($politician, new PersonTransformer);
     }
 
     /**
-     * Update the Politician in the database.
+     * Update the Person in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -107,14 +107,14 @@ class PoliticiansController extends BaseController
     public function uploadImg(Request $request, $id)
     {
         if (isset($request->image)) {
-            $politician = Politician::findOrFail($id);
+            $politician = Person::findOrFail($id);
             $img = Image::make($request->image)->resize(150, 150);
             $ext = explode('/', $img->mime())[1];
             $imgName = 'image/' . $politician->id . '.' . $ext;
             $img->save($imgName);
             $politician->image = $imgName;
             $politician->save();
-            return $this->item($politician, new PoliticianTransformer);
+            return $this->item($politician, new PersonTransformer);
         }
     }
 
@@ -126,6 +126,6 @@ class PoliticiansController extends BaseController
      */
     public function destroy($id)
     {
-        return Politician::destroy($id);
+        return Person::destroy($id);
     }
 }

@@ -2,15 +2,15 @@
 
 namespace Api\Transformers;
 
-use App\PoliticianCategory;
+use App\PostClassification;
 
-class PoliticianCategoryTransformer extends BaseTransformer
+class PostClassificationTransformer extends BaseTransformer
 {
 	protected $defaultIncludes = [
 		'event_category',
 	];
 
-	public function transform(PoliticianCategory $pCat)
+	public function transform(PostClassification $pCat)
 	{
 		return [
 			'id' => (int) $pCat->id,
@@ -18,7 +18,7 @@ class PoliticianCategoryTransformer extends BaseTransformer
 		];
 	}
 
-	public function includeEventCategory(PoliticianCategory $pCat)
+	public function includeEventCategory(PostClassification $pCat)
   {
     return $this->item($pCat->eventCategory, new EventCategoryTransformer);
   }

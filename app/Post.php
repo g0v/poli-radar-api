@@ -21,4 +21,9 @@ class Post extends Model
   {
     return $this->belongsTo('App\Organization');
   }
+
+  public function classification()
+  {
+    return $this->belongsTo('App\PostClassification');
+  }
 }
