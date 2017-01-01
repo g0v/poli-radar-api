@@ -32,10 +32,6 @@ $api->version('v1', function ($api) {
 		$api->get('cities/{id}', 'CityController@show');
 		$api->get('locations', 'LocationController@index');
 		$api->get('regions', 'RegionController@index');
-		$api->get('viewer', 'ViewerController@index');
-		$api->get('viewer/{hash}', 'ViewerController@show');
-		$api->post('viewer', 'ViewerController@store');
-		$api->put('viewer/{hash}', 'ViewerController@update');
 
 		$api->get('eventCategories/find/{name}', 'EventCategoryController@find');
 

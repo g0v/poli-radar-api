@@ -15,9 +15,12 @@ class CreatePoliticiansTable extends Migration
         Schema::create('politicians', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('sex');
+            $table->integer('born')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
-        
+
     }
 
     /**
@@ -27,7 +30,7 @@ class CreatePoliticiansTable extends Migration
      */
     public function down()
     {
-       
+
         Schema::drop('politicians');
     }
 }

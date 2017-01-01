@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Politician;
+use App\Job;
 use App\PoliticianCategory;
 use App\Event;
 use App\EventCategory;
@@ -23,21 +23,34 @@ class EventTableSeeder extends Seeder
         Event::truncate();
         Location::truncate();
         DB::table('event_event_category')->truncate();
-        DB::table('event_politician')->truncate();
 
-        $politicianCategories = [
-            '總統',
-            '行政首長',
-            '立法委員',
-            '縣市首長'
-        ];
+        $evt_cat = EventCategory::create(['name' => '立法委員']);
+        $cats_list = ['中央行程', '地方行程', '媒體行程'];
+        $main_cats = array_map(function($cat_name) use ($evt_cat) {
+          $sub_cat = EventCategory::create([
+            'parent_id' => $evt_cat->id,
+            'name' => $cat_name,
+          ]);
+          return $sub_cat;
+        }, $cats_list);
+        $poli_cat = PoliticianCategory::where('name', '立法委員')->first();
+        $evt_cat->politicianCategories()->save($poli_cat);
 
-        foreach ($politicianCategories as $name) {
-            $politicianCategory = EventCategory::create(['name' => $name]);
-            $attachment = PoliticianCategory::where('name', $name)->first();
-            if ($attachment) {
-                $politicianCategory->politicianCategories()->save($attachment);
+        $faker = \Faker\Factory::create('zh_TW');
+
+        foreach (Job::all() as $job) {
+          foreach ($main_cats as $sub_cat) {
+            for ($i = 0; $i < 3; $i++) {
+              $evt = Event::create([
+                'date' => $faker->dateTimeBetween('2016-02-01'),
+                'name' => $faker->realText($faker->numberBetween(10,20)),
+                'job_id' => $job->id,
+                'user_id' => 1,
+              ]);
+
+              $evt->categories()->attach($sub_cat);
             }
+          }
         }
     }
 }

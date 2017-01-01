@@ -24,10 +24,11 @@ class CreateLocationCategoriesTable extends Migration {
       $table->integer('depth')->nullable();
 
       // Add needed columns here (f.ex: name, slug, path, etc.)
-      $table->string('name', 255);
+      $table->string('name');
 
       $table->timestamps();
     });
+
     Schema::create('location_location_category', function(Blueprint $table) {
       $table->integer('location_id')->unsigned()->index();
       $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
@@ -42,12 +43,8 @@ class CreateLocationCategoriesTable extends Migration {
    * @return void
    */
   public function down() {
-    Schema::table('location_location_category', function($table) {
-        $table->dropForeign('location_location_category_location_id_foreign');
-        $table->dropForeign('location_location_category_location_category_id_foreign');
-    });
-    Schema::drop('location_categories');
     Schema::drop('location_location_category');
+    Schema::drop('location_categories');
   }
 
 }

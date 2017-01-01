@@ -154,6 +154,7 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         Baum\Providers\BaumServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Stolz\SchemaSpy\ServiceProvider::class,
 
     ],
 

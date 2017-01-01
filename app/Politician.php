@@ -6,21 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Politician extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = [
+      'name',
+      'born',
+      'sex',
+      'image',
+    ];
 
-    public function events()
+    public function jobs()
     {
-        return $this->belongsToMany('App\Event');
-    }
-
-    public function categories()
-    {
-        return $this->belongsToMany('App\PoliticianCategory');
-    }
-
-    public function traits()
-    {
-        return $this->belongsToMany('App\PoliticianTrait');
+        return $this->belongsToMany('App\Job');
     }
 
 }

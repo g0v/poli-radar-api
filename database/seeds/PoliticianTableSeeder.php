@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use App\Job;
+use App\JobPosition;
+use App\Party;
 use App\Politician;
 use App\PoliticianCategory;
-use App\PoliticianTrait;
 
 class PoliticianTableSeeder extends Seeder
 {
@@ -14,96 +17,57 @@ class PoliticianTableSeeder extends Seeder
      */
     public function run()
     {
+        Job::truncate();
+        JobPosition::truncate();
+        Party::truncate();
         Politician::truncate();
         PoliticianCategory::truncate();
-        PoliticianTrait::truncate();
-        DB::table('politician_politician_category')->truncate();
-        DB::table('politician_politician_trait')->truncate();
 
-        $json = base_path() . '/database/seeds/legi-party.json';
+        DB::table('job_job_position')->truncate();
 
-        $legis = json_decode(file_get_contents($json), true);
+        $json = __DIR__ . '/json/legi-party.json';
 
-		$politicians = [
-			[ 'name' => '蔡英文', 'party' => '民主進步黨', 'sex' => '女' ],
-    	];
+        $legis_list = json_decode(file_get_contents($json), true);
 
-        $president = PoliticianCategory::create([
-            'name' => '總統',
-        ]);
-
-        $exec = PoliticianCategory::create([
-            'name' => '行政首長',
-        ]);
-
-        $legiss = PoliticianCategory::create([
+        $legis = PoliticianCategory::create([
             'name' => '立法委員',
         ]);
 
-        $mayor = PoliticianCategory::create([
-            'name' => '縣市首長',
-        ]);
-
-        $sexRoot = PoliticianTrait::create(['name' => '性別']);
-        $partyRoot = PoliticianTrait::create(['name' => '政黨']);
-        
-    	foreach($politicians as $politician){
-    		$p = Politician::create([
-                'name' => $politician['name']
-            ]);
-            $sex = PoliticianTrait::firstOrCreate([
-                'parent_id' => $sexRoot->id,
-                'name' => $politician['sex']
-            ]);
-            $party = PoliticianTrait::firstOrCreate([
-                'parent_id' => $partyRoot->id,
-                'name' => $politician['party']
-            ]);
-
-            $p->traits()->attach([$sex->id, $party->id]);         
-
-            if ($p->name == '蔡英文') {
-                $p->categories()->attach($president->id);
-            }
-		}
-
-        foreach ($legis as $politician) {
+        foreach ($legis_list as $politician) {
             $p = Politician::create([
-                'name' => $politician['姓名']
-            ]);
-            $sex = PoliticianTrait::firstOrCreate([
-                'parent_id' => $sexRoot->id,
-                'name' => $politician['性別']
+                'name' => $politician['姓名'],
+                'sex' => $politician['性別']
             ]);
 
-            $party = PoliticianTrait::firstOrCreate([
-                'parent_id' => $partyRoot->id,
-                'name' => $politician['黨籍']
+            $party = Party::firstOrCreate([
+              'name' => $politician['黨籍']
             ]);
 
-            $p->traits()->attach($party->id);
-            $p->categories()->attach($legiss->id);   
+            $job = Job::create([
+              'start' => $politician['到職日期'],
+              'end' => $politician['離職日期'] ?? null,
+              'politician_id' => $p->id,
+              'politician_category_id' => $legis->id,
+              'party_id' => $party->id,
+            ]);
+
+            if (isset($politician['委員會'])) {
+              foreach ($politician['委員會'] as $period) {
+                foreach ($period as $key => $value) {
+                  $jp = JobPosition::firstOrCreate([
+                    'name' => $value,
+                  ]);
+                  $job->positions()->attach($jp);
+                }
+              }
+            }
+
+            if (isset($politician['選區'])) {
+              $region = JobPosition::firstOrCreate([
+                'name' => $politician['選區'],
+              ]);
+              $job->positions()->attach($region);
+            }
         }
-
-        $k = Politician::create([
-            'name' => '柯文哲'
-        ]);
-
-        $noParty = PoliticianTrait::where('name', '無黨籍')->first();
-
-        $k->traits()->attach($noParty->id);
-        $k->categories()->attach($mayor->id);
-
-        $lin = Politician::create([
-            'name' => '林全'
-        ]);
-
-        $dpp = PoliticianTrait::firstOrCreate([
-            'parent_id' => $partyRoot->id,
-            'name' => '民主進步黨'
-        ]);
-
-        $lin->traits()->attach($dpp->id);
-        $lin->categories()->attach($exec->id);
     }
 }

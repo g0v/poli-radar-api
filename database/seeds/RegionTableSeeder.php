@@ -13,11 +13,10 @@ class RegionTableSeeder extends Seeder
      */
     public function run()
     {
-
         City::truncate();
         Region::truncate();
 
-        $json = base_path() . '/database/seeds/addr.json';
+        $json = __DIR__ . '/json/addr.json';
 
         $cities = json_decode(file_get_contents($json), true);
 
@@ -29,7 +28,6 @@ class RegionTableSeeder extends Seeder
                     'postal_code' => $post,
                     'city_id'     => $city->id
                 ]);
-
             }
         }
 
