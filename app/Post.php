@@ -24,6 +24,6 @@ class Post extends Model
 
   public function classification()
   {
-    return $this->belongsTo('App\PostClassification');
+    return $this->belongsTo('App\PostClassification', 'post_classification_id');
   }
 }

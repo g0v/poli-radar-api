@@ -26,6 +26,7 @@ class OrganizationTransformer extends BaseTransformer
 
 	public function includeClassification(Organization $organization)
   {
-      return $this->item($organization->classification, new OrganizationClassificationTransformer);
+		if (is_null($organization->classification)) return $this->null();
+    return $this->item($organization->classification, new OrganizationClassificationTransformer);
   }
 }

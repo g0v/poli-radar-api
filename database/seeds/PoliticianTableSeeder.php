@@ -31,14 +31,25 @@ class PoliticianTableSeeder extends Seeder
             'name' => '立法委員',
         ]);
 
+        $local_service = PostClassification::create([
+            'name' => '選區',
+        ]);
+
+        $commitee_class = PostClassification::create([
+            'name' => '委員會',
+        ]);
+
         $legis_yuan = Organization::create([
             'name' => '立法院',
         ]);
 
+        $faker = \Faker\Factory::create();
+
         foreach ($legis_list as $politician) {
             $person = Person::create([
                 'name' => $politician['姓名'],
-                'gender' => $politician['性別']
+                'gender' => $politician['性別'],
+                'image' => $faker->imageUrl(400, 400, 'cats'),
             ]);
 
             $party = Organization::firstOrCreate([
@@ -68,6 +79,23 @@ class PoliticianTableSeeder extends Seeder
               'organization_id' => $party->id,
             ]);
 
+            $local = Post::firstOrCreate([
+              'label' => $politician['選區'],
+              'start' => '2016-02-01',
+              'end' => '2020-01-31',
+              'post_classification_id' => $local_service->id,
+              'organization_id' => $legis_yuan->id,
+            ]);
+
+            Membership::create([
+              'label' => '分區立委',
+              'start' => '2016-02-01',
+              'end' => '2020-01-31',
+              'person_id' => $person->id,
+              'organization_id' => $legis_yuan->id,
+              'post_id' => $local->id,
+            ]);
+
             if (isset($politician['委員會'])) {
               foreach ($politician['委員會'] as $period) {
                 foreach ($period as $key => $value) {
@@ -81,6 +109,7 @@ class PoliticianTableSeeder extends Seeder
                     $commitee_post = Post::firstOrCreate([
                       'label' => $name . '召集委員',
                       'organization_id' => $commitee_org->id,
+                      'post_classification_id' => $commitee_class->id,
                     ]);
 
                   } else {
@@ -92,12 +121,27 @@ class PoliticianTableSeeder extends Seeder
                     $commitee_post = Post::firstOrCreate([
                       'label' => $value . '委員',
                       'organization_id' => $commitee_org->id,
+                      'post_classification_id' => $commitee_class->id,
                     ]);
 
                   }
 
+                  // 2016/02/19 ~ 2016/07/15
+                  // 2016/09/13 ~ 2016/12/30
+                  if ($key == '第9屆第1會期') {
+                    $start = '2016/02/19';
+                    $end = '2016/07/19';
+                  }
+
+                  if ($key == '第9屆第2會期') {
+                    $start = '2016/09/13';
+                    $end = '2016/12/30';
+                  }
+
                   $commitee_member = Membership::create([
                     'label' => $key,
+                    'start' => $start,
+                    'end' => $end,
                     'organization_id' => $commitee_org->id,
                     'post_id' => $commitee_post->id,
                     'person_id' => $person->id,
@@ -106,6 +150,7 @@ class PoliticianTableSeeder extends Seeder
                 }
               }
             }
+
         }
     }
 }

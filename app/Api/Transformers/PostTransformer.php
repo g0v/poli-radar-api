@@ -40,6 +40,7 @@ class PostTransformer extends BaseTransformer
 
 	public function includeClassification(Post $post)
   {
+		  if (is_null($post->classification)) return $this->null();
       return $this->item($post->classification, new PostClassificationTransformer);
   }
 }

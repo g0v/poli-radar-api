@@ -40,7 +40,10 @@ class EventsController extends BaseController
 {
     public function index(Request $request)
     {
-      $events = Event::paginate(25);
+      if (isset($request->per_page)) {
+        $per_page = (int) $request->per_page;
+      }
+      $events = Event::orderBy('date', 'desc')->paginate($per_page ?? 25);
       return $this->response->paginator($events, new EventTransformer);
     }
 
