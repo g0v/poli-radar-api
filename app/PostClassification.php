@@ -12,7 +12,7 @@ class PostClassification extends Model
     return $this->hasMany('App\Post');
   }
 
-  public function eventCategory()
+  public function event_category()
   {
     return $this->belongsTo('App\EventCategory');
   }

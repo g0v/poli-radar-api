@@ -45,7 +45,7 @@ class PoliticianTableSeeder extends Seeder
               'name' => $politician['黨籍']
             ]);
 
-            $post = Post::create([
+            $post = Post::firstOrCreate([
               'label' => '第九屆立法委員',
               'start' => '2016-02-01',
               'end' => '2020-01-31',
@@ -58,6 +58,7 @@ class PoliticianTableSeeder extends Seeder
               'person_id' => $person->id,
               'start' => $politician['到職日期'],
               'end' => $politician['離職日期'] ?? null,
+              'post_id' => $post->id,
               'organization_id' => $legis_yuan->id,
             ]);
 
@@ -78,7 +79,7 @@ class PoliticianTableSeeder extends Seeder
                     ]);
 
                     $commitee_post = Post::firstOrCreate([
-                      'label' => '召集委員',
+                      'label' => $name . '召集委員',
                       'organization_id' => $commitee_org->id,
                     ]);
 
@@ -89,7 +90,7 @@ class PoliticianTableSeeder extends Seeder
                     ]);
 
                     $commitee_post = Post::firstOrCreate([
-                      'label' => '委員',
+                      'label' => $value . '委員',
                       'organization_id' => $commitee_org->id,
                     ]);
 

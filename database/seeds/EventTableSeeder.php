@@ -33,7 +33,7 @@ class EventTableSeeder extends Seeder
           return $sub_cat;
         }, $cats_list);
         $poli_cat = PostClassification::where('name', '立法委員')->first();
-        $evt_cat->postClassification()->save($poli_cat);
+        $evt_cat->post_classification()->save($poli_cat);
 
         $faker = \Faker\Factory::create('zh_TW');
 

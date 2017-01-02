@@ -13,14 +13,17 @@ class EventCategory extends Node {
    *
    * @var string
    */
-  protected $table = 'event_categories';
+  protected $fillable = [
+    'parent_id',
+    'name',
+  ];
 
   public function events()
   {
     return $this->belongsToMany('App\Event');
   }
 
-  public function postClassification()
+  public function post_classification()
   {
     return $this->hasOne('App\PostClassification');
   }

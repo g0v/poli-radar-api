@@ -6,8 +6,9 @@ use App\EventCategory;
 
 class EventCategoryTransformer extends BaseTransformer
 {
-	protected $defaultIncludes = [
+	protected $availableIncludes = [
 		'parent',
+		'children',
   ];
 
 	public function transform(EventCategory $eCat)
@@ -25,5 +26,14 @@ class EventCategoryTransformer extends BaseTransformer
 			return $this->null();
 		}
 		return $this->item($parent, new EventCategoryTransformer);
+	}
+
+	public function includeChildren(EventCategory $eCat)
+	{
+		$children = $eCat->children()->get();
+		if ($children->count() > 0) {
+			return $this->collection($children, new EventCategoryTransformer);
+		}
+		return $this->null();
 	}
 }

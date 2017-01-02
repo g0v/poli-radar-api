@@ -38,4 +38,9 @@ class MembershipTransformer extends BaseTransformer
       if (is_null($membership->post)) return $this->null();
       return $this->item($membership->post, new PostTransformer);
   }
+
+  public function includePerson(Membership $membership)
+  {
+      return $this->item($membership->person, new PersonTransformer);
+  }
 }

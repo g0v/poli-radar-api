@@ -12,7 +12,7 @@ class Post extends Model
     'updated_at',
   ];
 
-  public function member()
+  public function memberships()
   {
     return $this->hasMany('App\Membership');
   }

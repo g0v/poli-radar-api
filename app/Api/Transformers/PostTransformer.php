@@ -14,7 +14,6 @@ class PostTransformer extends BaseTransformer
   protected $availableIncludes = [
     'memberships',
 		'organization',
-		'person',
 		'classification',
   ];
 
@@ -34,9 +33,9 @@ class PostTransformer extends BaseTransformer
       return $this->item($post->organization, new OrganizationTransformer);
   }
 
-	public function includeMembership(Post $post)
+	public function includeMemberships(Post $post)
   {
-      return $this->collection($post->memberships, new PostTransformer);
+      return $this->collection($post->memberships, new MembershipTransformer);
   }
 
 	public function includeClassification(Post $post)

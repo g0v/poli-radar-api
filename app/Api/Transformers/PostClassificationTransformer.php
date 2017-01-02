@@ -6,8 +6,9 @@ use App\PostClassification;
 
 class PostClassificationTransformer extends BaseTransformer
 {
-	protected $defaultIncludes = [
+	protected $availableIncludes = [
 		'event_category',
+		'posts',
 	];
 
 	public function transform(PostClassification $pCat)
@@ -18,8 +19,13 @@ class PostClassificationTransformer extends BaseTransformer
 		];
 	}
 
+	public function includePosts(PostClassification $pCat)
+  {
+    return $this->collection($pCat->posts, new PostTransformer);
+  }
+
 	public function includeEventCategory(PostClassification $pCat)
   {
-    return $this->item($pCat->eventCategory, new EventCategoryTransformer);
+    return $this->item($pCat->event_category, new EventCategoryTransformer);
   }
 }
