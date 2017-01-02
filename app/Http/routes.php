@@ -21,8 +21,8 @@ $api->version('v1', function ($api) {
 
 		// $api->get('data', 'AllDataController@index');
 		// $api->get('date', 'DateController@index');
-		// $api->get('events', 'EventsController@index');
-		// $api->get('events/{id}', 'EventsController@show');
+		$api->get('events', 'EventsController@index');
+		$api->get('events/{id}', 'EventsController@show');
 		$api->get('persons', 'PersonsController@index');
 		$api->get('post/classifications', 'PostClassificationController@index');
 		$api->get('persons/{id}', 'PersonsController@show');

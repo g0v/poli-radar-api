@@ -2,43 +2,20 @@
 
 namespace Api\Controllers;
 
-use DB;
+// use DB;
 use Auth;
 use App\Event;
-use App\Region;
-use App\Location;
-use App\Politician;
-use App\EventCategory;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 // use Api\Requests\EventRequest;
 use Api\Transformers\EventTransformer;
-use Api\Transformers\PoliticianTransformer;
 
 use Carbon\Carbon;
 
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection as FractalCollection;
-
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-
-function checkDateCount($event, $ids, $eventCategories)
-{
-    $pIds = [];
-    $eCats = [];
-    foreach ($event->politicians as $p) {
-        $pIds[] = $p->id;
-    }
-    foreach ($event->categories as $cat) {
-        $eCats[] = $cat->id;
-    }
-    if (array_intersect($pIds, $ids) && array_intersect($eCats, $eventCategories)) {
-        return true;
-    }
-    return false;
-}
 
 function parseAddress($address)
 {
@@ -63,78 +40,8 @@ class EventsController extends BaseController
 {
     public function index(Request $request)
     {
-        if ($request->has('all')) {
-            return $this->response->collection(Event::all(), new EventTransformer);
-        } else {
-            if ($request->has('politician') && $request->has('eventCategories')) {
-                foreach (Event::orderBy('date', 'desc')->get() as $event) {
-                    if (checkDateCount($event, $request->politician, $request->eventCategories)) {
-                        $end = new Carbon($event->date);
-                        break;
-                    }
-                }
-            } else {
-                $latestDate = new Carbon(DB::table('events')
-                    ->select(DB::raw('MAX(date) as max'))
-                    ->first()->max);
-
-                $now = Carbon::now();
-
-                $end = $now->min($latestDate);
-            }
-
-            if ($request->has('end')) {
-                $end = new Carbon($request->end);
-            }
-
-            if ($request->has('start')) {
-                $start = new Carbon($request->start);
-            } else {
-                $endClone = clone $end;
-                $start = $endClone->subDays(30);
-            }
-
-            if ($request->has('politician')) {
-                if ($request->has('start') && $request->has('end')) {
-                    $politician = Politician::with(['events' => function ($query) use ($request) {
-                        $query->whereBetween('date', [$request->start, $request->end])
-                          ->with('categories')
-                          ->with('location.region.city');
-                    }])->find($request->politician);
-                } else if ($request->has('start')) {
-                    $politician = Politician::with(['events' => function ($query) use ($request) {
-                        $query->where('date', '>', $request->start)
-                          ->with('categories')
-                          ->with('location.region.city');
-                    }])->find($request->politician);
-                } else if ($request->has('end')) {
-                    $politician = Politician::with(['events' => function ($query) use ($request) {
-                        $query->whereBetween('date', '<',$request->end)
-                          ->with('categories')
-                          ->with('location.region.city');
-                    }])->find($request->politician);
-                } else {
-                  $politician = Politician::with(['events' => function ($query) use ($request) {
-                      $query->with('categories')
-                        ->with('location.region.city');
-                    }])->find($request->politician);
-                }
-
-                return $this->response->item($politician, new PoliticianTransformer);
-            }
-
-            $fractal = new Manager();
-
-            $events = new FractalCollection(Event::whereBetween('date', [$start, $end])->get(), new EventTransformer);
-
-            return $this->array([
-                'events' => $fractal->createData($events)->toArray(),
-                'date' => [
-                    'start' => $start->format('Y-m-d'),
-                    'end' => $end->format('Y-m-d'),
-                ]
-            ]);
-        }
+      $events = Event::paginate(25);
+      return $this->response->paginator($events, new EventTransformer);
     }
 
     /**
@@ -211,7 +118,7 @@ class EventsController extends BaseController
             $event->categories()->detach();
             $event->categories()->attach($eventType->id);
         }
-        
+
         // must detach ?
         $event->politicians()->detach();
         $event->politicians()->attach($request->politician);
@@ -226,7 +133,12 @@ class EventsController extends BaseController
      */
     public function show($id)
     {
-        return $this->item(Event::findOrFail($id), new EventTransformer);
+      try {
+        return $this->response->item(Event::findOrFail($id), new EventTransformer);
+      } catch (ModelNotFoundException $e) {
+        return $this->response->array([]);
+      }
+
     }
 
     /**
@@ -259,7 +171,7 @@ class EventsController extends BaseController
             ]);
             $event->location_id = $location->id;
         }
-        
+
         $event->save();
 
         $eventType = EventCategory::firstOrCreate([
