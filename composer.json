@@ -21,15 +21,15 @@
     "monolog/monolog": "^1.20",
     "league/fractal": "^0.13.0",
     "predis/predis": "^1.1",
-    "barryvdh/laravel-ide-helper": "^2.1"
+    "barryvdh/laravel-ide-helper": "^2.1",
+    "stolz/laravel-schema-spy": "^0.1.0"
   },
   "require-dev": {
     "doctrine/dbal": "^2.5",
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
     "phpunit/phpunit": "~4.0",
-    "phpspec/phpspec": "~2.1",
-    "stolz/laravel-schema-spy": "^0.1.0"
+    "phpspec/phpspec": "~2.1"
   },
   "autoload": {
     "classmap": [
