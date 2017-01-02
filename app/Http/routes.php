@@ -24,7 +24,10 @@ $api->version('v1', function ($api) {
 		$api->get('events', 'EventsController@index');
 		$api->get('events/{id}', 'EventsController@show');
 		$api->get('persons', 'PersonsController@index');
+		$api->get('posts', 'PostController@index');
+		$api->get('posts/{id}', 'PostController@show');
 		$api->get('post/classifications', 'PostClassificationController@index');
+		$api->get('post/classifications/{id}', 'PostClassificationController@show');
 		$api->get('persons/{id}', 'PersonsController@show');
 		// $api->get('politicianCategories', 'PoliticianCategoryController@index');
 		// $api->get('politicianCategories/names', 'PoliticianCategoryController@withNames');

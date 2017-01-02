@@ -2,18 +2,18 @@
 
 namespace Api\Controllers;
 
-use App\PostClassification;
+use App\Post;
 use App\Http\Requests;
 
-use Api\Transformers\PostClassificationTransformer;
+use Api\Transformers\PostTransformer;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /**
- * @Resource('PostClassifications', uri='/politicians')
+ * @Resource('Posts', uri='/politicians')
  */
-class PostClassificationController extends BaseController
+class PostController extends BaseController
 {
 
     /**
@@ -25,7 +25,7 @@ class PostClassificationController extends BaseController
      */
     public function index()
     {
-        return $this->response->collection(PostClassification::all(), new PostClassificationTransformer);
+        return $this->response->collection(Post::all(), new PostTransformer);
     }
 
     /**
@@ -36,7 +36,7 @@ class PostClassificationController extends BaseController
      */
     public function store(Request $request)
     {
-        return PostClassification::create($request->only([
+        return Post::create($request->only([
             'name'
         ]));
     }
@@ -50,14 +50,14 @@ class PostClassificationController extends BaseController
     public function show($id)
     {
       try {
-        return $this->response->item(PostClassification::findOrFail($id), new PostClassificationTransformer);
+        return $this->response->item(Post::findOrFail($id), new PostTransformer);
       } catch (ModelNotFoundException $e) {
         return $this->response->errorNotFound();
       }
     }
 
     /**
-     * Update the PostClassification in the database.
+     * Update the Post in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -65,7 +65,7 @@ class PostClassificationController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $candidate = PostClassification::findOrFail($id);
+        $candidate = Post::findOrFail($id);
         $candidate->update($request->only([
             'name'
         ]));
@@ -80,6 +80,6 @@ class PostClassificationController extends BaseController
      */
     public function destroy($id)
     {
-        return PostClassification::destroy($id);
+        return Post::destroy($id);
     }
 }

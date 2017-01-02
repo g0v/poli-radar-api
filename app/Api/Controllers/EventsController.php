@@ -136,7 +136,7 @@ class EventsController extends BaseController
       try {
         return $this->response->item(Event::findOrFail($id), new EventTransformer);
       } catch (ModelNotFoundException $e) {
-        return $this->response->array([]);
+        return $this->response->errorNotFound();
       }
 
     }
