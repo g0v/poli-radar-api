@@ -39,7 +39,7 @@ class EventTableSeeder extends Seeder
 
         foreach (Person::all() as $person) {
           foreach ($main_cats as $sub_cat) {
-            for ($i = 0; $i < 3; $i++) {
+            foreach (range(0, rand(3, 10)) as $i) {
               $evt = Event::create([
                 'date' => $faker->dateTimeBetween('2016-02-01'),
                 'name' => $faker->realText($faker->numberBetween(10,20)),
