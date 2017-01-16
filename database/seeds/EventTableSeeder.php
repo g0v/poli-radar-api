@@ -6,6 +6,8 @@ use App\PostClassification;
 use App\Event;
 use App\EventCategory;
 use App\Location;
+use App\MediaType;
+use App\Media;
 use Carbon\Carbon;
 
 class EventTableSeeder extends Seeder
@@ -21,7 +23,10 @@ class EventTableSeeder extends Seeder
         EventCategory::truncate();
         Event::truncate();
         Location::truncate();
+        MediaType::truncate();
+        Media::truncate();
         DB::table('event_event_category')->truncate();
+        $photo = MediaType::create(['name' => '照片', 'slug' => 'photo']);
 
         $evt_cat = EventCategory::create(['name' => '立法委員']);
         $cats_list = ['中央行程', '地方行程', '媒體行程'];
@@ -49,6 +54,13 @@ class EventTableSeeder extends Seeder
               ]);
 
               $evt->categories()->attach($sub_cat);
+              if (rand(0, 10) > 7) {
+                $media = Media::create([
+                  'event_id' => $evt->id,
+                  'type_id' => $photo->id,
+                  'value' => $faker->imageUrl(),
+                ]);
+              }
             }
           }
         }

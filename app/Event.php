@@ -32,4 +32,9 @@ class Event extends Model
     {
         return $this->belongsTo('App\Location');
     }
+
+    public function media()
+    {
+        return $this->hasOne('App\Media');
+    }
 }

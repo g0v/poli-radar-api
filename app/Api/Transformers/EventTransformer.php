@@ -14,6 +14,7 @@ class EventTransformer extends BaseTransformer
 
     protected $defaultIncludes = [
       'categories',
+      'media',
     ];
 
 
@@ -38,5 +39,10 @@ class EventTransformer extends BaseTransformer
     public function includePerson(Event $event)
     {
         return $this->item($event->person, new PersonTransformer);
+    }
+
+    public function includeMedia(Event $event)
+    {
+        if ($event->media) return $this->item($event->media, new MediaTransformer);
     }
 }
