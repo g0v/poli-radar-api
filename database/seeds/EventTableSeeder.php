@@ -30,13 +30,19 @@ class EventTableSeeder extends Seeder
 
         $evt_cat = EventCategory::create(['name' => '立法委員']);
         $cats_list = ['中央行程', '地方行程', '媒體行程'];
-        $main_cats = array_map(function($cat_name) use ($evt_cat) {
+        $main_cats = array_reduce($cats_list, function($list, $cat_name) use ($evt_cat) {
           $sub_cat = EventCategory::create([
             'parent_id' => $evt_cat->id,
             'name' => $cat_name,
           ]);
-          return $sub_cat;
-        }, $cats_list);
+          foreach (range(0, 3) as $i) {
+            $list[] = EventCategory::create([
+              'parent_id' => $sub_cat->id,
+              'name' => $cat_name . ' - ' . ($i + 1),
+            ]);
+          }
+          return $list;
+        }, []);
         $poli_cat = PostClassification::where('name', '立法委員')->first();
         $evt_cat->post_classification()->save($poli_cat);
 
@@ -44,7 +50,7 @@ class EventTableSeeder extends Seeder
 
         foreach (Person::all() as $person) {
           foreach ($main_cats as $sub_cat) {
-            foreach (range(0, rand(3, 10)) as $i) {
+            foreach (range(0, rand(2, 5)) as $i) {
               $evt = Event::create([
                 'date' => $faker->dateTimeBetween('2016-02-01'),
                 'name' => $faker->realText($faker->numberBetween(10,20)),

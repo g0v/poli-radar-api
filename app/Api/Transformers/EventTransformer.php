@@ -10,10 +10,10 @@ class EventTransformer extends BaseTransformer
     protected $availableIncludes = [
   		'location',
       'person',
+      'categories',
     ];
 
     protected $defaultIncludes = [
-      'categories',
       'media',
     ];
 
