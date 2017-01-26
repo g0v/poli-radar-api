@@ -8,13 +8,13 @@ use Carbon\Carbon;
 class EventTransformer extends BaseTransformer
 {
     protected $availableIncludes = [
-  		'location',
-      'person',
-      'categories',
+        'location',
+        'person',
+        'categories',
     ];
 
     protected $defaultIncludes = [
-      'media',
+        'media',
     ];
 
 

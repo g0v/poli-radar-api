@@ -11,23 +11,23 @@ use Api\V2\Transformers\LocationTransformer;
 
 class EventTransformer extends Fractal\TransformerAbstract
 {
-	/**
+    /**
      * List of resources possible to include
      *
      * @var array
      */
     protected $availableIncludes = [
-		'politicians',
-		'categories',
+        'politicians',
+        'categories',
         'location',
     ];
 
-	public function transform(Event $event)
-	{
-		$fractal = new Fractal\Manager();
-		if (isset($_GET['include'])) {
-			$fractal->parseIncludes($_GET['include']);
-		};
+    public function transform(Event $event)
+    {
+        $fractal = new Fractal\Manager();
+        if (isset($_GET['include'])) {
+            $fractal->parseIncludes($_GET['include']);
+        };
 
         return [
             'id' => $event->id,
@@ -36,32 +36,32 @@ class EventTransformer extends Fractal\TransformerAbstract
             'start' => $event->start,
             'end' => $event->end,
         ];
-	}
+    }
 
-	public function includeCategories(Event $event)
-	{
-		$categories = $event
-			->categories()
-			->get();
+    public function includeCategories(Event $event)
+    {
+        $categories = $event
+            ->categories()
+            ->get();
 
-		return $this->collection($categories, new EventCategoryTransformer);
-	}
+        return $this->collection($categories, new EventCategoryTransformer);
+    }
 
-	public function includePoliticians(Event $event)
-	{
-		$politicians = $event
-			->politicians()
-			->get();
+    public function includePoliticians(Event $event)
+    {
+        $politicians = $event
+            ->politicians()
+            ->get();
 
-		return $this->collection($politicians, new PoliticianTransformer);
-	}
+        return $this->collection($politicians, new PoliticianTransformer);
+    }
 
-	public function includeLocation(Event $event)
-	{
-		$location = $event
-			->location()
-			->first();
+    public function includeLocation(Event $event)
+    {
+        $location = $event
+            ->location()
+            ->first();
 
-		return $this->item($location, new LocationTransformer);
-	}
+        return $this->item($location, new LocationTransformer);
+    }
 }

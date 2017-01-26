@@ -6,12 +6,12 @@ use App\OrganizationClassification;
 
 class OrganizationClassificationTransformer extends BaseTransformer
 {
-	public function transform(OrganizationClassification $oClass)
-	{
-		return [
-			'id' => (int) $oClass->id,
-      'name' => $oClass->name,
-		];
-	}
+    public function transform(OrganizationClassification $oClass)
+    {
+        return [
+            'id' => (int) $oClass->id,
+            'name' => $oClass->name,
+        ];
+    }
 
 }

@@ -7,11 +7,11 @@ use League\Fractal\TransformerAbstract;
 
 class EventCategoryTransformer extends TransformerAbstract
 {
-	public function transform(EventCategory $category)
-	{
-		return [
-			'id' => (int)$category->id,
-			'name' => $category->name,
-		];
-	}
+    public function transform(EventCategory $category)
+    {
+        return [
+            'id' => (int)$category->id,
+            'name' => $category->name,
+        ];
+    }
 }

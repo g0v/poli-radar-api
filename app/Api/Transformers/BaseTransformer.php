@@ -9,25 +9,25 @@ use Carbon\Carbon;
 
 class NullTransformer extends TransformerAbstract
 {
-  public function transform()
-  {
-    return [];
-  }
+    public function transform()
+    {
+        return [];
+    }
 }
 
 class BaseTransformer extends TransformerAbstract
 {
 
-  public function dateFormat($source)
-  {
-    if (!isset($source)) return null;
+    public function dateFormat($source)
+    {
+        if (!isset($source)) return null;
 
-    $date = new Carbon($source);
-    return $date->format('Y-m-d');
-  }
+        $date = new Carbon($source);
+        return $date->format('Y-m-d');
+    }
 
-  public function null()
-  {
-    return $this->item(null, new NullTransformer);
-  }
+    public function null()
+    {
+        return $this->item(null, new NullTransformer);
+    }
 }

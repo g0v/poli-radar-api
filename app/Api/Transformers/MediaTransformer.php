@@ -6,11 +6,11 @@ use App\Media;
 
 class MediaTransformer extends BaseTransformer
 {
-	public function transform(Media $media)
-	{
-		return [
-			'id' => (int) $media->id,
-      'value' => url($media->value),
-		];
-	}
+    public function transform(Media $media)
+    {
+        return [
+            'id' => (int) $media->id,
+            'value' => url($media->value),
+        ];
+    }
 }
