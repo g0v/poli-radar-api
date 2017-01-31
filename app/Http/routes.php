@@ -28,6 +28,8 @@ $api->version('v1', function ($api) {
         $api->get('posts/{id}', 'PostController@show');
         $api->get('post/classifications', 'PostClassificationController@index');
         $api->get('post/classifications/{id}', 'PostClassificationController@show');
+        $api->get('organizations', 'OrganizationController@index');
+        $api->get('organizations/{id}', 'OrganizationController@show');
         // $api->get('politicianCategories', 'PoliticianCategoryController@index');
         // $api->get('politicianCategories/names', 'PoliticianCategoryController@withNames');
         // $api->get('politicianCategories/{id}', 'PoliticianCategoryController@show');
