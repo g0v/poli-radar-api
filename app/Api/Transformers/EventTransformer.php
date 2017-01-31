@@ -8,13 +8,13 @@ use Carbon\Carbon;
 class EventTransformer extends BaseTransformer
 {
     protected $availableIncludes = [
-  		'location',
-      'person',
-      'categories',
+        'location',
+        'persons',
+        'categories',
     ];
 
     protected $defaultIncludes = [
-      'media',
+        'media',
     ];
 
     public function transform(Event $event)
@@ -35,13 +35,26 @@ class EventTransformer extends BaseTransformer
         return $this->collection($event->categories, new EventCategoryTransformer);
     }
 
-    public function includePerson(Event $event)
+    public function includePersons(Event $event)
     {
-        return $this->item($event->person, new PersonTransformer);
+        return $this->collection($event->persons, new PersonTransformer);
     }
 
     public function includeMedia(Event $event)
     {
         if ($event->media) return $this->item($event->media, new MediaTransformer);
+    }
+
+    public function includeLocation(Event $event)
+    {
+        $location = $event->location;
+        if (is_null($location)) return $this->null();
+        $location_type = $event->location_type;
+        switch ($location_type) {
+        case 'App\Location':
+            return $this->item($location, new LocationTransformer);
+        case 'App\Region':
+            return $this->item($location, new RegionTransformer);
+        }
     }
 }

@@ -7,11 +7,11 @@ use League\Fractal\TransformerAbstract;
 
 class PoliticianTransformer extends TransformerAbstract
 {
-	public function transform(Politician $politician)
-	{
-		return [
-			'id' => (int)$politician->id,
-			'name' => $politician->name,
-		];
-	}
+    public function transform(Politician $politician)
+    {
+        return [
+            'id' => (int)$politician->id,
+            'name' => $politician->name,
+        ];
+    }
 }

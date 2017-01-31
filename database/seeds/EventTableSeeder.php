@@ -55,10 +55,9 @@ class EventTableSeeder extends Seeder
                 'date' => $faker->dateTimeBetween('2016-02-01'),
                 'name' => $faker->realText($faker->numberBetween(10,20)),
                 'description' => $faker->realText($faker->numberBetween(40,100)),
-                'person_id' => $person->id,
                 'user_id' => 1,
               ]);
-
+              $evt->persons()->attach($person);
               $evt->categories()->attach($sub_cat);
               if (rand(0, 10) > 7) {
                 $media = Media::create([
