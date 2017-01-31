@@ -17,7 +17,6 @@ class EventTransformer extends BaseTransformer
       'media',
     ];
 
-
     public function transform(Event $event)
     {
         return [
