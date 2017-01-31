@@ -17,4 +17,9 @@ class Region extends Model
     {
         return $this->belongsTo('App\City');
     }
+
+    public function events()
+    {
+        return $this->morphMany('App\Event', 'location');
+    }
 }

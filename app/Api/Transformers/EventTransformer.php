@@ -48,7 +48,14 @@ class EventTransformer extends BaseTransformer
 
     public function includeLocation(Event $event)
     {
-        if (is_null($event->location)) return $this->null();
-        return $this->item($event>location, new LocationTransformer);
+        $location = $event->location;
+        if (is_null($location)) return $this->null();
+        $location_type = $event->location_type;
+        switch ($location_type) {
+        case 'App\Location':
+            return $this->item($location, new LocationTransformer);
+        case 'App\Region':
+            return $this->item($location, new RegionTransformer);
+        }
     }
 }
