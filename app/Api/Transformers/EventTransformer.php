@@ -45,4 +45,10 @@ class EventTransformer extends BaseTransformer
     {
         if ($event->media) return $this->item($event->media, new MediaTransformer);
     }
+
+    public function includeLocation(Event $event)
+    {
+        if (is_null($event->location)) return $this->null();
+        return $this->item($event>location, new LocationTransformer);
+    }
 }
