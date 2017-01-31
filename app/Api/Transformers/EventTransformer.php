@@ -9,7 +9,7 @@ class EventTransformer extends BaseTransformer
 {
     protected $availableIncludes = [
         'location',
-        'person',
+        'persons',
         'categories',
     ];
 
@@ -36,9 +36,9 @@ class EventTransformer extends BaseTransformer
         return $this->collection($event->categories, new EventCategoryTransformer);
     }
 
-    public function includePerson(Event $event)
+    public function includePersons(Event $event)
     {
-        return $this->item($event->person, new PersonTransformer);
+        return $this->collection($event->persons, new PersonTransformer);
     }
 
     public function includeMedia(Event $event)
