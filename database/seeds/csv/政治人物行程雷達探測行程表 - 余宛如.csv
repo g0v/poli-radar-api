@@ -1,53 +1,1099 @@
-立委,行程日期,開始時間（選填）,結束時間（選填）,行程分類,行程名稱,行程敘述（選填）,相關連結（選填）,行程地點,媒體類型（選填）,媒體連結（選填）
-余宛如,2017-01-23,下午,,媒體公關,借鏡法國經驗活化企業與創新產業座談,邀請到「La French Tech」之母、打造法國創新生態圈的Fleur Pellerin蒞臨立法院，分享法國的政策經驗。,,立法院,FB,https://www.facebook.com/Yuwanju/posts/1325124220885844
-余宛如,2017-01-19,,,媒體公關,立法院FinTech Seminar,邀請到FinTech Taiwan發起人、澳洲新南威爾斯大學法學院Research Fellow的臧正運 （CY Tsang）博士，為財政委員會的民進黨委員與助理同仁、金管會的鄭副主委、資服處蔡處長與其他同仁，分享金融科技監理的國際潮流與因應策略。此外，也邀請了源鉑資本的胡一天 （Thomas Hu）談區塊鏈技術與金融科技。,,立法院,FB,https://www.facebook.com/Yuwanju/posts/1321323477932585
-余宛如,2017-01-18,,,媒體公關,打造台灣成為新創南向的HUB!會議,邀請國發會龔副主委、行政院經貿談判辦公室、經濟部投資業務處、中小企業處、國貿局、世界台灣商會聯合總會青商會祕書長吳國本與 TXA 創新加速器總經理徐竹先，共同討論如何推動創新創業南向延伸，落實蔡總統政見中新南向、亞洲矽谷與五加二產業計畫，打造連結新產業南向的橋梁，也讓台灣新創有更多機會走入東南亞市場。,,,FB,https://www.facebook.com/Yuwanju/posts/1320137098051223
+立委,行程日期,開始時間（選填）,結束時間（選填）,行程分類,行程名稱,行程敘述（選填）,相關連結（選填）,行程地點,geocode,lat,lon,媒體類型（選填）,媒體連結（選填）
+余宛如,2017-01-23,下午,,媒體公關,借鏡法國經驗活化企業與創新產業座談,邀請到「La French Tech」之母、打造法國創新生態圈的Fleur Pellerin蒞臨立法院，分享法國的政策經驗。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""1"",
+               ""short_name"" : ""1"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路1號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.0442838,
+               ""lng"" : 121.5207021
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0456327802915,
+                  ""lng"" : 121.5220510802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.0429348197085,
+                  ""lng"" : 121.5193531197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJh2e9c3GpQjQRf42gbiw8jgc"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.0442838,121.5207021,FB,https://www.facebook.com/Yuwanju/posts/1325124220885844
+余宛如,2017-01-19,,,媒體公關,立法院FinTech Seminar,邀請到FinTech Taiwan發起人、澳洲新南威爾斯大學法學院Research Fellow的臧正運 （CY Tsang）博士，為財政委員會的民進黨委員與助理同仁、金管會的鄭副主委、資服處蔡處長與其他同仁，分享金融科技監理的國際潮流與因應策略。此外，也邀請了源鉑資本的胡一天 （Thomas Hu）談區塊鏈技術與金融科技。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""1"",
+               ""short_name"" : ""1"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路1號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.0442838,
+               ""lng"" : 121.5207021
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0456327802915,
+                  ""lng"" : 121.5220510802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.0429348197085,
+                  ""lng"" : 121.5193531197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJh2e9c3GpQjQRf42gbiw8jgc"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.0442838,121.5207021,FB,https://www.facebook.com/Yuwanju/posts/1321323477932585
+余宛如,2017-01-18,,,媒體公關,打造台灣成為新創南向的HUB!會議,邀請國發會龔副主委、行政院經貿談判辦公室、經濟部投資業務處、中小企業處、國貿局、世界台灣商會聯合總會青商會祕書長吳國本與 TXA 創新加速器總經理徐竹先，共同討論如何推動創新創業南向延伸，落實蔡總統政見中新南向、亞洲矽谷與五加二產業計畫，打造連結新產業南向的橋梁，也讓台灣新創有更多機會走入東南亞市場。,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1320137098051223
 余宛如,2017-01-18,,,國會事務,"兩公約經社文公
-約審查會議",台灣兩公約國家報告的重要審查會議,,,FB,https://www.facebook.com/Yuwanju/posts/1318422021556064
-余宛如,2017-01-17,,,媒體公關,女委大主廚．新春活動特輯,與立院好媽媽 蘇巧慧委員、淡水Jolin 呂孫綾委員，一同錄製農曆春節的節目「女委大主廚」。,,,FB,https://www.facebook.com/Yuwanju/posts/1319411364790463
-余宛如,2017-01-17,,,媒體公關,台少盟會議,台灣少年權益與福利促進聯盟秘書長葉大華的邀請，聆聽青年就業的議題。,,,FB,https://www.facebook.com/Yuwanju/posts/1319438458121087
-余宛如,2017-01-17,,,媒體公關,亞太智慧卡協 會-創新金融與 支付博覽會2017,亞太智慧卡協會定期舉辦金融科技方面的座談,,,FB,https://www.facebook.com/Yuwanju/posts/1318519221546344
+約審查會議",台灣兩公約國家報告的重要審查會議,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1318422021556064
+余宛如,2017-01-17,,,媒體公關,女委大主廚．新春活動特輯,與立院好媽媽 蘇巧慧委員、淡水Jolin 呂孫綾委員，一同錄製農曆春節的節目「女委大主廚」。,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1319411364790463
+余宛如,2017-01-17,,,媒體公關,台少盟會議,台灣少年權益與福利促進聯盟秘書長葉大華的邀請，聆聽青年就業的議題。,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1319438458121087
+余宛如,2017-01-17,,,媒體公關,亞太智慧卡協 會-創新金融與 支付博覽會2017,亞太智慧卡協會定期舉辦金融科技方面的座談,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1318519221546344
 余宛如,2017-01-16,,,媒體公關,"台北市會計師公
-會贈米濟貧活動",參加會計師公會一年一度捐贈白米給低收入戶的愛心活動，與姚文智委員、周威佑議員，一起在台北市萬華區青山里辦公室，同里長將愛心白米交到需要的民眾手上。,,,FB,https://www.facebook.com/Yuwanju/posts/1318416368223296
-余宛如,2017-01-14,,,媒體公關,中美洲-英捷專 案-舊金山,,,舊金山,FB,https://www.facebook.com/Yuwanju/posts/1318412181557048
-余宛如,2017-01-14,,,媒體公關,中美洲-英捷專 案-舊金山,,,舊金山,FB,https://www.facebook.com/Yuwanju/posts/1318412181557048
-余宛如,2017-01-12,,,媒體公關,中美洲-英捷專 案-薩爾瓦多,與薩國青年座談,,薩爾瓦多,FB,https://www.facebook.com/Yuwanju/posts/1315780711820195
-余宛如,2017-01-11,,,媒體公關,中美洲-英捷專 案-瓜地馬拉,,,瓜地馬拉,FB,https://www.facebook.com/Yuwanju/posts/1314559888608944
-余宛如,2017-01-10,,,媒體公關,中美洲-英捷專 案-尼加拉瓜,,,尼加拉瓜,FB,https://www.facebook.com/Yuwanju/posts/1313558968709036
-余宛如,2017-01-09,,,媒體公關,中美洲-英捷專 案-宏都拉斯,,,宏都拉斯,FB,https://www.facebook.com/Yuwanju/posts/1312531198811813
-余宛如,2017-01-08,,,媒體公關,中美洲-英捷專案-休士頓,,,休士頓,FB,https://www.facebook.com/Yuwanju/posts/1310751245656475
-余宛如,2017-01-07,,,媒體公關,中美洲-英捷專 案-行前說明,,,,FB,https://www.facebook.com/Yuwanju/posts/1309531092445157
-余宛如,2017-01-06,,,媒體公關,尤美女-南非國 會友好聯誼會,,,南非,FB,https://www.facebook.com/Yuwanju/posts/1309733435758256
-余宛如,2017-01-04,,,媒體公關,青總,青創總會四十五週年啟動儀式,,,FB,https://www.facebook.com/Yuwanju/posts/1308915132506753
-余宛如,2017-01-03,,,媒體公關,meet SOAS 青年未來 Daffyd,,,,FB,https://www.facebook.com/Yuwanju/photos/a.254081111323499.62597.185265471538397/1308660152532251/?type=3
+會贈米濟貧活動",參加會計師公會一年一度捐贈白米給低收入戶的愛心活動，與姚文智委員、周威佑議員，一起在台北市萬華區青山里辦公室，同里長將愛心白米交到需要的民眾手上。,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1318416368223296
+余宛如,2017-01-14,,,媒體公關,中美洲-英捷專 案-舊金山,,,舊金山,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""舊金山"",
+               ""short_name"" : ""SF"",
+               ""types"" : [ ""locality"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""舊金山"",
+               ""short_name"" : ""舊金山"",
+               ""types"" : [ ""administrative_area_level_2"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""加利福尼亞州"",
+               ""short_name"" : ""CA"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""美國"",
+               ""short_name"" : ""US"",
+               ""types"" : [ ""country"", ""political"" ]
+            }
+         ],
+         ""formatted_address"" : ""美國加利福尼亞州舊金山"",
+         ""geometry"" : {
+            ""bounds"" : {
+               ""northeast"" : {
+                  ""lat"" : 37.9298239,
+                  ""lng"" : -122.28178
+               },
+               ""southwest"" : {
+                  ""lat"" : 37.6398299,
+                  ""lng"" : -123.173825
+               }
+            },
+            ""location"" : {
+               ""lat"" : 37.7749295,
+               ""lng"" : -122.4194155
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 37.812,
+                  ""lng"" : -122.3482
+               },
+               ""southwest"" : {
+                  ""lat"" : 37.70339999999999,
+                  ""lng"" : -122.527
+               }
+            }
+         },
+         ""place_id"" : ""ChIJIQBpAG2ahYAR_6128GcTUEo"",
+         ""types"" : [ ""locality"", ""political"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",37.7749295,-122.4194155,FB,https://www.facebook.com/Yuwanju/posts/1318412181557048
+余宛如,2017-01-14,,,媒體公關,中美洲-英捷專 案-舊金山,,,舊金山,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""舊金山"",
+               ""short_name"" : ""SF"",
+               ""types"" : [ ""locality"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""舊金山"",
+               ""short_name"" : ""舊金山"",
+               ""types"" : [ ""administrative_area_level_2"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""加利福尼亞州"",
+               ""short_name"" : ""CA"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""美國"",
+               ""short_name"" : ""US"",
+               ""types"" : [ ""country"", ""political"" ]
+            }
+         ],
+         ""formatted_address"" : ""美國加利福尼亞州舊金山"",
+         ""geometry"" : {
+            ""bounds"" : {
+               ""northeast"" : {
+                  ""lat"" : 37.9298239,
+                  ""lng"" : -122.28178
+               },
+               ""southwest"" : {
+                  ""lat"" : 37.6398299,
+                  ""lng"" : -123.173825
+               }
+            },
+            ""location"" : {
+               ""lat"" : 37.7749295,
+               ""lng"" : -122.4194155
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 37.812,
+                  ""lng"" : -122.3482
+               },
+               ""southwest"" : {
+                  ""lat"" : 37.70339999999999,
+                  ""lng"" : -122.527
+               }
+            }
+         },
+         ""place_id"" : ""ChIJIQBpAG2ahYAR_6128GcTUEo"",
+         ""types"" : [ ""locality"", ""political"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",37.7749295,-122.4194155,FB,https://www.facebook.com/Yuwanju/posts/1318412181557048
+余宛如,2017-01-12,,,媒體公關,中美洲-英捷專 案-薩爾瓦多,與薩國青年座談,,薩爾瓦多,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""薩爾瓦多"",
+               ""short_name"" : ""SV"",
+               ""types"" : [ ""country"", ""political"" ]
+            }
+         ],
+         ""formatted_address"" : ""薩爾瓦多"",
+         ""geometry"" : {
+            ""bounds"" : {
+               ""northeast"" : {
+                  ""lat"" : 14.4505567,
+                  ""lng"" : -87.6682
+               },
+               ""southwest"" : {
+                  ""lat"" : 13.0473999,
+                  ""lng"" : -90.19229999999999
+               }
+            },
+            ""location"" : {
+               ""lat"" : 13.794185,
+               ""lng"" : -88.89653
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 14.4505567,
+                  ""lng"" : -87.68385019999999
+               },
+               ""southwest"" : {
+                  ""lat"" : 13.1554312,
+                  ""lng"" : -90.1268106
+               }
+            }
+         },
+         ""place_id"" : ""ChIJVwZkWaYnY48RMkiFmOsWmm8"",
+         ""types"" : [ ""country"", ""political"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",13.794185,-88.89653,FB,https://www.facebook.com/Yuwanju/posts/1315780711820195
+余宛如,2017-01-11,,,媒體公關,中美洲-英捷專 案-瓜地馬拉,,,瓜地馬拉,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""瓜地馬拉"",
+               ""short_name"" : ""GT"",
+               ""types"" : [ ""country"", ""political"" ]
+            }
+         ],
+         ""formatted_address"" : ""瓜地馬拉"",
+         ""geometry"" : {
+            ""bounds"" : {
+               ""northeast"" : {
+                  ""lat"" : 17.8156973,
+                  ""lng"" : -88.19820009999999
+               },
+               ""southwest"" : {
+                  ""lat"" : 13.63,
+                  ""lng"" : -92.2714
+               }
+            },
+            ""location"" : {
+               ""lat"" : 15.783471,
+               ""lng"" : -90.23075899999999
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 17.8157114,
+                  ""lng"" : -88.2307249
+               },
+               ""southwest"" : {
+                  ""lat"" : 13.7400214,
+                  ""lng"" : -92.23183589999999
+               }
+            }
+         },
+         ""place_id"" : ""ChIJa1DnNlATiIURu9WEWzcrmDU"",
+         ""types"" : [ ""country"", ""political"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",15.783471,-90.23075899999999,FB,https://www.facebook.com/Yuwanju/posts/1314559888608944
+余宛如,2017-01-10,,,媒體公關,中美洲-英捷專 案-尼加拉瓜,,,尼加拉瓜,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""尼加拉瓜"",
+               ""short_name"" : ""NI"",
+               ""types"" : [ ""country"", ""political"" ]
+            }
+         ],
+         ""formatted_address"" : ""尼加拉瓜"",
+         ""geometry"" : {
+            ""bounds"" : {
+               ""northeast"" : {
+                  ""lat"" : 15.0302755,
+                  ""lng"" : -82.2766
+               },
+               ""southwest"" : {
+                  ""lat"" : 10.7080549,
+                  ""lng"" : -87.75879999999999
+               }
+            },
+            ""location"" : {
+               ""lat"" : 12.865416,
+               ""lng"" : -85.207229
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 15.0302755,
+                  ""lng"" : -82.5920716
+               },
+               ""southwest"" : {
+                  ""lat"" : 10.7080549,
+                  ""lng"" : -87.69030769999999
+               }
+            }
+         },
+         ""place_id"" : ""ChIJzSL_zgDCEI8RtRWsP-Wn-sg"",
+         ""types"" : [ ""country"", ""political"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",12.865416,-85.207229,FB,https://www.facebook.com/Yuwanju/posts/1313558968709036
+余宛如,2017-01-09,,,媒體公關,中美洲-英捷專 案-宏都拉斯,,,宏都拉斯,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""洪都拉斯"",
+               ""short_name"" : ""HN"",
+               ""types"" : [ ""country"", ""political"" ]
+            }
+         ],
+         ""formatted_address"" : ""洪都拉斯"",
+         ""geometry"" : {
+            ""bounds"" : {
+               ""northeast"" : {
+                  ""lat"" : 17.4677999,
+                  ""lng"" : -83.06210009999999
+               },
+               ""southwest"" : {
+                  ""lat"" : 12.9842246,
+                  ""lng"" : -89.3564822
+               }
+            },
+            ""location"" : {
+               ""lat"" : 15.199999,
+               ""lng"" : -86.241905
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 16.5168515,
+                  ""lng"" : -83.12757979999999
+               },
+               ""southwest"" : {
+                  ""lat"" : 12.9842246,
+                  ""lng"" : -89.3564822
+               }
+            }
+         },
+         ""place_id"" : ""ChIJzzG3cxp1ao8RZIL7toLe0X4"",
+         ""types"" : [ ""country"", ""political"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",15.199999,-86.241905,FB,https://www.facebook.com/Yuwanju/posts/1312531198811813
+余宛如,2017-01-08,,,媒體公關,中美洲-英捷專案-休士頓,,,休士頓,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""休斯敦"",
+               ""short_name"" : ""休斯敦"",
+               ""types"" : [ ""locality"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""哈里斯縣"",
+               ""short_name"" : ""哈里斯縣"",
+               ""types"" : [ ""administrative_area_level_2"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""德克薩斯"",
+               ""short_name"" : ""TX"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""美國"",
+               ""short_name"" : ""US"",
+               ""types"" : [ ""country"", ""political"" ]
+            }
+         ],
+         ""formatted_address"" : ""美國德克薩斯休斯敦"",
+         ""geometry"" : {
+            ""bounds"" : {
+               ""northeast"" : {
+                  ""lat"" : 30.1107319,
+                  ""lng"" : -95.01449599999999
+               },
+               ""southwest"" : {
+                  ""lat"" : 29.523624,
+                  ""lng"" : -95.78808690000001
+               }
+            },
+            ""location"" : {
+               ""lat"" : 29.7604267,
+               ""lng"" : -95.3698028
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 30.1107319,
+                  ""lng"" : -95.01449599999999
+               },
+               ""southwest"" : {
+                  ""lat"" : 29.523624,
+                  ""lng"" : -95.78808690000001
+               }
+            }
+         },
+         ""place_id"" : ""ChIJAYWNSLS4QIYROwVl894CDco"",
+         ""types"" : [ ""locality"", ""political"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",29.7604267,-95.3698028,FB,https://www.facebook.com/Yuwanju/posts/1310751245656475
+余宛如,2017-01-07,,,媒體公關,中美洲-英捷專 案-行前說明,,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1309531092445157
+余宛如,2017-01-06,,,媒體公關,尤美女-南非國 會友好聯誼會,,,南非,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""南非"",
+               ""short_name"" : ""ZA"",
+               ""types"" : [ ""country"", ""political"" ]
+            }
+         ],
+         ""formatted_address"" : ""南非"",
+         ""geometry"" : {
+            ""bounds"" : {
+               ""northeast"" : {
+                  ""lat"" : -22.1254241,
+                  ""lng"" : 38.2216904
+               },
+               ""southwest"" : {
+                  ""lat"" : -47.1313489,
+                  ""lng"" : 16.2816999
+               }
+            },
+            ""location"" : {
+               ""lat"" : -30.559482,
+               ""lng"" : 22.937506
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : -22.1254241,
+                  ""lng"" : 32.8909911
+               },
+               ""southwest"" : {
+                  ""lat"" : -34.83323230000001,
+                  ""lng"" : 16.4535919
+               }
+            }
+         },
+         ""place_id"" : ""ChIJURLu2YmmNBwRoOikHwxjXeg"",
+         ""types"" : [ ""country"", ""political"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",-30.559482,22.937506,FB,https://www.facebook.com/Yuwanju/posts/1309733435758256
+余宛如,2017-01-04,,,媒體公關,青總,青創總會四十五週年啟動儀式,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1308915132506753
+余宛如,2017-01-03,,,媒體公關,meet SOAS 青年未來 Daffyd,,,,,,,FB,https://www.facebook.com/Yuwanju/photos/a.254081111323499.62597.185265471538397/1308660152532251/?type=3
 余宛如,2016-12-29,,,媒體公關,"婚姻平權採訪
-(with尤美女)",,,,FB,https://www.facebook.com/Yuwanju/posts/1303173789747554
-余宛如,2016-12-28,10:51:59,11:04:08,國會事務,立法院第9屆第2會期財政委員會第24次全體委員會議,事由：審查中華民國106年度中央政府總預算案附屬單位預算非營業部分有關作業基金：地方建設基金、國有財產開發基金。債務基金：中央政府債務基金。特別收入基金：行政院公營事業民營化基金。(12月28日及12月29日【兩天一次會】),,立法院,,
-余宛如,2016-12-26,10:16:43,10:28:37,國會事務,立法院第9屆第2會期財政委員會第23次全體委員會議,事由：一、審查行政院函請審議「稅捐稽徵法第二十三條條文修正草案」案。 二、審查本院委員邱志偉等19人擬具「稅捐稽徵法第二十三條條文修正草案」案。 三、審查行政院函請審議「貨物稅條例第十二條之三條文修正草案」案。 (第一案、第二案及第三案業經各黨團簽署「不復議同意書」在案。) 四、審查本院委員許毓仁等24人、委員羅明才等19人、委員費鴻泰等16人、委員盧秀燕等16人及委員趙天麟等21人分別擬具「貨物稅條例第十二條之三條文修正草案」案等5案。 五、審查本院委員管碧玲等16人擬具「貨物稅條例第十一條及第十二條之三條文修正草案」案。 六、審查本院委員邱議瑩等17人擬具「貨物稅條例第十二條及第十二條之三條文修正草案」案。 七、審查本院委員余宛如等16人擬具「貨物稅條例第十二條之三及第三十七條條文修正草案」案。 八、審查本院委員邱泰源等25人擬具「關稅法第四十九條條文修正草案」案。,,立法院,,
-余宛如,2016-12-25,,,媒體公關,「亞洲．矽谷計畫執行中心」的接碑儀式,,,,FB,https://www.facebook.com/Yuwanju/posts/1300012966730303
+(with尤美女)",,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1303173789747554
+余宛如,2016-12-28,10:51:59,11:04:08,國會事務,立法院第9屆第2會期財政委員會第24次全體委員會議,事由：審查中華民國106年度中央政府總預算案附屬單位預算非營業部分有關作業基金：地方建設基金、國有財產開發基金。債務基金：中央政府債務基金。特別收入基金：行政院公營事業民營化基金。(12月28日及12月29日【兩天一次會】),,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""1"",
+               ""short_name"" : ""1"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路1號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.0442838,
+               ""lng"" : 121.5207021
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0456327802915,
+                  ""lng"" : 121.5220510802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.0429348197085,
+                  ""lng"" : 121.5193531197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJh2e9c3GpQjQRf42gbiw8jgc"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.0442838,121.5207021,,
+余宛如,2016-12-26,10:16:43,10:28:37,國會事務,立法院第9屆第2會期財政委員會第23次全體委員會議,事由：一、審查行政院函請審議「稅捐稽徵法第二十三條條文修正草案」案。 二、審查本院委員邱志偉等19人擬具「稅捐稽徵法第二十三條條文修正草案」案。 三、審查行政院函請審議「貨物稅條例第十二條之三條文修正草案」案。 (第一案、第二案及第三案業經各黨團簽署「不復議同意書」在案。) 四、審查本院委員許毓仁等24人、委員羅明才等19人、委員費鴻泰等16人、委員盧秀燕等16人及委員趙天麟等21人分別擬具「貨物稅條例第十二條之三條文修正草案」案等5案。 五、審查本院委員管碧玲等16人擬具「貨物稅條例第十一條及第十二條之三條文修正草案」案。 六、審查本院委員邱議瑩等17人擬具「貨物稅條例第十二條及第十二條之三條文修正草案」案。 七、審查本院委員余宛如等16人擬具「貨物稅條例第十二條之三及第三十七條條文修正草案」案。 八、審查本院委員邱泰源等25人擬具「關稅法第四十九條條文修正草案」案。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""1"",
+               ""short_name"" : ""1"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路1號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.0442838,
+               ""lng"" : 121.5207021
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0456327802915,
+                  ""lng"" : 121.5220510802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.0429348197085,
+                  ""lng"" : 121.5193531197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJh2e9c3GpQjQRf42gbiw8jgc"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.0442838,121.5207021,,
+余宛如,2016-12-25,,,媒體公關,「亞洲．矽谷計畫執行中心」的接碑儀式,,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1300012966730303
 余宛如,2016-12-25,,,媒體公關,"中華電信基金會
 十週年活動
-",,,,FB,https://www.facebook.com/Yuwanju/posts/1297576140307319
-余宛如,2016-12-22,,,媒體公關,社會企業拜訪之旅-拜訪sunny,,,,FB,https://www.facebook.com/Yuwanju/photos/a.254081111323499.62597.185265471538397/1321243874607212/?type=3&theater
-余宛如,2016-12-22,12:06:25,12:17:44,國會事務,立法院第9屆第2會期財政委員會第22次全體委員會議,事由：審查中華民國106年度中央政府總預算案有關補助直轄市及縣市政府。災害準備金。第二預備金。融資財源調度部分。,,立法院,,
-余宛如,2016-12-21,,,媒體公關,蘇巧慧-炫光聖 誕樹記者會,蘇巧慧委員的邀請，昨日我跟 吳玉琴、 呂孫綾、柯志恩、 李麗芬、 陳賴素美等委員，一起在中興大樓一樓點亮炫光聖誕樹，迎接聖誕節的來臨，同時為台灣祈福。,,,FB,https://www.facebook.com/Yuwanju/posts/1297313710333562
-余宛如,2016-12-21,,,媒體公關,Eatgether新創飯局,與新創公司Eatgether一起吃第一次合作餐會,,,FB,https://www.facebook.com/Yuwanju/posts/1296875377044062
-余宛如,2016-12-20,,,媒體公關,社會企業拜訪之旅-鄭義老師拜訪,,,,FB,https://www.facebook.com/Yuwanju/photos/a.254081111323499.62597.185265471538397/1321244757940457/?type=3
-余宛如,2016-12-19,,,媒體公關,金融監理沙盒出財政委員會,財政委員會審查金融監理沙盒的提案,,,FB,https://www.facebook.com/Yuwanju/posts/1294766130588320
-余宛如,2016-12-18,,,媒體公關,社會企業嘉年華,參加扶輪社3480地區與社企聚落​、以及29家不同類型的社企，在松菸盛大舉辦【社企相扶 輪轉台灣-1217因愛一起聯合嘉年華】活動。,,,FB,https://www.facebook.com/Yuwanju/posts/1293198394078427
-余宛如,2016-12-15,,,媒體公關,參加新創活動,參加了Taiwan Startup Stadium 台灣新創競技場 舉辦的Home coming party,,,FB,https://www.facebook.com/Yuwanju/posts/1292428067488793
-余宛如,2016-12-15,下午,,國會事務,產創條例公聽會,與賴瑞隆、鍾佳濱委員一起召開公聽會，邀請政府部門和民間團體代表，共同討論我提出的「產業創新條例」修正草案。,,立法院,FB,https://www.facebook.com/Yuwanju/posts/1292203874177879
-余宛如,2016-12-15,,,媒體公關,社會企業拜訪之旅-拜訪周宗穎,,,,FB,https://www.facebook.com/Yuwanju/photos/a.254081111323499.62597.185265471538397/1302326569832276/?type=3
-余宛如,2016-12-15,,,媒體公關,台北扶輪社演講,,,,FB,https://www.facebook.com/Yuwanju/posts/1291192060945727
-余宛如,2016-12-14,,,媒體公關,民視錄影,參加四季線上影視4gtv的直播節目：你在大聲什麼啦,,,FB,https://www.facebook.com/Yuwanju/posts/1290985877633012
-余宛如,2016-12-14,9:59:11,10:09:07,國會事務,立法院第9屆第2會期財政委員會第20次全體委員會議,事由：審查中華民國106年度中央政府總預算案附屬單位預算營業部分有關中國輸出入銀行、臺灣金融控股股份有限公司（含臺灣銀行股份有限公司、臺銀人壽保險股份有限公司、臺銀綜合證券股份有限公司）、臺灣土地銀行股份有限公司（含土銀保險經紀人股份有限公司）、財政部印刷廠。(12月14日及12月15日【兩天一次會】),,立法院,,
-余宛如,2016-12-13,,,媒體公關,電子函證高峰會,受邀參加 《電子函證高峰會》見證台灣FinTech新奇蹟，見識台灣經濟研究院與電子函證推動小組打造的函證交換平台。,,,FB,https://www.facebook.com/Yuwanju/posts/1289206534477613
-余宛如,2016-12-13,,,媒體公關,Eatgether拍影片,,,,FB,https://www.facebook.com/Yuwanju/videos/1290208827710717/
-余宛如,2016-12-13,,,媒體公關,溫暖微光社企專書發表會,參加「溫暖微光」專書發表會，這是由衛福部社家署所發行的社會企業專書，希望藉由不同的案例來推廣以人為本的社企價值。,,,FB,https://www.facebook.com/Yuwanju/posts/1289248504473416
-余宛如,2016-12-13,,,媒體公關,南非民主聯盟拜訪,和蔡其昌副院長和 Kolas Yotaka委員一起，會見南非最大在野黨─民主聯盟的參訪團。,,,FB,https://www.facebook.com/Yuwanju/posts/1289064701158463
-余宛如,2016-12-12,,,媒體公關,朝日新聞採訪,12/19登在頭版,,,FB,https://www.facebook.com/Yuwanju/posts/1294950387236561
-余宛如,2016-12-12,10:05:29,10:15:50,國會事務,立法院第9屆第2會期財政委員會第19次全體委員會議,事由：一、彙總整理提出「中華民國106年度中央政府總預算案審查總報告草案」提報院會案。 二、審查行政院函請審議「海關進口稅則部分稅則修正草案」案。,,立法院,,
-余宛如,2016-12-11,,,媒體公關,財政-監理沙盒稅務配套,,,,FB,https://www.facebook.com/Yuwanju/posts/1288059614592305
-余宛如,2016-12-08,10:36:31,10:46:12,國會事務,立法院第9屆第2會期財政委員會第18次全體委員會議,事由：一、審查本院委員曾銘宗等17人擬具「保險法增訂第一百三十六條之一條文草案」案、委員余宛如等17人擬具「保險法增訂部分條文草案」案及委員賴士葆等20人擬具「保險法增訂第一百三十六條之一條文草案」案等3案。 二、審查本院委員曾銘宗等17人擬具「證券交易法增訂第四十四條之一條文草案」案、委員余宛如等16人擬具「證券交易法增訂部分條文草案」案及委員賴士葆等20人擬具「證券交易法增訂第四十四條之一條文草案」案等3案。 三、審查本院委員曾銘宗等17人擬具「銀行法增訂第二十二條之一條文草案」案、委員余宛如等16人擬具「銀行法增訂部分條文草案」案、委員許毓仁等17人擬具「銀行法部分條文修正草案」案及委員賴士葆等20人擬具「銀行法增訂第二十二條之一條文草案」案等4案。 四、審查本院委員曾銘宗等17人擬具「期貨交易法增訂第五十六條之一條文草案」案、委員余宛如等16人擬具「期貨交易法增訂部分條文草案」案及委員賴士葆等20人擬具「期貨交易法增訂第五十六條之一條文草案」案等3案。 五、審查本院委員余宛如等16人擬具「信託業法增訂部分條文草案」案及委員賴士葆等20人擬具「信託業法增訂第三條之一條文草案」案等2案。 六、審查本院委員曾銘宗等17人擬具「證券投資信託及顧問法增訂第三條之一條文草案」案、委員余宛如等16人擬具「證券投資信託及顧問法增訂部分條文草案」案及委員賴士葆等20人擬具「證券投資信託及顧問法增訂第三條之一條文草案」案等3案。 七、審查本院委員曾銘宗等17人擬具「電子票證發行管理條例增訂第五條之二條文草案」案、委員余宛如等16人擬具「電子票證發行管理條例增訂部分條文草案」案及委員賴士葆等20人擬具「電子票證發行管理條例增訂第五條之二條文草案」案等3案。 八、審查本院委員曾銘宗等17人擬具「電子支付機構管理條例增訂第三條之一條文草案」案、委員余宛如等16人擬具「電子支付機構管理條例增訂部分條文草案」案及委員賴士葆等20人擬具「電子支付機構管理條例增訂第三條之一條文草案」案等3案。 九、審查本院委員余宛如等18人擬具「金融消費者保護法增訂第三十二條之二條文草案」案。,,立法院,,
-余宛如,2016-12-05,10:00:49,10:10:51,國會事務,立法院第9屆第2會期財政委員會第17次全體委員會議,事由：一、審查行政院函請審議「證券交易稅條例第二條之一條文修正草案」案。（詢答及處理） 二、審查中華民國106年度中央政府總預算案有關財政部關務署及所屬。金融監督管理委員會證券期貨局、保險局部分。（詢答）(12月5日及12月7日【兩天一次會】),,立法院,,
-余宛如,2016-12-01,10:45:51,10:58:12,國會事務,立法院第9屆第2會期財政委員會第16次全體委員會議,事由：邀請行政院主計總處朱主計長澤民、審計部林審計長慶隆、衛生福利部次長、交通部次長、教育部次長、文化部次長、科技部次長、經濟部次長、行政院農業委員會副主任委員、國家發展委員會副主任委員就「中央對地方政府與民間團體補助及核銷要求適切性檢討」進行專題報告，並備質詢。,,立法院,,
+",,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1297576140307319
+余宛如,2016-12-22,,,媒體公關,社會企業拜訪之旅-拜訪sunny,,,,,,,FB,https://www.facebook.com/Yuwanju/photos/a.254081111323499.62597.185265471538397/1321243874607212/?type=3&theater
+余宛如,2016-12-22,12:06:25,12:17:44,國會事務,立法院第9屆第2會期財政委員會第22次全體委員會議,事由：審查中華民國106年度中央政府總預算案有關補助直轄市及縣市政府。災害準備金。第二預備金。融資財源調度部分。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""1"",
+               ""short_name"" : ""1"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路1號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.0442838,
+               ""lng"" : 121.5207021
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0456327802915,
+                  ""lng"" : 121.5220510802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.0429348197085,
+                  ""lng"" : 121.5193531197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJh2e9c3GpQjQRf42gbiw8jgc"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.0442838,121.5207021,,
+余宛如,2016-12-21,,,媒體公關,蘇巧慧-炫光聖 誕樹記者會,蘇巧慧委員的邀請，昨日我跟 吳玉琴、 呂孫綾、柯志恩、 李麗芬、 陳賴素美等委員，一起在中興大樓一樓點亮炫光聖誕樹，迎接聖誕節的來臨，同時為台灣祈福。,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1297313710333562
+余宛如,2016-12-21,,,媒體公關,Eatgether新創飯局,與新創公司Eatgether一起吃第一次合作餐會,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1296875377044062
+余宛如,2016-12-20,,,媒體公關,社會企業拜訪之旅-鄭義老師拜訪,,,,,,,FB,https://www.facebook.com/Yuwanju/photos/a.254081111323499.62597.185265471538397/1321244757940457/?type=3
+余宛如,2016-12-19,,,媒體公關,金融監理沙盒出財政委員會,財政委員會審查金融監理沙盒的提案,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1294766130588320
+余宛如,2016-12-18,,,媒體公關,社會企業嘉年華,參加扶輪社3480地區與社企聚落​、以及29家不同類型的社企，在松菸盛大舉辦【社企相扶 輪轉台灣-1217因愛一起聯合嘉年華】活動。,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1293198394078427
+余宛如,2016-12-15,,,媒體公關,參加新創活動,參加了Taiwan Startup Stadium 台灣新創競技場 舉辦的Home coming party,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1292428067488793
+余宛如,2016-12-15,下午,,國會事務,產創條例公聽會,與賴瑞隆、鍾佳濱委員一起召開公聽會，邀請政府部門和民間團體代表，共同討論我提出的「產業創新條例」修正草案。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""1"",
+               ""short_name"" : ""1"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路1號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.0442838,
+               ""lng"" : 121.5207021
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0456327802915,
+                  ""lng"" : 121.5220510802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.0429348197085,
+                  ""lng"" : 121.5193531197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJh2e9c3GpQjQRf42gbiw8jgc"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.0442838,121.5207021,FB,https://www.facebook.com/Yuwanju/posts/1292203874177879
+余宛如,2016-12-15,,,媒體公關,社會企業拜訪之旅-拜訪周宗穎,,,,,,,FB,https://www.facebook.com/Yuwanju/photos/a.254081111323499.62597.185265471538397/1302326569832276/?type=3
+余宛如,2016-12-15,,,媒體公關,台北扶輪社演講,,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1291192060945727
+余宛如,2016-12-14,,,媒體公關,民視錄影,參加四季線上影視4gtv的直播節目：你在大聲什麼啦,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1290985877633012
+余宛如,2016-12-14,9:59:11,10:09:07,國會事務,立法院第9屆第2會期財政委員會第20次全體委員會議,事由：審查中華民國106年度中央政府總預算案附屬單位預算營業部分有關中國輸出入銀行、臺灣金融控股股份有限公司（含臺灣銀行股份有限公司、臺銀人壽保險股份有限公司、臺銀綜合證券股份有限公司）、臺灣土地銀行股份有限公司（含土銀保險經紀人股份有限公司）、財政部印刷廠。(12月14日及12月15日【兩天一次會】),,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""10號"",
+               ""short_name"" : ""10號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路10號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.043659,
+               ""lng"" : 121.5225734
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0450079802915,
+                  ""lng"" : 121.5239223802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.04231001970849,
+                  ""lng"" : 121.5212244197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJjVz0AnGpQjQRab8lWpqL7JQ"",
+         ""types"" : [ ""establishment"", ""parking"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.043659,121.5225734,,
+余宛如,2016-12-13,,,媒體公關,電子函證高峰會,受邀參加 《電子函證高峰會》見證台灣FinTech新奇蹟，見識台灣經濟研究院與電子函證推動小組打造的函證交換平台。,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1289206534477613
+余宛如,2016-12-13,,,媒體公關,Eatgether拍影片,,,,,,,FB,https://www.facebook.com/Yuwanju/videos/1290208827710717/
+余宛如,2016-12-13,,,媒體公關,溫暖微光社企專書發表會,參加「溫暖微光」專書發表會，這是由衛福部社家署所發行的社會企業專書，希望藉由不同的案例來推廣以人為本的社企價值。,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1289248504473416
+余宛如,2016-12-13,,,媒體公關,南非民主聯盟拜訪,和蔡其昌副院長和 Kolas Yotaka委員一起，會見南非最大在野黨─民主聯盟的參訪團。,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1289064701158463
+余宛如,2016-12-12,,,媒體公關,朝日新聞採訪,12/19登在頭版,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1294950387236561
+余宛如,2016-12-12,10:05:29,10:15:50,國會事務,立法院第9屆第2會期財政委員會第19次全體委員會議,事由：一、彙總整理提出「中華民國106年度中央政府總預算案審查總報告草案」提報院會案。 二、審查行政院函請審議「海關進口稅則部分稅則修正草案」案。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""10號"",
+               ""short_name"" : ""10號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路10號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.043659,
+               ""lng"" : 121.5225734
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0450079802915,
+                  ""lng"" : 121.5239223802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.04231001970849,
+                  ""lng"" : 121.5212244197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJjVz0AnGpQjQRab8lWpqL7JQ"",
+         ""types"" : [ ""establishment"", ""parking"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.043659,121.5225734,,
+余宛如,2016-12-11,,,媒體公關,財政-監理沙盒稅務配套,,,,,,,FB,https://www.facebook.com/Yuwanju/posts/1288059614592305
+余宛如,2016-12-08,10:36:31,10:46:12,國會事務,立法院第9屆第2會期財政委員會第18次全體委員會議,事由：一、審查本院委員曾銘宗等17人擬具「保險法增訂第一百三十六條之一條文草案」案、委員余宛如等17人擬具「保險法增訂部分條文草案」案及委員賴士葆等20人擬具「保險法增訂第一百三十六條之一條文草案」案等3案。 二、審查本院委員曾銘宗等17人擬具「證券交易法增訂第四十四條之一條文草案」案、委員余宛如等16人擬具「證券交易法增訂部分條文草案」案及委員賴士葆等20人擬具「證券交易法增訂第四十四條之一條文草案」案等3案。 三、審查本院委員曾銘宗等17人擬具「銀行法增訂第二十二條之一條文草案」案、委員余宛如等16人擬具「銀行法增訂部分條文草案」案、委員許毓仁等17人擬具「銀行法部分條文修正草案」案及委員賴士葆等20人擬具「銀行法增訂第二十二條之一條文草案」案等4案。 四、審查本院委員曾銘宗等17人擬具「期貨交易法增訂第五十六條之一條文草案」案、委員余宛如等16人擬具「期貨交易法增訂部分條文草案」案及委員賴士葆等20人擬具「期貨交易法增訂第五十六條之一條文草案」案等3案。 五、審查本院委員余宛如等16人擬具「信託業法增訂部分條文草案」案及委員賴士葆等20人擬具「信託業法增訂第三條之一條文草案」案等2案。 六、審查本院委員曾銘宗等17人擬具「證券投資信託及顧問法增訂第三條之一條文草案」案、委員余宛如等16人擬具「證券投資信託及顧問法增訂部分條文草案」案及委員賴士葆等20人擬具「證券投資信託及顧問法增訂第三條之一條文草案」案等3案。 七、審查本院委員曾銘宗等17人擬具「電子票證發行管理條例增訂第五條之二條文草案」案、委員余宛如等16人擬具「電子票證發行管理條例增訂部分條文草案」案及委員賴士葆等20人擬具「電子票證發行管理條例增訂第五條之二條文草案」案等3案。 八、審查本院委員曾銘宗等17人擬具「電子支付機構管理條例增訂第三條之一條文草案」案、委員余宛如等16人擬具「電子支付機構管理條例增訂部分條文草案」案及委員賴士葆等20人擬具「電子支付機構管理條例增訂第三條之一條文草案」案等3案。 九、審查本院委員余宛如等18人擬具「金融消費者保護法增訂第三十二條之二條文草案」案。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""10號"",
+               ""short_name"" : ""10號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路10號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.043659,
+               ""lng"" : 121.5225734
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0450079802915,
+                  ""lng"" : 121.5239223802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.04231001970849,
+                  ""lng"" : 121.5212244197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJjVz0AnGpQjQRab8lWpqL7JQ"",
+         ""types"" : [ ""establishment"", ""parking"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.043659,121.5225734,,
+余宛如,2016-12-05,10:00:49,10:10:51,國會事務,立法院第9屆第2會期財政委員會第17次全體委員會議,事由：一、審查行政院函請審議「證券交易稅條例第二條之一條文修正草案」案。（詢答及處理） 二、審查中華民國106年度中央政府總預算案有關財政部關務署及所屬。金融監督管理委員會證券期貨局、保險局部分。（詢答）(12月5日及12月7日【兩天一次會】),,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""1"",
+               ""short_name"" : ""1"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路1號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.0442838,
+               ""lng"" : 121.5207021
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0456327802915,
+                  ""lng"" : 121.5220510802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.0429348197085,
+                  ""lng"" : 121.5193531197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJh2e9c3GpQjQRf42gbiw8jgc"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.0442838,121.5207021,,
+余宛如,2016-12-01,10:45:51,10:58:12,國會事務,立法院第9屆第2會期財政委員會第16次全體委員會議,事由：邀請行政院主計總處朱主計長澤民、審計部林審計長慶隆、衛生福利部次長、交通部次長、教育部次長、文化部次長、科技部次長、經濟部次長、行政院農業委員會副主任委員、國家發展委員會副主任委員就「中央對地方政府與民間團體補助及核銷要求適切性檢討」進行專題報告，並備質詢。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""1"",
+               ""short_name"" : ""1"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路1號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.0442838,
+               ""lng"" : 121.5207021
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0456327802915,
+                  ""lng"" : 121.5220510802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.0429348197085,
+                  ""lng"" : 121.5193531197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJh2e9c3GpQjQRf42gbiw8jgc"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.0442838,121.5207021,,

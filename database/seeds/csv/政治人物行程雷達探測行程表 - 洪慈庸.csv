@@ -1,22 +1,1142 @@
-立委,行程日期,開始時間（選填）,結束時間（選填）,行程分類,行程名稱,行程敘述（選填）,相關連結（選填）,行程地點,媒體類型（選填）,媒體連結（選填）
-洪慈庸,2017-01-30,9:00:00,,媒體公關,紅包發放拜年行程,,,后里鎮安宮,,
-洪慈庸,2017-01-29,8:50:00,,媒體公關,紅包發放拜年行程,,,潭子潭水亭觀音廟,,
-洪慈庸,2017-01-29,10:20:00,,媒體公關,紅包發放拜年行程,,,大雅永興宮,,
-洪慈庸,2017-01-29,11:10:00,,媒體公關,紅包發放拜年行程,,,神岡社口萬興宮,,
-洪慈庸,2017-01-29,12:00:00,,媒體公關,紅包發放拜年行程,,,神岡大明宮,,
-洪慈庸,2017-01-28,8:00:00,,媒體公關,紅包發放拜年行程,,,潭子頭家厝得天宮,,
-洪慈庸,2017-01-28,8:50:00,,媒體公關,紅包發放拜年行程,,,神岡豐洲寮福宮,,
-洪慈庸,2017-01-28,9:30:00,,媒體公關,紅包發放拜年行程,,,后里后義宮,,
-洪慈庸,2017-01-28,10:30:00,,媒體公關,紅包發放拜年行程,,,后里月眉慈賢宮,,
-洪慈庸,2017-01-24,,,地方事務,拜訪「惠明盲校」,與林全院長、林佳龍市長、徐永明委員及衛福部的夥伴們一起來到大雅區的「惠明盲校」。,,大雅區,,
-洪慈庸,2017-01-22,,,地方事務,寒士30吃飽辦桌,與大雅在地的高和春貴慈善基金會共同捐贈物資,,台中,,
-洪慈庸,2017-01-17,,,媒體公關,參加民視節目,民視看正晶邀請，聊聊身為「小黨」一員，這一年在國會打滾跌撞的心得，和各自對未來國會和各項改革法案的期待。節目將在初六（2/2）晚上8點播出,,,,
-洪慈庸,2017-01-11,,,媒體公關,尼加拉瓜奧德嘉總統就職典禮,,,,,
-洪慈庸,2017-01-18,10:41:32,10:44:33,國會事務,第9屆第2會期第1次臨時會第2次會議（院會）,,,立法院,,
-洪慈庸,2016-12-29,9:30:01,9:42:54,國會事務,立法院第9屆第2會期社會福利及衛生環境委員會第24次全體委員會議,事由：邀請勞動部及行政院公共工程委員會就「因應大溪高中重大職災事件，三名死亡工作者未參加勞保，可能被認定為非職災事故。然而另二名死亡工作者則因有加入勞保而可認定為職災，造成同一工作場所事故卻同時存在職災與非職災的案例。爰就未加勞保勞工不幸發生職業災害，如何才能領取職業災害勞工保護法法定職災補助？我國職災勞工保護法施行成效及勞動部如何落實職災勞工保障」列席報告，並備質詢。,,立法院,,
-洪慈庸,2016-12-22,9:25:42,9:36:55,國會事務,立法院第9屆第2會期社會福利及衛生環境委員會第23次全體委員會議,事由：審查（一）本院委員鍾孔炤等18人擬具「勞資爭議處理法第六條條文修正草案」、（二）委員林德福等24人擬具「勞資爭議處理法第六十五條條文修正草案」、（三）時代力量黨團擬具「勞資爭議處理法第四十三條條文修正草案」等3案。,,立法院,,
-洪慈庸,2016-12-21,9:12:17,9:24:40,國會事務,立法院第9屆第2會期社會福利及衛生環境、財政二委員會第1次聯席會議,事由：審查（一）行政院函請審議「長期照顧服務法部分條文修正草案」案、（二）本院委員顏寬恒等16人擬具「長期照顧服務法部分條文修正草案」等2案。,,立法院,,
-洪慈庸,2016-12-15,9:45:23,10:00:29,國會事務,立法院第9屆第2會期社會福利及衛生環境委員會第21次全體委員會議,事由：邀請勞動部、交通部、原住民族委員會、行政院公共工程委員會、內政部營建署、內政部移民署、內政部警政署、經濟部工業局就「影響原住民族勞動權益專案報告─政府部門對原住民勞動條件、就業服務、職業訓練及職業災害等相關措施檢討；引進外籍勞工對原住民就業權益及勞動條件之影響；政府如何保障原住民勞動權益進而提升原住民勞工福祉」列席報告，並備質詢。,,立法院,,
-洪慈庸,2016-12-08,9:22:11,9:34:11,國會事務,立法院第9屆第2會期社會福利及衛生環境委員會第20次全體委員會議,事由：邀請行政院環境保護署署長就「建構綠能永續新世代垃圾處理計畫（焚化爐延役相關計畫）」列席報告，並備質詢。,,立法院,,
-洪慈庸,2016-12-07,9:50:14,10:01:46,國會事務,立法院第9屆第2會期社會福利及衛生環境委員會第19次全體委員會議,事由：一、審查(一)本院民進黨黨團擬具「全民健康保險法第二十七條及第一百零四條條文修正草案」、(二) 親民黨黨團擬具「全民健康保險法第九條、第十條及第二十七條條文修正草案」等2案。 二、審查本院委員吳玉琴等18人擬具「口腔健康法部分條文修正草案」案。 三、審查(一)行政院函請審議「助產人員法部分條文修正草案」、(二)委員王育敏等16人擬具「助產人員法第十二條、第十二條之一及第三十五條條文修正草案」、(三)委員顏寬恒等17人擬具「助產人員法第四條、第十二條及第四十五條條文修正草案」等3案。,,立法院,,
-洪慈庸,2016-12-06,,,國會事務,第9屆第2會期第13次會議（院會）,事由：一、2日上午9時至10時進行國是論壇。二、討論事項：詳見議事日程。三、6日下午5時至6時處理臨時提案。,,立法院,,
+立委,行程日期,開始時間（選填）,結束時間（選填）,行程分類,行程名稱,行程敘述（選填）,相關連結（選填）,行程地點,geocode,lat,lon,媒體類型（選填）,媒體連結（選填）
+洪慈庸,2017-01-30,9:00:00,,媒體公關,紅包發放拜年行程,,,后里鎮安宮,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""42號"",
+               ""short_name"" : ""42號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""三光路"",
+               ""short_name"" : ""三光路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""后里區"",
+               ""short_name"" : ""后里區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台中市"",
+               ""short_name"" : ""台中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""421"",
+               ""short_name"" : ""421"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""421台灣台中市后里區三光路42號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 24.305876,
+               ""lng"" : 120.7111359
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.3072249802915,
+                  ""lng"" : 120.7124848802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.3045270197085,
+                  ""lng"" : 120.7097869197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJ687JTXUQaTQRFj3GrIbMvD4"",
+         ""types"" : [ ""establishment"", ""place_of_worship"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.305876,120.7111359,,
+洪慈庸,2017-01-29,8:50:00,,媒體公關,紅包發放拜年行程,,,潭子潭水亭觀音廟,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""89"",
+               ""short_name"" : ""89"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""潭陽村復興路二段"",
+               ""short_name"" : ""潭陽村復興路二段"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""潭子區"",
+               ""short_name"" : ""潭子區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""臺中市"",
+               ""short_name"" : ""臺中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""427"",
+               ""short_name"" : ""427"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""427台灣臺中市潭子區潭陽村復興路二段89號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 24.210263,
+               ""lng"" : 120.707684
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.2116119802915,
+                  ""lng"" : 120.7090329802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.20891401970849,
+                  ""lng"" : 120.7063350197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJbcYgtnwXaTQRmW-8gSds_jw"",
+         ""types"" : [ ""establishment"", ""place_of_worship"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.210263,120.707684,,
+洪慈庸,2017-01-29,10:20:00,,媒體公關,紅包發放拜年行程,,,大雅永興宮,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""37號"",
+               ""short_name"" : ""37號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""大雅路"",
+               ""short_name"" : ""大雅路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""大雅區"",
+               ""short_name"" : ""大雅區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台中市"",
+               ""short_name"" : ""台中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""428"",
+               ""short_name"" : ""428"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""428台灣台中市大雅區大雅路37號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 24.2240115,
+               ""lng"" : 120.6489463
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.2253604802915,
+                  ""lng"" : 120.6502952802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.2226625197085,
+                  ""lng"" : 120.6475973197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJHw8d_u0WaTQRrMX-i_d0cnI"",
+         ""types"" : [ ""establishment"", ""place_of_worship"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.2240115,120.6489463,,
+洪慈庸,2017-01-29,11:10:00,,媒體公關,紅包發放拜年行程,,,神岡社口萬興宮,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""337"",
+               ""short_name"" : ""337"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""昌平路五段"",
+               ""short_name"" : ""昌平路五段"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""神岡區"",
+               ""short_name"" : ""神岡區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台中市"",
+               ""short_name"" : ""台中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""429"",
+               ""short_name"" : ""429"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""429台灣台中市神岡區昌平路五段337號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 24.2452517,
+               ""lng"" : 120.6839661
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.2466006802915,
+                  ""lng"" : 120.6853150802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.24390271970849,
+                  ""lng"" : 120.6826171197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJu1oHhzQXaTQRY9a1jW4b3yw"",
+         ""types"" : [ ""establishment"", ""place_of_worship"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.2452517,120.6839661,,
+洪慈庸,2017-01-29,12:00:00,,媒體公關,紅包發放拜年行程,,,神岡大明宮,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""96號"",
+               ""short_name"" : ""96號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""神洲路159巷"",
+               ""short_name"" : ""神洲路159巷"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""神岡區"",
+               ""short_name"" : ""神岡區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台中市"",
+               ""short_name"" : ""台中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""429"",
+               ""short_name"" : ""429"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""429台灣台中市神岡區神洲路159巷96號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 24.2673992,
+               ""lng"" : 120.7019063
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.2687481802915,
+                  ""lng"" : 120.7032552802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.2660502197085,
+                  ""lng"" : 120.7005573197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJVSPoYZkQaTQRSlqn8xp2k4s"",
+         ""types"" : [ ""establishment"", ""place_of_worship"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.2673992,120.7019063,,
+洪慈庸,2017-01-28,8:00:00,,媒體公關,紅包發放拜年行程,,,潭子頭家厝得天宮,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""潭子區"",
+               ""short_name"" : ""潭子區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台中市"",
+               ""short_name"" : ""台中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""427"",
+               ""short_name"" : ""427"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""427台灣台中市潭子區"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 24.1954599,
+               ""lng"" : 120.700826
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.1968088802915,
+                  ""lng"" : 120.7021749802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.1941109197085,
+                  ""lng"" : 120.6994770197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJgTYasoQXaTQRe4j7G55dRVk"",
+         ""types"" : [ ""establishment"", ""place_of_worship"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.1954599,120.700826,,
+洪慈庸,2017-01-28,8:50:00,,媒體公關,紅包發放拜年行程,,,神岡豐洲寮福宮,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""77"",
+               ""short_name"" : ""77"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""前寮路"",
+               ""short_name"" : ""前寮路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""神岡區"",
+               ""short_name"" : ""神岡區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台中市"",
+               ""short_name"" : ""台中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""429"",
+               ""short_name"" : ""429"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""429台灣台中市神岡區前寮路77號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 24.258179,
+               ""lng"" : 120.700512
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.2595279802915,
+                  ""lng"" : 120.7018609802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.2568300197085,
+                  ""lng"" : 120.6991630197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJ15My06QQaTQRYdfZx7wKd9s"",
+         ""types"" : [ ""establishment"", ""place_of_worship"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.258179,120.700512,,
+洪慈庸,2017-01-28,9:30:00,,媒體公關,紅包發放拜年行程,,,后里后義宮,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""17之3號"",
+               ""short_name"" : ""17之3號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""梅里路"",
+               ""short_name"" : ""梅里路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""后里區"",
+               ""short_name"" : ""后里區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台中市"",
+               ""short_name"" : ""台中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""421"",
+               ""short_name"" : ""421"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""421台灣台中市后里區梅里路17之3號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 24.3082615,
+               ""lng"" : 120.7313294
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.3096104802915,
+                  ""lng"" : 120.7326783802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.3069125197085,
+                  ""lng"" : 120.7299804197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJzX2DIrkaaTQRXdtwOHhbDZM"",
+         ""types"" : [ ""establishment"", ""place_of_worship"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.3082615,120.7313294,,
+洪慈庸,2017-01-28,10:30:00,,媒體公關,紅包發放拜年行程,,,后里月眉慈賢宮,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""421"",
+               ""short_name"" : ""421"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""421台灣后里區雲頭路公會巷9號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 24.321103,
+               ""lng"" : 120.701746
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.3224519802915,
+                  ""lng"" : 120.7030949802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.3197540197085,
+                  ""lng"" : 120.7003970197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJoXWsIwUQaTQRYrUL6oqXjHM"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      },
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""西屯區"",
+               ""short_name"" : ""西屯區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台中市"",
+               ""short_name"" : ""台中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""407"",
+               ""short_name"" : ""407"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""407台灣台中市西屯區"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 24.170802,
+               ""lng"" : 120.6237519
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.1721509802915,
+                  ""lng"" : 120.6251008802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.1694530197085,
+                  ""lng"" : 120.6224029197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJt8uGnP49aTQRj9_9JbI__5U"",
+         ""types"" : [ ""establishment"", ""place_of_worship"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.321103,120.701746,,
+洪慈庸,2017-01-24,,,地方事務,拜訪「惠明盲校」,與林全院長、林佳龍市長、徐永明委員及衛福部的夥伴們一起來到大雅區的「惠明盲校」。,,大雅區,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""大雅區"",
+               ""short_name"" : ""大雅區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台中市"",
+               ""short_name"" : ""台中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            }
+         ],
+         ""formatted_address"" : ""台灣台中市大雅區"",
+         ""geometry"" : {
+            ""bounds"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.2591569,
+                  ""lng"" : 120.6827615
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.2015261,
+                  ""lng"" : 120.5963838
+               }
+            },
+            ""location"" : {
+               ""lat"" : 24.2225023,
+               ""lng"" : 120.6545022
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.2591569,
+                  ""lng"" : 120.6827615
+               },
+               ""southwest"" : {
+                  ""lat"" : 24.2015261,
+                  ""lng"" : 120.5963838
+               }
+            }
+         },
+         ""place_id"" : ""ChIJe2L-mpMWaTQRit__DGSe_Yg"",
+         ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.2225023,120.6545022,,
+洪慈庸,2017-01-22,,,地方事務,寒士30吃飽辦桌,與大雅在地的高和春貴慈善基金會共同捐贈物資,,台中,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""台中市"",
+               ""short_name"" : ""台中市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            }
+         ],
+         ""formatted_address"" : ""台灣台中市"",
+         ""geometry"" : {
+            ""bounds"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.4416976,
+                  ""lng"" : 121.4509512
+               },
+               ""southwest"" : {
+                  ""lat"" : 23.9985086,
+                  ""lng"" : 120.4607975
+               }
+            },
+            ""location"" : {
+               ""lat"" : 24.1477358,
+               ""lng"" : 120.6736482
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 24.4416976,
+                  ""lng"" : 121.4509512
+               },
+               ""southwest"" : {
+                  ""lat"" : 23.9985086,
+                  ""lng"" : 120.4607975
+               }
+            }
+         },
+         ""place_id"" : ""ChIJ7yJ5-d8XaTQRf0SmfuQ-Uoc"",
+         ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",24.1477358,120.6736482,,
+洪慈庸,2017-01-17,,,媒體公關,參加民視節目,民視看正晶邀請，聊聊身為「小黨」一員，這一年在國會打滾跌撞的心得，和各自對未來國會和各項改革法案的期待。節目將在初六（2/2）晚上8點播出,,,,,,,
+洪慈庸,2017-01-11,,,媒體公關,尼加拉瓜奧德嘉總統就職典禮,,,,,,,,
+洪慈庸,2017-01-18,10:41:32,10:44:33,國會事務,第9屆第2會期第1次臨時會第2次會議（院會）,,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""1"",
+               ""short_name"" : ""1"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路1號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.0442838,
+               ""lng"" : 121.5207021
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0456327802915,
+                  ""lng"" : 121.5220510802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.0429348197085,
+                  ""lng"" : 121.5193531197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJh2e9c3GpQjQRf42gbiw8jgc"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.0442838,121.5207021,,
+洪慈庸,2016-12-29,9:30:01,9:42:54,國會事務,立法院第9屆第2會期社會福利及衛生環境委員會第24次全體委員會議,事由：邀請勞動部及行政院公共工程委員會就「因應大溪高中重大職災事件，三名死亡工作者未參加勞保，可能被認定為非職災事故。然而另二名死亡工作者則因有加入勞保而可認定為職災，造成同一工作場所事故卻同時存在職災與非職災的案例。爰就未加勞保勞工不幸發生職業災害，如何才能領取職業災害勞工保護法法定職災補助？我國職災勞工保護法施行成效及勞動部如何落實職災勞工保障」列席報告，並備質詢。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""1"",
+               ""short_name"" : ""1"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路1號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.0442838,
+               ""lng"" : 121.5207021
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0456327802915,
+                  ""lng"" : 121.5220510802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.0429348197085,
+                  ""lng"" : 121.5193531197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJh2e9c3GpQjQRf42gbiw8jgc"",
+         ""types"" : [ ""establishment"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.0442838,121.5207021,,
+洪慈庸,2016-12-22,9:25:42,9:36:55,國會事務,立法院第9屆第2會期社會福利及衛生環境委員會第23次全體委員會議,事由：審查（一）本院委員鍾孔炤等18人擬具「勞資爭議處理法第六條條文修正草案」、（二）委員林德福等24人擬具「勞資爭議處理法第六十五條條文修正草案」、（三）時代力量黨團擬具「勞資爭議處理法第四十三條條文修正草案」等3案。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""10號"",
+               ""short_name"" : ""10號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路10號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.043659,
+               ""lng"" : 121.5225734
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0450079802915,
+                  ""lng"" : 121.5239223802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.04231001970849,
+                  ""lng"" : 121.5212244197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJjVz0AnGpQjQRab8lWpqL7JQ"",
+         ""types"" : [ ""establishment"", ""parking"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.043659,121.5225734,,
+洪慈庸,2016-12-21,9:12:17,9:24:40,國會事務,立法院第9屆第2會期社會福利及衛生環境、財政二委員會第1次聯席會議,事由：審查（一）行政院函請審議「長期照顧服務法部分條文修正草案」案、（二）本院委員顏寬恒等16人擬具「長期照顧服務法部分條文修正草案」等2案。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""10號"",
+               ""short_name"" : ""10號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路10號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.043659,
+               ""lng"" : 121.5225734
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0450079802915,
+                  ""lng"" : 121.5239223802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.04231001970849,
+                  ""lng"" : 121.5212244197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJjVz0AnGpQjQRab8lWpqL7JQ"",
+         ""types"" : [ ""establishment"", ""parking"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.043659,121.5225734,,
+洪慈庸,2016-12-15,9:45:23,10:00:29,國會事務,立法院第9屆第2會期社會福利及衛生環境委員會第21次全體委員會議,事由：邀請勞動部、交通部、原住民族委員會、行政院公共工程委員會、內政部營建署、內政部移民署、內政部警政署、經濟部工業局就「影響原住民族勞動權益專案報告─政府部門對原住民勞動條件、就業服務、職業訓練及職業災害等相關措施檢討；引進外籍勞工對原住民就業權益及勞動條件之影響；政府如何保障原住民勞動權益進而提升原住民勞工福祉」列席報告，並備質詢。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""10號"",
+               ""short_name"" : ""10號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路10號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.043659,
+               ""lng"" : 121.5225734
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0450079802915,
+                  ""lng"" : 121.5239223802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.04231001970849,
+                  ""lng"" : 121.5212244197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJjVz0AnGpQjQRab8lWpqL7JQ"",
+         ""types"" : [ ""establishment"", ""parking"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.043659,121.5225734,,
+洪慈庸,2016-12-08,9:22:11,9:34:11,國會事務,立法院第9屆第2會期社會福利及衛生環境委員會第20次全體委員會議,事由：邀請行政院環境保護署署長就「建構綠能永續新世代垃圾處理計畫（焚化爐延役相關計畫）」列席報告，並備質詢。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""10號"",
+               ""short_name"" : ""10號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路10號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.043659,
+               ""lng"" : 121.5225734
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0450079802915,
+                  ""lng"" : 121.5239223802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.04231001970849,
+                  ""lng"" : 121.5212244197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJjVz0AnGpQjQRab8lWpqL7JQ"",
+         ""types"" : [ ""establishment"", ""parking"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.043659,121.5225734,,
+洪慈庸,2016-12-07,9:50:14,10:01:46,國會事務,立法院第9屆第2會期社會福利及衛生環境委員會第19次全體委員會議,事由：一、審查(一)本院民進黨黨團擬具「全民健康保險法第二十七條及第一百零四條條文修正草案」、(二) 親民黨黨團擬具「全民健康保險法第九條、第十條及第二十七條條文修正草案」等2案。 二、審查本院委員吳玉琴等18人擬具「口腔健康法部分條文修正草案」案。 三、審查(一)行政院函請審議「助產人員法部分條文修正草案」、(二)委員王育敏等16人擬具「助產人員法第十二條、第十二條之一及第三十五條條文修正草案」、(三)委員顏寬恒等17人擬具「助產人員法第四條、第十二條及第四十五條條文修正草案」等3案。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""10號"",
+               ""short_name"" : ""10號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路10號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.043659,
+               ""lng"" : 121.5225734
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0450079802915,
+                  ""lng"" : 121.5239223802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.04231001970849,
+                  ""lng"" : 121.5212244197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJjVz0AnGpQjQRab8lWpqL7JQ"",
+         ""types"" : [ ""establishment"", ""parking"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.043659,121.5225734,,
+洪慈庸,2016-12-06,,,國會事務,第9屆第2會期第13次會議（院會）,事由：一、2日上午9時至10時進行國是論壇。二、討論事項：詳見議事日程。三、6日下午5時至6時處理臨時提案。,,立法院,"{
+   ""results"" : [
+      {
+         ""address_components"" : [
+            {
+               ""long_name"" : ""10號"",
+               ""short_name"" : ""10號"",
+               ""types"" : [ ""street_number"" ]
+            },
+            {
+               ""long_name"" : ""青島東路"",
+               ""short_name"" : ""青島東路"",
+               ""types"" : [ ""route"" ]
+            },
+            {
+               ""long_name"" : ""中正區"",
+               ""short_name"" : ""中正區"",
+               ""types"" : [ ""administrative_area_level_3"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台北市"",
+               ""short_name"" : ""台北市"",
+               ""types"" : [ ""administrative_area_level_1"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""台灣"",
+               ""short_name"" : ""TW"",
+               ""types"" : [ ""country"", ""political"" ]
+            },
+            {
+               ""long_name"" : ""100"",
+               ""short_name"" : ""100"",
+               ""types"" : [ ""postal_code"" ]
+            }
+         ],
+         ""formatted_address"" : ""100台灣台北市中正區青島東路10號"",
+         ""geometry"" : {
+            ""location"" : {
+               ""lat"" : 25.043659,
+               ""lng"" : 121.5225734
+            },
+            ""location_type"" : ""APPROXIMATE"",
+            ""viewport"" : {
+               ""northeast"" : {
+                  ""lat"" : 25.0450079802915,
+                  ""lng"" : 121.5239223802915
+               },
+               ""southwest"" : {
+                  ""lat"" : 25.04231001970849,
+                  ""lng"" : 121.5212244197085
+               }
+            }
+         },
+         ""place_id"" : ""ChIJjVz0AnGpQjQRab8lWpqL7JQ"",
+         ""types"" : [ ""establishment"", ""parking"", ""point_of_interest"" ]
+      }
+   ],
+   ""status"" : ""OK""
+}
+",25.043659,121.5225734,,
