@@ -6,6 +6,8 @@ use App\PostClassification;
 use App\Event;
 use App\EventCategory;
 use App\Location;
+use App\Region;
+use App\City;
 use App\MediaType;
 use App\Media;
 use Carbon\Carbon;
@@ -61,10 +63,50 @@ class EventTableSeeder extends Seeder
                     'link' => $data['相關連結（選填）'] ?: null,
                     'user_id' => 1,
                 ]);
+
+                $place =
+                    Location::where('name', $data['行程地點'])->first()
+                    ?: Region::where('name', $data['行程地點'])->first()
+                    ?: City::where('name', $data['行程地點'])->first();
+
+                if ($place) {
+                    $event->place()->associate($place);
+                } elseif ($data['geocode']) {
+                    $geocode = json_decode($data['geocode'], true);
+                    $first = $geocode['results'][0];
+                    $region = null;
+                    $city = null;
+                    foreach ($first['address_components'] as $part) {
+                        if ($part['types'][0] == 'administrative_area_level_3') {
+                            $region = Region::where('name', $part['short_name'])->first();
+                        } else if ($part['types'][0] == 'administrative_area_level_1') {
+                            $city = City::where('name', $part['short_name'])->first();
+                        }
+                    }
+                    if (array_key_exists('geometry', $first)) {
+                        $location = Location::create([
+                            'name' => $data['行程地點'],
+                            'lat' => $first['geometry']['location']['lat'],
+                            'lng' => $first['geometry']['location']['lng'],
+                        ]);
+                        $location->region()->associate($region);
+                        $location->save();
+                        $event->place()->associate($location);
+                    } else if ($region) {
+                        $event->place()->associate($region);
+                    } else if ($city) {
+                        $event->place()->associate($city);
+                    } else {
+                        throw new Exception('Unexpected place');
+                    }
+                }
+
                 $event->persons()->attach($person);
 
                 $cat = EventCategory::where('name', $data['行程分類'])->first();
                 $event->categories()->attach($cat);
+
+                $event->save();
             }
             fclose($fh);
         }
