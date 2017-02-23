@@ -21,7 +21,7 @@ class CreateRegionsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('postal_code', 3);
-            $table->integer('city_id')->unsigned()->nullable();
+            $table->integer('city_id')->unsigned();
             $table->foreign('city_id')->references('id')->on('cities');
             $table->timestamps();
         });
