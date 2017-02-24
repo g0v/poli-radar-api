@@ -14,4 +14,9 @@ class City extends Model
     {
         return $this->hasMany('App\Region');
     }
+
+    public function events()
+    {
+        return $this->morphMany('App\Event', 'place');
+    }
 }
