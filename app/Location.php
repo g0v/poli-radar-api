@@ -21,7 +21,7 @@ class Location extends Model
 
     public function events()
     {
-        return $this->morphMany('App\Event', 'place');
+        return $this->morphMany('App\Event');
     }
 
     public function categories()

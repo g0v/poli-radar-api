@@ -20,6 +20,6 @@ class Region extends Model
 
     public function events()
     {
-        return $this->morphMany('App\Event', 'place');
+        return $this->morphMany('App\Event', 'location');
     }
 }

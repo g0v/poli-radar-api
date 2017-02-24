@@ -28,9 +28,9 @@ class Event extends Model
         return $this->belongsToMany('App\EventCategory');
     }
 
-    public function place()
+    public function location()
     {
-        return $this->morphTo();
+        return $this->belongsTo('App\Location');
     }
 
     public function media()
