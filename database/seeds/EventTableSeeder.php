@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
 use App\Person;
 use App\PostClassification;
 use App\Event;
@@ -34,6 +35,8 @@ class EventTableSeeder extends Seeder
         $poli_cat = PostClassification::where('name', '立法委員')->first();
         $evt_cat->post_classification()->save($poli_cat);
 
+        $user = User::where('name', 'Administrator')->first();
+
         foreach (['余宛如', '吳秉叡', '洪慈庸', '蔣萬安'] as $personName) {
 
             $fh = fopen(__DIR__ . '/csv/政治人物行程雷達探測行程表 - ' . $personName . '.csv', 'r');
@@ -53,7 +56,7 @@ class EventTableSeeder extends Seeder
                     'name' => $data['行程名稱'],
                     'description' => $data['行程敘述（選填）'],
                     'link' => $data['相關連結（選填）'] ?: null,
-                    'user_id' => 1,
+                    'user_id' => $user->id,
                 ]);
 
                 $place =
@@ -80,6 +83,7 @@ class EventTableSeeder extends Seeder
                             'name' => $data['行程地點'],
                             'lat' => $first['geometry']['location']['lat'],
                             'lng' => $first['geometry']['location']['lng'],
+                            'address' => $first['formatted_address'],
                         ]);
                         $location->region()->associate($region);
                         $location->save();
