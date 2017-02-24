@@ -13,8 +13,8 @@ class RegionTableSeeder extends Seeder
      */
     public function run()
     {
-        City::truncate();
-        Region::truncate();
+        DB::statement('TRUNCATE cities CASCADE');
+        DB::statement('TRUNCATE regions CASCADE');
 
         $json = __DIR__ . '/json/addr.json';
 

@@ -17,12 +17,6 @@ class UserTableSeeder extends Seeder
     {
         Model::unguard();
 
-        DB::table('permission_role')->truncate();
-        DB::table('role_user')->truncate();
-        DB::table('users')->truncate();
-        DB::table('permissions')->truncate();
-        DB::table('roles')->truncate();
-
         $admin = Role::create([
             'name'         => 'admin',
             'display_name' => 'Administrator'

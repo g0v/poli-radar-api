@@ -21,15 +21,7 @@ class EventTableSeeder extends Seeder
      */
     public function run()
     {
-
-        EventCategory::truncate();
-        Event::truncate();
-        Location::truncate();
-        MediaType::truncate();
-        Media::truncate();
-        DB::table('event_event_category')->truncate();
         $photo = MediaType::create(['name' => '照片', 'slug' => 'photo']);
-
         $evt_cat = EventCategory::create(['name' => '立法委員']);
         $cats_list = ['國會事務', '地方事務', '媒體公關'];
         $main_cats = array_reduce($cats_list, function($list, $cat_name) use ($evt_cat) {

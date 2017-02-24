@@ -17,12 +17,6 @@ class PoliticianTableSeeder extends Seeder
      */
     public function run()
     {
-        Membership::truncate();
-        Organization::truncate();
-        Person::truncate();
-        Post::truncate();
-        PostClassification::truncate();
-
         $json = __DIR__ . '/json/legi-party.json';
 
         $legis_list = json_decode(file_get_contents($json), true);
