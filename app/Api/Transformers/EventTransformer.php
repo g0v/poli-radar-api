@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class EventTransformer extends BaseTransformer
 {
     protected $availableIncludes = [
-        'location',
+        'place',
         'persons',
         'categories',
     ];
@@ -45,16 +45,16 @@ class EventTransformer extends BaseTransformer
         if ($event->media) return $this->item($event->media, new MediaTransformer);
     }
 
-    public function includeLocation(Event $event)
+    public function includePlace(Event $event)
     {
-        $location = $event->location;
-        if (is_null($location)) return $this->null();
-        $location_type = $event->location_type;
-        switch ($location_type) {
+        $place = $event->place;
+        if (is_null($place)) return $this->null();
+        $place_type = $event->place_type;
+        switch ($place_type) {
         case 'App\Location':
-            return $this->item($location, new LocationTransformer);
+            return $this->item($place, new LocationTransformer);
         case 'App\Region':
-            return $this->item($location, new RegionTransformer);
+            return $this->item($place, new RegionTransformer);
         }
     }
 }
