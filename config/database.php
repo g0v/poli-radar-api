@@ -1,18 +1,5 @@
 <?php
 
-$host = 'localhost';
-$database = 'forge';
-$username = 'forge';
-$password = '';
-
-if (getenv('DATABASE_URL')) {
-    $url = parse_url(getenv('DATABASE_URL'));
-    $host = $url['host'] ?: $host;
-    $database = substr($url['path'], 1) ?: $database;
-    $username = $url['user'] ?: $username;
-    $password = $url['pass'] ?: $password;
-}
-
 return [
 
     /*
@@ -39,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'sqlite'),
 
     /*
     |--------------------------------------------------------------------------
@@ -67,10 +54,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', $host),
-            'database'  => env('DB_DATABASE', $database),
-            'username'  => env('DB_USERNAME', $username),
-            'password'  => env('DB_PASSWORD', $password),
+            'host'      => env('DB_HOST', 'localhost'),
+            'database'  => env('DB_DATABASE', 'forge'),
+            'username'  => env('DB_USERNAME', 'forge'),
+            'password'  => env('DB_PASSWORD', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -94,6 +81,16 @@ return [
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
+            'charset'  => 'utf8',
+            'prefix'   => '',
+        ],
+
+        'heroku' => [
+            'driver'   => 'pgsql',
+            'host'     => parse_url(getenv('DATABASE_URL'))['host'],
+            'database' => substr(parse_url(getenv('DATABASE_URL'))['path'], 1),
+            'username' => parse_url(getenv('DATABASE_URL'))['user'],
+            'password' => parse_url(getenv('DATABASE_URL'))['pass'],
             'charset'  => 'utf8',
             'prefix'   => '',
         ],
