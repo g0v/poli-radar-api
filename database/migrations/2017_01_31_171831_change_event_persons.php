@@ -23,6 +23,7 @@ class ChangeEventPersons extends Migration
         });
 
         Schema::table('events', function(Blueprint $table) {
+            $table->dropForeign('events_person_id_foreign');
             $table->dropColumn('person_id');
         });
     }

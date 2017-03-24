@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "146a9ca7eecf46125d2e052633ab9bd2",
-    "content-hash": "ff991fe11c94a672223a43cbc5734470",
+    "hash": "063ff1f34dbcbd97d80c111bba77dfe0",
+    "content-hash": "23490cccf3450a36f9b9cd23789c9405",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4293,6 +4293,56 @@
                 "test"
             ],
             "time": "2015-05-11 14:41:42"
+        },
+        {
+            "name": "laravel/homestead",
+            "version": "v5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/homestead.git",
+                "reference": "760bd982c3e0897e5f49bb09c70969711669e865"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/760bd982c3e0897e5f49bb09c70969711669e865",
+                "reference": "760bd982c3e0897e5f49bb09c70969711669e865",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "symfony/console": "~2.3|~3.0",
+                "symfony/process": "~2.3|~3.0",
+                "symfony/yaml": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7 || ^6.0"
+            },
+            "bin": [
+                "bin/homestead"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Homestead\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "A virtual machine for web artisans.",
+            "time": "2017-03-14 23:52:28"
         },
         {
             "name": "mockery/mockery",

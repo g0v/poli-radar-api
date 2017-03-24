@@ -15,8 +15,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
         $admin = Role::create([
             'name'         => 'admin',
             'display_name' => 'Administrator'
@@ -50,7 +48,5 @@ class UserTableSeeder extends Seeder
         ]);
 
         $demo->attachRole($manager);
-
-        Model::reguard();
     }
 }
