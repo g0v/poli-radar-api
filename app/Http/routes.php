@@ -13,6 +13,8 @@ $api->version('v1', function ($api) {
     $api->group(['namespace' => 'Api\Controllers', 'middleware' => 'cors'], function ($api) {
         $api->get('images/{filename}', 'ImageController@show')
             ->where('filename', '(.*)');
+        $api->get('reports/persons/{id}', 'ReportController@show')
+            ->where('id', '(\d+)');
 
         // Login route
         $api->post('login', 'AuthController@authenticate');
