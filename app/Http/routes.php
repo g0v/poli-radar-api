@@ -25,9 +25,9 @@ $api->version('v1', function ($api) {
         $api->get('persons', 'PersonsController@index');
         $api->get('persons/{id}', 'PersonsController@show');
         $api->get('posts', 'PostController@index');
-        $api->get('posts/{id}', 'PostController@show');
+        $api->get('posts/{query}', 'PostController@show');
         $api->get('post/classifications', 'PostClassificationController@index');
-        $api->get('post/classifications/{id}', 'PostClassificationController@show');
+        $api->get('post/classifications/{query}', 'PostClassificationController@show');
         $api->get('organizations', 'OrganizationController@index');
         $api->get('organizations/{id}', 'OrganizationController@show');
         // $api->get('politicianCategories', 'PoliticianCategoryController@index');

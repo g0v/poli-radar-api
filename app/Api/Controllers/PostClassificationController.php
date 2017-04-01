@@ -47,13 +47,18 @@ class PostClassificationController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($query)
     {
       try {
-        return $this->response->item(PostClassification::findOrFail($id), new PostClassificationTransformer);
+        $item = PostClassification::findOrFail((int) $query);
       } catch (ModelNotFoundException $e) {
-        return $this->response->errorNotFound();
+        try {
+          $item = PostClassification::where('name', $query)->firstOrFail();
+        } catch (ModelNotFoundException $e) {
+          return $this->response->errorNotFound();
+        }
       }
+      return $this->response->item($item, new PostClassificationTransformer);
     }
 
     /**

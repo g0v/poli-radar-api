@@ -47,13 +47,18 @@ class PostController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($query)
     {
       try {
-        return $this->response->item(Post::findOrFail($id), new PostTransformer);
+        $item = Post::findOrFail((int) $query);
       } catch (ModelNotFoundException $e) {
-        return $this->response->errorNotFound();
+        try {
+          $item = Post::where('label', $query)->firstOrFail();
+        } catch (ModelNotFoundException $e) {
+          return $this->response->errorNotFound();
+        }
       }
+      return $this->response->item($item, new PostTransformer);
     }
 
     /**
